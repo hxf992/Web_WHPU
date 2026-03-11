@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOFU课题组 · 增强背景版</title>
+    <title>TOFU课题组 · WHPU</title>
     <!-- 柔和风格, 学术感字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -652,7 +652,6 @@
     </style>
 </head>
 <body>
-<canvas id="particle-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
 
 <!-- 浮动背景圆层 - 已放大尺寸 -->
 <div class="floating-circles">
@@ -1145,136 +1144,5 @@
     animate();
 })();
 </script>
-<!-- 粒子效果脚本 -->
-<script>
-(function() {
-    const canvas = document.getElementById('particle-canvas');
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-
-    let particles = [];
-    let animationFrame;
-
-    // 柔和色调 - 调整为更淡雅的学术色系
-    const pastelPalette = [
-        'hsla(210, 25%, 85%, 0.7)',   // 淡蓝色
-        'hsla(200, 20%, 88%, 0.7)',   // 极淡天蓝
-        'hsla(180, 15%, 90%, 0.7)',   // 淡青色
-        'hsla(220, 18%, 86%, 0.7)',   // 淡灰蓝
-        'hsla(190, 22%, 84%, 0.7)',   // 水蓝色
-    ];
-
-    const CONFIG = {
-        particleCount: 80,              // 减少粒子数量，避免太密集
-        baseSpeed: 0.03,                // 更慢的上升速度
-        speedVariation: 0.02,
-        baseSizeMin: 5,                  // 底部最小尺寸
-        baseSizeMax: 12,                   // 底部最大尺寸
-        topSizeMin: 10,                    // 顶部最小尺寸
-        topSizeMax: 30,                    // 顶部最大尺寸
-    };
-
-    function randomRange(min, max) {
-        return Math.random() * (max - min) + min;
-    }
-
-    function createParticle(resetFromTop = false) {
-        const x = Math.random();
-        let y;
-        if (resetFromTop) {
-            y = 1.0;  // 从底部开始
-        } else {
-            y = Math.random();  // 初始化时随机分布
-        }
-
-        const color = pastelPalette[Math.floor(Math.random() * pastelPalette.length)];
-        const speed = CONFIG.baseSpeed + randomRange(-CONFIG.speedVariation, CONFIG.speedVariation);
-        const sizeFactor = Math.random();
-
-        return {
-            x, y, speed: Math.max(0.01, speed), sizeFactor, color
-        };
-    }
-
-    function initParticles() {
-        particles = [];
-        for (let i = 0; i < CONFIG.particleCount; i++) {
-            particles.push(createParticle(false));
-        }
-    }
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-
-    function computeSize(particle) {
-        const baseMin = CONFIG.baseSizeMin;
-        const baseMax = CONFIG.baseSizeMax;
-        const topMin = CONFIG.topSizeMin;
-        const topMax = CONFIG.topSizeMax;
-
-        const bottomSize = baseMin + particle.sizeFactor * (baseMax - baseMin);
-        const topSize = topMin + particle.sizeFactor * (topMax - topMin);
-
-        const size = topSize * (1 - particle.y) + bottomSize * particle.y;
-        return Math.max(0.5, size);
-    }
-
-    function updateParticles() {
-        for (let p of particles) {
-            p.y -= p.speed * 0.01;
-
-            if (p.y < 0) {
-                p.y = 1.0;
-                p.x = Math.random();
-                if (Math.random() > 0.7) {
-                    p.sizeFactor = Math.random();
-                    p.color = pastelPalette[Math.floor(Math.random() * pastelPalette.length)];
-                }
-            }
-        }
-    }
-
-    function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        const w = canvas.width;
-        const h = canvas.height;
-
-        for (let p of particles) {
-            const screenX = p.x * w;
-            const screenY = p.y * h;
-            const radius = computeSize(p) * 0.5;
-
-            ctx.beginPath();
-            ctx.arc(screenX, screenY, radius, 0, Math.PI * 2);
-            ctx.fillStyle = p.color;
-            ctx.fill();
-        }
-
-        updateParticles();
-        animationFrame = requestAnimationFrame(draw);
-    }
-
-    function startAnimation() {
-        if (animationFrame) cancelAnimationFrame(animationFrame);
-        resizeCanvas();
-        initParticles();
-        draw();
-    }
-
-    window.addEventListener('resize', resizeCanvas);
-    window.addEventListener('load', startAnimation);
-    
-    window.addEventListener('beforeunload', () => {
-        if (animationFrame) {
-            cancelAnimationFrame(animationFrame);
-        }
-    });
-})();
-</script>
-
 </body>
 </html>
