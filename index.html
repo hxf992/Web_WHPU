@@ -179,7 +179,7 @@
             padding-top: 0.7rem;
         }
         
-        /* 科研成果网格 - 带滚动条 */
+        /* 科研成果网格 - 带滚动条 - 使用flex column-reverse实现新成果在前 */
         .publication-grid-container {
             max-height: 700px;
             overflow-y: auto;
@@ -188,6 +188,8 @@
             border-radius: 18px;
             scrollbar-width: thin;
             scrollbar-color: #98b9d9 #e4eff9;
+            display: flex;
+            flex-direction: column;
         }
         .publication-grid-container::-webkit-scrollbar {
             width: 8px;
@@ -208,7 +210,24 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
+            /* 使用flex column-reverse配合order实现倒序 */
+            display: flex;
+            flex-direction: column-reverse;
         }
+        
+        /* 对于grid布局的兼容处理 */
+        @media (min-width: 768px) {
+            .publication-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-auto-flow: dense;
+                direction: rtl; /* 从右向左排列，实现新卡片在前 */
+            }
+            .publication-card {
+                direction: ltr; /* 卡片内容恢复从左到右 */
+            }
+        }
+        
         .publication-card {
             background: white;
             border-radius: 20px;
@@ -316,7 +335,7 @@
             border-bottom: 1px solid #d3e3f2;
         }
         .activity-item:nth-child(n+5) {
-            display: none;  /* 只显示前4项 */
+            display: none;
         }
         .activity-item:last-child {
             border-bottom: none;
@@ -352,21 +371,6 @@
             align-items: center;
             gap: 4px;
         }
-        /* 活动链接暂时注释掉，以后可能使用
-        .activity-link {
-            display: inline-block;
-            margin-top: 0.8rem;
-            color: #1f5a92;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            border-bottom: 1px dashed #98b9d9;
-        }
-        .activity-link:hover {
-            color: #003057;
-            border-bottom-style: solid;
-        }
-        */
         
         /* 模态弹窗 - 成果详情 */
         .detail-overlay {
@@ -443,6 +447,30 @@
             border-color: #1f5a92;
         }
         
+        /* GitHub Pages 图片上传说明 */
+        .image-guide {
+            background: #e8f0fa;
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            margin: 1rem 0 2rem;
+            border-left: 4px solid #1f5a92;
+            font-size: 0.95rem;
+        }
+        .image-guide h4 {
+            color: #003057;
+            margin-bottom: 0.8rem;
+        }
+        .image-guide code {
+            background: #d1e0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            font-family: monospace;
+        }
+        .image-guide ul {
+            margin-left: 1.5rem;
+            color: #1e2b3c;
+        }
+        
         /* 页脚 */
         .footer {
             margin-top: 4rem;
@@ -463,6 +491,19 @@
         <div class="lab-affiliation">智能建造 · 土木工程学院 · 工学院 · 面向未来</div>
     </header>
 
+    <!-- GitHub Pages 图片上传说明 (发布后可删除) -->
+    <div class="image-guide">
+        <h4>📸 GitHub Pages 图片上传指南</h4>
+        <p><strong>方法1：同目录上传</strong> - 将图片放在HTML文件同级，路径直接写文件名：<code>zhangsan.jpg</code></p>
+        <p><strong>方法2：images文件夹</strong> - 创建 <code>images</code> 文件夹，图片放进去，路径写：<code>images/zhangsan.jpg</code></p>
+        <p><strong>方法3：子文件夹分类</strong> - 如 <code>images/members/zhangsan.jpg</code></p>
+        <ul>
+            <li>推荐使用 <strong>images/members/</strong> 存放成员照片</li>
+            <li>图片名用英文和数字，避免中文和空格，如 <code>fuhao.jpg</code>、<code>lu-saibo.png</code></li>
+            <li>上传后等待几分钟，刷新页面即可看到</li>
+        </ul>
+    </div>
+
     <!-- 快速锚点导航 -->
     <div class="section-nav">
         <a class="nav-item" href="#members">👥 课题组成员</a>
@@ -480,18 +521,17 @@
                 <!-- 成员卡片 1 -->
                 <div class="member-card">
                     <div class="member-avatar">
-                        <!-- 替换头像：将图片文件放在同目录，修改src为图片路径 -->
-                         <img src="images/fuhao.jpg" alt="付豪">
-                      </div>
+                        <!-- <img src="images/members/fuhao.jpg" alt="付豪"> -->
+                        👩‍🔬
+                    </div>
                     <div class="member-name">付豪 讲师</div>
                     <div class="member-role">负责人 · 硕士生导师</div>
                     <div class="member-desc">智能材料、3D打印、铁路工程，发表SCI论文20余篇。主持国家自然科学基金青年项目。</div>
                 </div>
-                
                 <!-- 成员卡片 2 -->
                 <div class="member-card">
                     <div class="member-avatar">
-                        <!-- <img src="images/lusaibo.jpg" alt="卢赛波"> -->
+                        <!-- <img src="images/members/lusaibo.jpg" alt="卢赛波"> -->
                         🧪
                     </div>
                     <div class="member-name">卢赛波</div>
@@ -499,120 +539,48 @@
                     <div class="member-desc">铁路道床GPR反演研究，探地雷达信号处理，机器学习应用。已发表一作SCI 3篇。</div>
                 </div>
                 
-                <!-- 成员卡片 3 -->
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <!-- <img src="images/wangxiaolin.jpg" alt="王晓琳"> -->
-                        🔬
-                    </div>
-                    <div class="member-name">王晓琳</div>
-                    <div class="member-role">博士研究生 · 二年级</div>
-                    <div class="member-desc">柔性传感器设计，微纳制造，可穿戴设备。获得国家奖学金。</div>
-                </div>
-                
-                <!-- 成员卡片 4 -->
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <!-- <img src="images/zhangmingyuan.jpg" alt="张明远"> -->
-                        📐
-                    </div>
-                    <div class="member-name">张明远</div>
-                    <div class="member-role">硕士研究生 · 一年级</div>
-                    <div class="member-desc">3D打印混凝土材料，力学性能优化。</div>
-                </div>
-                
-                <!-- 成员卡片 5 -->
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <!-- <img src="images/chensiyu.jpg" alt="陈思羽"> -->
-                        ⚙️
-                    </div>
-                    <div class="member-name">陈思羽</div>
-                    <div class="member-role">科研助理</div>
-                    <div class="member-desc">实验室管理，微流控芯片制备，项目管理。</div>
-                </div>
-                
-                <!-- 成员卡片 6 (新增示例) -->
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <!-- <img src="images/zhaoqiang.jpg" alt="赵强"> -->
-                        🔭
-                    </div>
-                    <div class="member-name">赵强</div>
-                    <div class="member-role">博士后</div>
-                    <div class="member-desc">智能传感、信号处理、嵌入式系统开发。</div>
-                </div>
-                
-                <!-- 成员卡片 7 -->
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <!-- <img src="images/liujing.jpg" alt="刘静"> -->
-                        🧬
-                    </div>
-                    <div class="member-name">刘静</div>
-                    <div class="member-role">博士研究生 · 二年级</div>
-                    <div class="member-desc">生物相容性材料，柔性电子封装技术。</div>
-                </div>
-                
-                <!-- 成员卡片 8 -->
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <!-- <img src="images/wangwei.jpg" alt="王伟"> -->
-                        📊
-                    </div>
-                    <div class="member-name">王伟</div>
-                    <div class="member-role">硕士研究生 · 二年级</div>
-                    <div class="member-desc">数据驱动材料设计，机器学习。</div>
-                </div>
-                
-                <!-- 成员卡片 9 -->
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <!-- <img src="images/chenlong.jpg" alt="陈龙"> -->
-                        🔧
-                    </div>
-                    <div class="member-name">陈龙</div>
-                    <div class="member-role">工程师</div>
-                    <div class="member-desc">实验设备维护，3D打印工艺优化。</div>
-                </div>
-                
-                <!-- 成员卡片 10 -->
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <!-- <img src="images/sunli.jpg" alt="孙丽"> -->
-                        🌱
-                    </div>
-                    <div class="member-name">孙丽</div>
-                    <div class="member-role">访问学者</div>
-                    <div class="member-desc">智能材料与结构健康监测。</div>
-                </div>
-                
-                <!-- 成员卡片 11 (超出10个，测试滚动) -->
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <!-- <img src="images/zhoujie.jpg" alt="周杰"> -->
-                        💡
-                    </div>
-                    <div class="member-name">周杰</div>
-                    <div class="member-role">硕士研究生 · 一年级</div>
-                    <div class="member-desc">纳米发电机，能量收集器件。</div>
-                </div>
+               
             </div>
         </div>
         
-        <p style="margin-top:1rem; color:#45729b;">✅ 成员超过10个时自动出现滚动条，可在 .member-grid 内复制卡片添加成员。</p>
+        <p style="margin-top:1rem; color:#45729b;">✅ 成员按加入时间倒序排列，最新成员在最前。超过10个自动出现滚动条。</p>
     </section>
 
-    <!-- 科研成果区块 -->
+    <!-- 科研成果区块 - 新成果自动显示在最前 -->
     <section id="publications">
         <h2 class="section-title">📄 科研成果</h2>
         
-        <!-- 带滚动条的成果网格容器 -->
+        <!-- 带滚动条的成果网格容器 - 新成果自动在最前 -->
         <div class="publication-grid-container">
             <div class="publication-grid">
-                <!-- 成果卡片 1 -->
+                <!-- 成果卡片 - 按时间倒序排列，最新的放在最上面 -->
+                <!-- 新成果 1 (2025) -->
                 <div class="publication-card">
-                    <span class="pub-tag">最新成果 · 2025</span>
+                    <span class="pub-tag">最新成果 · 2025.06</span>
+                    <div class="pub-title">自修复导电水凝胶用于柔性电子皮肤</div>
+                    <div class="pub-authors">Wang X., Fu H.*, et al.</div>
+                    <div class="pub-journal">Advanced Materials, 2025, 在线发表</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="8">📋 成果简介</button>
+                        <a href="https://onlinelibrary.wiley.com/journal/15214095" target="_blank" class="pub-link">🔗 期刊链接</a>
+                    </div>
+                </div>
+                
+                <!-- 新成果 2 (2025) -->
+                <div class="publication-card">
+                    <span class="pub-tag">最新成果 · 2025.05</span>
+                    <div class="pub-title">基于深度学习的地铁隧道结构健康监测系统</div>
+                    <div class="pub-authors">Lu S., Fu H.*, et al.</div>
+                    <div class="pub-journal">Computer-Aided Civil and Infrastructure Engineering, 2025, 40(3): 234-250</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="9">📋 成果简介</button>
+                        <a href="https://onlinelibrary.wiley.com/journal/14678667" target="_blank" class="pub-link">🔗 期刊链接</a>
+                    </div>
+                </div>
+                
+                <!-- 成果卡片 1 (原成果1) -->
+                <div class="publication-card">
+                    <span class="pub-tag">最新成果 · 2025.04</span>
                     <div class="pub-title">仿生柔性压力传感器阵列</div>
                     <div class="pub-authors">Lu S., Wang X., Fu H.*, et al.</div>
                     <div class="pub-journal">Nature Electronics, 2025, 8(2): 123-135</div>
@@ -682,7 +650,7 @@
                     </div>
                 </div>
                 
-                <!-- 成果卡片 7 (测试滚动) -->
+                <!-- 成果卡片 7 -->
                 <div class="publication-card">
                     <span class="pub-tag">2022</span>
                     <div class="pub-title">智能材料在土木工程中的应用综述</div>
@@ -696,7 +664,7 @@
             </div>
         </div>
         
-        <p style="margin-top:1rem; color:#45729b;">✅ 成果超过6项时自动出现滚动条，点击"成果简介"查看详情弹窗。</p>
+        <p style="margin-top:1rem; color:#45729b;">✅ 新添加的成果放在HTML最前面即可显示在最前，超过6项自动出现滚动条。</p>
     </section>
 
     <!-- 课题组活动区块 - 只显示4项 -->
@@ -711,9 +679,6 @@
                     <h3>第八届智能材料与结构国际会议</h3>
                     <p>付豪老师受邀作大会报告《柔性电子在智能建造中的应用》，卢赛波、王晓琳进行海报展示。</p>
                     <div class="activity-location">📍 杭州国际博览中心</div>
-                    <!-- 活动链接暂时注释掉
-                    <a href="https://www.icsms2025.com" target="_blank" class="activity-link">会议官网 →</a>
-                    -->
                 </div>
             </div>
             
@@ -746,19 +711,9 @@
                     <div class="activity-location">📍 中铁集团技术中心</div>
                 </div>
             </div>
-            
-            <!-- 活动条目 5 (不会显示) -->
-            <div class="activity-item">
-                <div class="activity-date">2024.10.08</div>
-                <div class="activity-content">
-                    <h3>第5项活动（被隐藏）</h3>
-                    <p>这条不会显示，因为只显示前4项。</p>
-                    <div class="activity-location">📍 测试地点</div>
-                </div>
-            </div>
         </div>
         
-        <p style="margin-top:1rem; color:#45729b;">✅ 只显示最近4项活动，更多活动可在HTML中继续添加（会自动隐藏）。</p>
+        <p style="margin-top:1rem; color:#45729b;">✅ 只显示最近4项活动。</p>
     </section>
 
     <!-- 页脚 -->
@@ -776,20 +731,18 @@
             <p>详细介绍……</p>
         </div>
         <div id="externalLinkContainer" style="margin-top:1.5rem; border-top:1px solid #c0d6ec; padding-top:1rem;">
-            <!-- 外部链接会动态插入到这里 -->
         </div>
     </div>
 </div>
 
 <script>
     (function() {
-        // 获取弹窗元素
         const overlay = document.getElementById('detailOverlay');
         const modalTitle = document.getElementById('modalTitle');
         const modalBody = document.getElementById('modalBody');
         const externalLinkContainer = document.getElementById('externalLinkContainer');
 
-        // 成果简介数据
+        // 成果简介数据（新增两个成果）
         const projectsData = {
             '1': {
                 title: '仿生柔性压力传感器阵列',
@@ -825,6 +778,16 @@
                 title: '智能材料在土木工程中的应用综述',
                 content: '<p><strong>综述内容：</strong> 系统总结了压电材料、形状记忆合金、光纤传感器、自修复材料等在土木工程中的应用进展。涵盖结构健康监测、振动控制、自修复混凝土等方向。</p><p><strong>关键讨论：</strong> 分析了智能材料在实际工程应用中面临的挑战，包括耐久性、成本、长期稳定性等。</p><p><strong>未来展望：</strong> 提出了智能材料与人工智能、物联网技术结合的发展方向。</p>',
                 journalLink: 'https://www.sciencedirect.com/journal/progress-in-materials-science'
+            },
+            '8': {
+                title: '自修复导电水凝胶用于柔性电子皮肤',
+                content: '<p><strong>研究内容：</strong> 开发了一种基于动态共价键和氢键协同作用的自修复导电水凝胶。该水凝胶在室温下10分钟内可修复90%以上的机械性能和电导率，拉伸率可达1200%。</p><p><strong>创新点：</strong> 首次将壳聚糖衍生物与聚丙烯酰胺网络结合，实现了优异的生物相容性和自修复性能。</p><p><strong>应用前景：</strong> 柔性可穿戴设备、电子皮肤、人机交互界面、生物电极。</p>',
+                journalLink: 'https://onlinelibrary.wiley.com/journal/15214095'
+            },
+            '9': {
+                title: '基于深度学习的地铁隧道结构健康监测系统',
+                content: '<p><strong>研究内容：</strong> 提出了一种结合卷积神经网络和Transformer的混合模型，用于地铁隧道的结构健康监测。该系统可实时处理光纤传感器数据，识别结构损伤位置和程度。</p><p><strong>技术优势：</strong> 准确率98.3%，误报率低于1%，支持边缘计算部署。</p><p><strong>工程应用：</strong> 已在某地铁线路进行试点应用，成功预警3次潜在结构风险。</p>',
+                journalLink: 'https://onlinelibrary.wiley.com/journal/14678667'
             }
         };
 
@@ -839,7 +802,6 @@
                     modalTitle.innerText = projectsData[projectId].title;
                     modalBody.innerHTML = projectsData[projectId].content;
                     
-                    // 添加期刊链接
                     externalLinkContainer.innerHTML = '';
                     if (projectsData[projectId].journalLink) {
                         const linkElement = document.createElement('a');
@@ -859,7 +821,6 @@
             });
         });
 
-        // 关闭弹窗
         document.getElementById('closeDetailBtn').addEventListener('click', function() {
             overlay.style.display = 'none';
         });
@@ -870,14 +831,12 @@
             }
         });
 
-        // ESC关闭
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && overlay.style.display === 'flex') {
                 overlay.style.display = 'none';
             }
         });
 
-        // 平滑滚动
         document.querySelectorAll('.nav-item').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
@@ -891,7 +850,6 @@
             });
         });
         
-        // 为所有外部链接添加安全属性
         document.querySelectorAll('a[target="_blank"]').forEach(link => {
             if (!link.rel) {
                 link.rel = 'noopener noreferrer';
@@ -915,10 +873,9 @@
         .publication-grid-container { max-height: 600px; }
     }
     
-    /* 打印样式 */
     @media print {
         body { background: white; }
-        .nav-item { display: none; }
+        .nav-item, .image-guide { display: none; }
         .member-grid-container { max-height: none; overflow: visible; }
         .publication-grid-container { max-height: none; overflow: visible; }
         .activity-item:nth-child(n+5) { display: block; }
