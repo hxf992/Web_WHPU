@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>付豪 · 个人简历 | TOFU课题组</title>
+    <!-- 学术感字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Source+Serif+4:opsz@8..60&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8faff;
+            color: #1e2b3c;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+        }
+        /* 头部标识 & 返回链接 */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid #d0e0f0;
+            padding-bottom: 1.2rem;
+        }
+        .lab-home a {
+            font-weight: 500;
+            color: #1f5a92;
+            text-decoration: none;
+            background: #e4eff9;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            border: 1px solid #98b9d9;
+            transition: 0.15s;
+        }
+        .lab-home a:hover {
+            background: #1f5a92;
+            color: white;
+        }
+        .page-title h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            background: linear-gradient(145deg, #003057, #1b4f7a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        /* 名片区域 */
+        .profile-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 30px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,35,65,0.08);
+            border: 1px solid #d0e0f0;
+        }
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #b5d1ec, #779fc7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: 400;
+            box-shadow: 0 8px 18px #b0c9e0;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-info {
+            flex: 1;
+        }
+        .profile-info h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #002a50;
+        }
+        .profile-info .subtitle {
+            font-size: 1.2rem;
+            color: #1f5a92;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid #809ab3;
+            padding-left: 1rem;
+        }
+        .profile-desc {
+            background: #f0f7fe;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            font-size: 1rem;
+            color: #1a3350;
+            line-height: 1.7;
+        }
+        .profile-desc p {
+            margin: 0.3rem 0;
+        }
+        /* 联系方式卡片 */
+        .contact-card {
+            background: #e4eff9;
+            border-radius: 24px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+            border-left: 6px solid #1f5a92;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: flex-start;
+            box-shadow: 0 5px 15px rgba(0,40,70,0.1);
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.05rem;
+            background: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .contact-item span:first-child {
+            font-weight: 600;
+            color: #003f6f;
+        }
+        .contact-item a {
+            color: #1f5a92;
+            text-decoration: none;
+            border-bottom: 1px dotted;
+        }
+        .contact-item a:hover {
+            color: #003057;
+        }
+        /* 通用章节 */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.5rem 0;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 70%;
+            height: 4px;
+            background: #98b9d9;
+            border-radius: 4px;
+        }
+        /* 经历卡片 */
+        .exp-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: white;
+            border-radius: 28px;
+            padding: 2rem 2rem 1rem;
+            box-shadow: 0 8px 25px rgba(0,35,65,0.05);
+            border: 1px solid #d0e0f0;
+        }
+        .exp-item {
+            display: flex;
+            gap: 1.8rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #c7d9ec;
+        }
+        .exp-item:last-child {
+            border-bottom: none;
+        }
+        .exp-date {
+            min-width: 150px;
+            font-weight: 600;
+            color: #003f6f;
+            background: #e4eff9;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            height: fit-content;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        .exp-content {
+            flex: 1;
+        }
+        .exp-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: #002b4a;
+        }
+        .exp-content p {
+            color: #2f4460;
+        }
+        /* 研究方向标签 */
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        .tag {
+            background: #e4eff9;
+            color: #1f5a92;
+            padding: 0.4rem 1.3rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid #aac3db;
+        }
+        /* 论文列表 */
+        .papers-list {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem 2rem 1rem;
+            box-shadow: 0 8px 25px rgba(0,35,65,0.05);
+            border: 1px solid #d0e0f0;
+        }
+        .paper-item {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #dde9f5;
+        }
+        .paper-item:last-child {
+            border-bottom: none;
+        }
+        .paper-authors {
+            font-weight: 500;
+            color: #1f4465;
+        }
+        .paper-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #002a50;
+            margin: 0.3rem 0;
+        }
+        .paper-journal {
+            color: #2f6080;
+            font-style: italic;
+        }
+        .paper-meta {
+            margin-top: 0.4rem;
+            font-size: 0.95rem;
+            color: #305f8a;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+        .paper-meta a {
+            color: #1f5a92;
+            text-decoration: none;
+            border-bottom: 1px dotted #98b9d9;
+        }
+        .paper-meta a:hover {
+            color: #003057;
+        }
+        .badge {
+            background: #d9e7f5;
+            color: #124072;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            border: 1px solid #aac3db;
+        }
+        /* 专著/获奖 */
+        .honor-box {
+            background: #eef5fc;
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0 2.5rem;
+            border-left: 6px solid #98b9d9;
+            font-size: 1.05rem;
+        }
+        .footer {
+            margin-top: 4rem;
+            border-top: 2px solid #d0e2f2;
+            padding-top: 1.8rem;
+            text-align: center;
+            color: #3d6180;
+            font-size: 0.95rem;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #c0d6ec;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 顶部导航 -->
+    <div class="top-bar">
+        <div class="lab-home">
+            <a href="index.html">← 返回 TOFU课题组主页</a>
+        </div>
+        <div class="page-title">
+            <h1>付豪 · 个人简历</h1>
+        </div>
+    </div>
+
+    <!-- 基本资料卡 -->
+    <div class="profile-header">
+        <div class="profile-avatar">
+            <!-- 如果有个性照片可替换下方地址 -->
+ <img src="../images/fuhao.jpg" alt="付豪"> 
+        </div>
+        <div class="profile-info">
+            <h2>付豪</h2>
+            <div class="subtitle">博士 · 讲师 · 硕士生导师</div>
+            <div class="profile-desc">
+                <p>男，1995年生，籍贯湖北省荆州市松滋市。武汉轻工大学土木工程与建筑学院讲师。</p>
+                <p style="margin-top:0.5rem;">主要研究方向：铁路下部基础结构、3D打印多孔结构设计、机器学习。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系方式卡片 -->
+    <div class="contact-card">
+        <div class="contact-item"><span>📧</span> <a href="mailto:haofu@whpu.edu.cn">haofu@whpu.edu.cn</a></div>
+        <div class="contact-item"><span>📍</span> 湖北省武汉市常青花园学府南路68号</div>
+        <div class="contact-item"><span>📮</span> 430023</div>
+    </div>
+
+    <!-- 个人经历 -->
+    <h2 class="section-title">📋 个人经历</h2>
+    <div class="exp-grid">
+        <div class="exp-item">
+            <div class="exp-date">2019.11 – 2024.07</div>
+            <div class="exp-content"><h3>英国伯明翰大学 工学院博士</h3><p>铁路研究与教育中心</p></div>
+        </div>
+        <div class="exp-item">
+            <div class="exp-date">2016.09 – 2019.06</div>
+            <div class="exp-content"><h3>北京交通大学 土建学院硕士</h3><p>道路与铁道工程</p></div>
+        </div>
+        <div class="exp-item">
+            <div class="exp-date">2012.09 – 2016.07</div>
+            <div class="exp-content"><h3>北京交通大学 土建学院本科</h3><p>土木工程（城市轨道交通）</p></div>
+        </div>
+    </div>
+
+    <!-- 社会兼职 + 研究方向（并排） -->
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 2rem 0;">
+        <div style="flex: 1; min-width: 280px;">
+            <h2 class="section-title" style="margin-top: 0;">📌 社会兼职</h2>
+            <div style="background: white; border-radius: 28px; padding: 1.8rem 2rem; border: 1px solid #d0e0f0; height: 100%;">
+                <p style="font-size: 1.05rem; line-height: 1.8;">担任 <strong>Construction and Building Materials</strong>、<strong>Journal of Vibration and Control</strong>、<strong>Thin-Wall Structures</strong>、<strong>交通运输工程学报英文版</strong> 等期刊审稿人。</p>
+            </div>
+        </div>
+        <div style="flex: 1; min-width: 280px;">
+            <h2 class="section-title" style="margin-top: 0;">🔬 主要研究方向</h2>
+            <div style="background: white; border-radius: 28px; padding: 1.8rem 2rem; border: 1px solid #d0e0f0; height: 100%;">
+                <div class="research-tags">
+                    <span class="tag">铁路下部基础结构</span>
+                    <span class="tag">3D打印多孔结构设计</span>
+                    <span class="tag">机器学习</span>
+                </div>
+                <p style="margin-top: 1.5rem; color: #2f4460;">基于离散元(DEM)与实验方法，研究三周期极小曲面(TPMS)结构力学性能及铁路有砟道床行为。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 学术成果标题 -->
+    <h2 class="section-title">📄 学术成果</h2>
+
+    <!-- 科研项目 -->
+    <div style="background: white; border-radius: 28px; padding: 1.8rem 2rem; margin-bottom: 2rem; border: 1px solid #d0e0f0;">
+        <h3 style="font-size: 1.4rem; font-weight: 600; color: #002a50; margin-bottom: 0.8rem;">科研项目情况</h3>
+        <p style="color: #2d3f54; font-style: italic;">主持/参与国家自然科学基金、铁路集团合作项目等，具体信息持续更新中。</p>
+    </div>
+
+    <!-- 论文列表 -->
+    <h3 style="font-size: 1.4rem; font-weight: 600; color: #002a50; margin: 1.5rem 0 1rem;">📝 近几年发表论文（*为通讯作者）</h3>
+    <div class="papers-list">
+        <!-- 1 -->
+        <div class="paper-item">
+            <div class="paper-authors">Fu, Hao, and Sakdirat Kaewunruen.</div>
+            <div class="paper-title">"The axially-loaded behaviours of Schwarz Primitive (SP)-based structures: an experimental and DEM study."</div>
+            <div class="paper-journal">Thin-Walled Structures (2024): 111973.</div>
+            <div class="paper-meta">DOI: 10.1016/j.tws.2024.111973. <span class="badge">一区 TOP, IF6.4</span> <a href="https://doi.org/10.1016/j.tws.2024.111973" target="_blank">查看原文</a></div>
+        </div>
+        <!-- 2 -->
+        <div class="paper-item">
+            <div class="paper-authors">Fu, Hao, Xu Huang, and Sakdirat Kaewunruen.</div>
+            <div class="paper-title">"Nonlinear Instabilities of TPMS Cellular Units Under Axially Loaded Conditions."</div>
+            <div class="paper-journal">International Journal of Structural Stability and Dynamics (2024): 2450261.</div>
+            <div class="paper-meta">DOI: 10.1142/S0219455424502614. <span class="badge">三区, IF3.6</span> <a href="https://doi.org/10.1142/S0219455424502614" target="_blank">查看原文</a></div>
+        </div>
+        <!-- 3 -->
+        <div class="paper-item">
+            <div class="paper-authors">Fu, Hao, Xu Huang, and Sakdirat Kaewunruen.</div>
+            <div class="paper-title">"Experimental investigations into nonlinear dynamic behaviours of triply periodical minimal surface structures."</div>
+            <div class="paper-journal">Composite Structures 323 (2023): 117510.</div>
+            <div class="paper-meta">DOI: 10.1016/j.compstruct.2023.117510. <span class="badge">一区 TOP, IF6.3</span> <a href="https://doi.org/10.1016/j.compstruct.2023.117510" target="_blank">查看原文</a></div>
+        </div>
+        <!-- 4 -->
+        <div class="paper-item">
+            <div class="paper-authors">Fu, Hao, Junhui Huang, and Sakdirat Kaewunruen.</div>
+            <div class="paper-title">"Mechanical performance of Bio-Inspired Gyroid and Primitive concrete structures under combined compression and torsion Loads: A discrete element method study."</div>
+            <div class="paper-journal">Engineering Structures 291 (2023): 116429.</div>
+            <div class="paper-meta">DOI: 10.1016/j.engstruct.2023.116429. <span class="badge">一区 TOP, IF5.5</span> <a href="https://doi.org/10.1016/j.engstruct.2023.116429" target="_blank">查看原文</a></div>
+        </div>
+        <!-- 5 -->
+        <div class="paper-item">
+            <div class="paper-authors">Fu, Hao, Yushi Yang, and Sakdirat Kaewunruen.</div>
+            <div class="paper-title">"Multi-hazard effects of crosswinds on cascading failures of conventional and interspersed railway tracks exposed to ballast washaway and moving train loads."</div>
+            <div class="paper-journal">Sensors 23.4 (2023): 1786.</div>
+            <div class="paper-meta">DOI: 10.3390/s23041786. <span class="badge">三区, IF3.9</span> <a href="https://doi.org/10.3390/s23041786" target="_blank">查看原文</a></div>
+        </div>
+        <!-- 6 -->
+        <div class="paper-item">
+            <div class="paper-authors">Fu, Hao, and Sakdirat Kaewunruen.</div>
+            <div class="paper-title">"Experimental and DEM investigation of axially-loaded behaviours of IWP-based structures."</div>
+            <div class="paper-journal">International Journal of Mechanical Sciences 235 (2022): 107738.</div>
+            <div class="paper-meta">DOI: 10.1016/j.ijmecsci.2022.107738. <span class="badge">一区 TOP, IF7.3</span> <a href="https://doi.org/10.1016/j.ijmecsci.2022.107738" target="_blank">查看原文</a></div>
+        </div>
+        <!-- 7 -->
+        <div class="paper-item">
+            <div class="paper-authors">Fu, Hao, and Sakdirat Kaewunruen.</div>
+            <div class="paper-title">"Numerical investigation of porous composite honeycomb track slab under point load."</div>
+            <div class="paper-journal">Materials Today: Proceedings 65 (2022): 1628-1633.</div>
+            <div class="paper-meta">DOI: 10.1016/j.matpr.2022.04.691. <span class="badge">EI</span> <a href="https://doi.org/10.1016/j.matpr.2022.04.691" target="_blank">查看原文</a></div>
+        </div>
+        <!-- 8 -->
+        <div class="paper-item">
+            <div class="paper-authors">Fu, Hao, and Sakdirat Kaewunruen.</div>
+            <div class="paper-title">"State-of-the-art review on additive manufacturing technology in railway infrastructure systems."</div>
+            <div class="paper-journal">Journal of Composites Science 6, no. 1 (2021): 7.</div>
+            <div class="paper-meta">DOI: 10.3390/jcs6010007. <span class="badge">IF3.3</span> <a href="https://doi.org/10.3390/jcs6010007" target="_blank">查看原文</a></div>
+        </div>
+        <!-- 9 通讯作者 -->
+        <div class="paper-item">
+            <div class="paper-authors">Jing, G. Q., P. Aela, H. Fu*, and M. Esmaeili.</div>
+            <div class="paper-title">"Numerical and experimental analysis of lateral resistance of biblock sleeper on ballasted tracks."</div>
+            <div class="paper-journal">International Journal of Geomechanics 20, no. 6 (2020): 04020051.</div>
+            <div class="paper-meta">DOI: 10.1061/(ASCE)GM.1943-5622.0001689. <span class="badge">二区, IF3.7 (通讯作者)</span> <a href="https://doi.org/10.1061/(ASCE)GM.1943-5622.0001689" target="_blank">查看原文</a></div>
+        </div>
+    </div>
+
+    <!-- 专著/获奖 -->
+    <div style="margin: 2.5rem 0;">
+        <h2 class="section-title">🏆 科研/设计成果获奖情况</h2>
+        <div class="honor-box">
+            <p style="font-weight: 600;">📘 专著：</p>
+            <p style="margin-left: 1.5rem;">井国庆; 付豪. 有砟道床横向阻力. ISBN：9787113276072.</p>
+            <hr>
+            <p>其他奖项及荣誉信息持续更新中。</p>
+        </div>
+    </div>
+
+    <!-- 返回链接 -->
+    <div style="text-align: center; margin: 3rem 0 1rem;">
+        <a href="index.html" style="background: #e4eff9; color: #1f5a92; padding: 0.7rem 2.5rem; border-radius: 40px; text-decoration: none; font-weight: 500; border: 1px solid #98b9d9; transition: 0.2s;">← 返回课题组主页</a>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        ⚛️ TOFU课题组 · 个人简历页面 · 最后更新 2025年4月
+    </footer>
+</div>
+
+<!-- 可选的移动端优化 -->
+<style>
+    @media (max-width: 650px) {
+        .container { padding: 1.5rem 1rem; }
+        .profile-header { flex-direction: column; align-items: center; text-align: center; }
+        .profile-info .subtitle { border-left: none; border-top: 2px solid #809ab3; padding-top: 0.5rem; }
+        .exp-item { flex-direction: column; gap: 0.3rem; }
+        .exp-date { align-self: flex-start; }
+        .contact-card { flex-direction: column; align-items: flex-start; }
+        .paper-meta { flex-wrap: wrap; }
+    }
+</style>
+
+</body>
+</html>
