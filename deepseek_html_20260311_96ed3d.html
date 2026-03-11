@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课题组 · 学术动态与成员</title>
+    <!-- 柔和风格, 学术感字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Source+Serif+4:opsz@8..60&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8faff;
+            color: #1e2b3c;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 2rem 3rem;
+        }
+        /* 头部标识 */
+        .lab-header {
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid #d0e0f0;
+            padding-bottom: 1.5rem;
+        }
+        .lab-name {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(145deg, #003057, #1b4f7a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .lab-affiliation {
+            font-size: 1.1rem;
+            color: #2c4b6f;
+            margin-top: 0.2rem;
+            font-weight: 300;
+            border-left: 4px solid #809ab3;
+            padding-left: 1rem;
+        }
+        /* 导航卡片区(简化为锚点) */
+        .section-nav {
+            display: flex;
+            gap: 1.8rem;
+            margin: 2rem 0 1.5rem;
+            flex-wrap: wrap;
+        }
+        .nav-item {
+            font-weight: 500;
+            background: white;
+            padding: 0.5rem 1.6rem;
+            border-radius: 40px;
+            box-shadow: 0 4px 10px rgba(0,40,70,0.08);
+            border: 1px solid #cdddec;
+            transition: 0.15s;
+            color: #1f4465;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .nav-item:hover {
+            background: #e4edf7;
+            border-color: #809ab3;
+            box-shadow: 0 6px 14px rgba(27,79,122,0.12);
+        }
+        /* 通用区块设计 */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 550;
+            margin: 2.8rem 0 1.8rem 0;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 80%;
+            height: 4px;
+            background: #98b9d9;
+            border-radius: 4px;
+        }
+        /* 科研动态网格 (点击卡片弹出新页模拟) */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .news-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.6rem 1.5rem 1.8rem 1.5rem;
+            box-shadow: 0 10px 25px -8px rgba(0,35,65,0.12);
+            border: 1px solid rgba(152,185,217,0.3);
+            transition: transform 0.2s, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 22px 30px -12px rgba(10,60,110,0.2);
+            border-color: #b3cde5;
+        }
+        .news-tag {
+            background: #d9e7f5;
+            color: #124072;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            align-self: flex-start;
+            letter-spacing: 0.3px;
+            margin-bottom: 1rem;
+            border: 1px solid #aac3db;
+        }
+        .news-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        .news-summary {
+            color: #2d3f54;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            flex: 1;
+        }
+        .btn-detail {
+            background: transparent;
+            border: 2px solid #1f5a92;
+            color: #1f5a92;
+            padding: 0.5rem 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 0.8rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+        }
+        .btn-detail:hover {
+            background: #1f5a92;
+            color: white;
+        }
+        /* 课题组成员 – 头像列表 */
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 2rem 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+        .member-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.8rem 1.2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(40,70,100,0.08);
+            border: 1px solid #dbe6f0;
+            transition: 0.15s;
+        }
+        .member-card:hover {
+            background: #f3f9ff;
+            border-color: #90b0d0;
+        }
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #b5d1ec, #779fc7);
+            margin: 0 auto 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 400;
+            box-shadow: 0 8px 14px #c0d3e6;
+        }
+        .member-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        .member-role {
+            color: #1f5a92;
+            font-weight: 500;
+            font-size: 0.9rem;
+            background: #e1effa;
+            display: inline-block;
+            padding: 0.2rem 1.2rem;
+            border-radius: 20px;
+            margin: 0.5rem 0 0.3rem;
+        }
+        .member-desc {
+            color: #2f4460;
+            font-size: 0.9rem;
+            margin-top: 0.6rem;
+            border-top: 1px dashed #bfd5ea;
+            padding-top: 0.7rem;
+        }
+        /* 课题组活动 – 卡片时间轴感 */
+        .activity-list {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem 2rem 1rem;
+            box-shadow: inset 0 1px 5px #eef5fc, 0 15px 25px -10px #a7c0d9;
+            border: 1px solid #cddef0;
+        }
+        .activity-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #d3e3f2;
+        }
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        .activity-date {
+            min-width: 100px;
+            font-weight: 600;
+            color: #003f6f;
+            background: #e4eff9;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            height: fit-content;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .activity-content h3 {
+            font-size: 1.25rem;
+            font-weight: 580;
+            margin-bottom: 0.25rem;
+            color: #002b4a;
+        }
+        .activity-content p {
+            color: #2c4057;
+        }
+        .activity-location {
+            margin-top: 0.4rem;
+            font-size: 0.9rem;
+            color: #617e9e;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        /* 模拟弹窗/新页 — 科研动态详情（隐藏浮层） */
+        .detail-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,20,40,0.6);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .detail-card {
+            max-width: 550px;
+            width: 90%;
+            background: #fbfdff;
+            border-radius: 36px;
+            padding: 2.5rem 2.2rem;
+            box-shadow: 0 40px 60px #001e3c;
+            border: 1px solid white;
+            position: relative;
+            transform: scale(0.98);
+            transition: 0.2s;
+        }
+        .detail-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #002a50;
+        }
+        .detail-card p {
+            font-size: 1.1rem;
+            margin: 1.2rem 0;
+            color: #17334f;
+        }
+        .close-detail {
+            position: absolute;
+            top: 1.2rem; right: 1.8rem;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #305f8a;
+            font-weight: 300;
+        }
+        .close-detail:hover {
+            color: #001e3c;
+        }
+        .badge-dummy {
+            background: #b5d2ec;
+            padding: 0.3rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        /* 页脚 */
+        .footer {
+            margin-top: 4rem;
+            border-top: 2px solid #d0e2f2;
+            padding-top: 1.8rem;
+            font-size: 0.9rem;
+            color: #3d6180;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 课题组招牌 -->
+    <header class="lab-header">
+        <h1 class="lab-name">智能材料与微纳传感课题组</h1>
+        <div class="lab-affiliation">先进材料研究中心 · 工学院 · 面向未来的智能感知</div>
+    </header>
+
+    <!-- 快速锚点导航 -->
+    <div class="section-nav">
+        <a class="nav-item" href="#research">📄 科研动态</a>
+        <a class="nav-item" href="#members">👥 课题组成员</a>
+        <a class="nav-item" href="#activities">🧪 课题组活动</a>
+    </div>
+
+    <!-- 科研动态区块 ------------------------------------------------->
+    <section id="research">
+        <h2 class="section-title">📋 科研动态</h2>
+        <div class="news-grid">
+            <!-- 条目 1 (点击弹出详情) -->
+            <div class="news-card" data-project="柔性传感器">
+                <span class="news-tag">最新成果</span>
+                <div class="news-title">仿生柔性压力传感器阵列</div>
+                <div class="news-summary">提出基于微结构离子凝胶的高灵敏度柔性压力传感器，响应时间<15ms，已应用于可穿戴脉搏监测。</div>
+                <button class="btn-detail" data-project="1">🔍 查看详情 · 新页</button>
+            </div>
+            <!-- 条目 2 -->
+            <div class="news-card" data-project="自修复材料">
+                <span class="news-tag">材料设计</span>
+                <div class="news-title">室温自修复电子皮肤</div>
+                <div class="news-summary">基于动态双硫键与氢键协同作用，实现受损后85%电导率恢复，拉伸率超过600%。</div>
+                <button class="btn-detail" data-project="2">🔍 查看详情 · 新页</button>
+            </div>
+            <!-- 条目 3 -->
+            <div class="news-card" data-project="微流控芯片">
+                <span class="news-tag">微纳加工</span>
+                <div class="news-title">3D打印微流控芯片快速检测</div>
+                <div class="news-summary">开发DLP 3D打印技术制作集成微阀的芯片，用于水体病原体即时检测，灵敏度达单细胞级别。</div>
+                <button class="btn-detail" data-project="3">🔍 查看详情 · 新页</button>
+            </div>
+            <!-- 条目 4 -->
+            <div class="news-card" data-project="能源器件">
+                <span class="news-tag">跨学科</span>
+                <div class="news-title">基于摩擦纳米发电机的自驱动传感</div>
+                <div class="news-summary">设计织物基摩擦电材料，可收集人体运动能量并同时监测关节活动，实现自驱动传感。</div>
+                <button class="btn-detail" data-project="4">🔍 查看详情 · 新页</button>
+            </div>
+        </div>
+        <p style="margin-top:0.8rem; font-style:italic; color:#45729b;">※ 点击每一项的“查看详情”可弹出独立介绍页（模拟新页面）</p>
+    </section>
+
+    <!-- 课题组成员 ------------------------------------------------->
+    <section id="members">
+        <h2 class="section-title">👥 课题组成员</h2>
+        <div class="member-grid">
+            <!-- 教授 1 -->
+            <div class="member-card">
+                <div class="member-avatar">👩‍🔬</div>
+                <div class="member-name">陈敏 教授</div>
+                <div class="member-role">课题组长 · 首席科学家</div>
+                <div class="member-desc">智能材料、微纳传感器，国家杰出青年科学基金获得者，发表Nature Electronics等论文80余篇。</div>
+            </div>
+            <!-- 副教授 2 -->
+            <div class="member-card">
+                <div class="member-avatar">👨‍🔬</div>
+                <div class="member-name">张逸凡 副教授</div>
+                <div class="member-role">微纳加工负责人</div>
+                <div class="member-desc">专注于3D微纳打印、柔性混合电子，主持重点研发子课题，获中国仪器仪表学会二等奖。</div>
+            </div>
+            <!-- 博士后 3 -->
+            <div class="member-card">
+                <div class="member-avatar">🧪</div>
+                <div class="member-name">李雨桐 博士后</div>
+                <div class="member-role">博士后 · 自修复材料</div>
+                <div class="member-desc">动态高分子网络设计与合成，在Adv. Mater., ACS Nano 发表一作论文5篇。</div>
+            </div>
+            <!-- 博士生 4 -->
+            <div class="member-card">
+                <div class="member-avatar">🔬</div>
+                <div class="member-name">王思远</div>
+                <div class="member-role">博士研究生 (四年级)</div>
+                <div class="member-desc">柔性可穿戴传感系统，开发了用于康复监测的智能绷带，受理专利2项。</div>
+            </div>
+            <!-- 博士生 5 -->
+            <div class="member-card">
+                <div class="member-avatar">📊</div>
+                <div class="member-name">赵一凡</div>
+                <div class="member-role">博士研究生 (三年级)</div>
+                <div class="member-desc">微流控与即时诊断，微滴生成芯片及数字LAMP检测。</div>
+            </div>
+            <!-- 硕士生 6 -->
+            <div class="member-card">
+                <div class="member-avatar">🧫</div>
+                <div class="member-name">刘子慕</div>
+                <div class="member-role">硕士研究生 (二年级)</div>
+                <div class="member-desc">摩擦纳米发电机、能量采集电路设计。</div>
+            </div>
+            <!-- 科研助理 7 -->
+            <div class="member-card">
+                <div class="member-avatar">⚙️</div>
+                <div class="member-name">周瑾 工程师</div>
+                <div class="member-role">科研助理 · 微纳加工平台</div>
+                <div class="member-desc">负责光刻、溅射、SEM等设备维护与工艺开发。</div>
+            </div>
+            <!-- 访问学生 8 -->
+            <div class="member-card">
+                <div class="member-avatar">🌐</div>
+                <div class="member-name">Alex Chen</div>
+                <div class="member-role">访问学生 (UC Berkeley)</div>
+                <div class="member-desc">机器学习辅助材料设计，短期合作项目。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课题组活动 ------------------------------------------------->
+    <section id="activities">
+        <h2 class="section-title">🧪 课题组活动</h2>
+        <div class="activity-list">
+            <div class="activity-item">
+                <div class="activity-date">2025.04.15-17</div>
+                <div class="activity-content">
+                    <h3>第八届全国智能材料与微纳传感器大会</h3>
+                    <p>课题组一行7人参加杭州会议，陈敏教授做大会邀请报告，博士生王思远获最佳墙报奖。</p>
+                    <div class="activity-location">📍 杭州国际博览中心</div>
+                </div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-date">2025.03.10</div>
+                <div class="activity-content">
+                    <h3>春季团建 · 课题组成果总结与展望</h3>
+                    <p>课题组年度春游暨学术烧烤研讨会，在良渚公园讨论未来方向，欢迎新成员赵一凡、刘子慕。</p>
+                    <div class="activity-location">📍 良渚文化村 · 草坪实验室</div>
+                </div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-date">2025.01.08-12</div>
+                <div class="activity-content">
+                    <h3>Workshop: 柔性电子与医疗健康</h3>
+                    <p>与医学院联合举办，展示课题组在脉搏传感、智能绷带的最新进展，多名研究生参与组织。</p>
+                    <div class="activity-location">📍 大学医学中心 报告厅</div>
+                </div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-date">2024.11.02</div>
+                <div class="activity-content">
+                    <h3>实验室开放日 · 科普进校园</h3>
+                    <p>接待附中学生50余人，演示3D打印微流控芯片、摩擦电LED互动，激发科研兴趣。</p>
+                    <div class="activity-location">📍 微纳加工超净实验室</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        ⚛️ 智能材料与微纳传感课题组 · 最后更新 2025年4月 · 联系方式：lab-smart@uni.edu
+    </footer>
+</div>
+
+<!-- 模态层：模拟点击科研动态后“单独的网页介绍” (仿新页面) -->
+<div id="detailOverlay" class="detail-overlay">
+    <div class="detail-card" id="detailContent">
+        <button class="close-detail" id="closeDetailBtn">&times;</button>
+        <h2 id="modalTitle">项目详情</h2>
+        <div id="modalBody">
+            <p>这里是详细介绍……</p>
+            <span class="badge-dummy">课题组 2025</span>
+        </div>
+        <p style="font-size:0.95rem; margin-top:1.5rem; border-top:1px solid #c0d6ec; padding-top:1rem;">✨ 模拟新页面展示 — 实际项目中可跳转至独立html或路由。</p>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // 获取弹窗元素
+        const overlay = document.getElementById('detailOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+
+        // 科研动态详情数据集 (模拟不同项目的内容)
+        const projectsData = {
+            '1': {
+                title: '仿生柔性压力传感器阵列',
+                content: '<p><strong>研究内容：</strong> 开发基于微结构离子凝胶薄膜的高灵敏度柔性压力传感器。通过仿生微金字塔结构与微裂纹设计，灵敏度高达12.3 kPa⁻¹，检测限低至2 Pa。同时集成了4×4传感阵列，实现了空间压力分布成像，可用于脉搏波形监测、喉部振动语音识别等场景。</p><p><strong>最新进展：</strong> 已在ACS Nano送审，并与医疗器械公司展开联合测试。</p>'
+            },
+            '2': {
+                title: '室温自修复电子皮肤',
+                content: '<p><strong>研究内容：</strong> 利用多重动态键(二硫键、氢键、金属配位)设计了一种可在室温下快速自修复的聚合物导电复合材料。断裂后的样品在10分钟内恢复机械强度，电导率恢复至原始值的85%以上。拉伸断裂伸长率可超过800%，且修复后依然保持稳定传感功能。</p><p><strong>应用方向：</strong> 仿人机器人触觉皮肤、可穿戴健康监测。</p>'
+            },
+            '3': {
+                title: '3D打印微流控芯片快速检测',
+                content: '<p><strong>研究内容：</strong> 采用自主配制的光敏树脂，通过数字光处理(DLP) 3D打印技术一体化制造带有微阀和混合通道的微流控芯片。无需复杂的键合工艺，30分钟即可完成芯片制造。结合环介导等温扩增(LAMP)技术，实现了对水体中大肠杆菌的单细胞级别灵敏检测。</p><p><strong>优势：</strong> 快速原型、低成本，适合于资源匮乏地区的病原体检测。</p>'
+            },
+            '4': {
+                title: '自驱动传感: 摩擦纳米发电机',
+                content: '<p><strong>研究内容：</strong> 设计基于静电纺丝尼龙/聚偏氟乙烯复合纳米纤维的织物摩擦纳米发电机。不仅可以收集人体运动的机械能(输出功率密度达到120 mW/m²)，还可作为自驱动传感器监测手指弯曲、步态等。构建了无线关节运动监测系统。</p><p><strong>特色：</strong> 透气、柔性、可水洗，结合能量管理电路可实现蓝牙传感节点自驱动。</p>'
+            }
+        };
+
+        // 给所有查看详情按钮绑定点击事件 (科研卡片)
+        const detailButtons = document.querySelectorAll('.btn-detail');
+        detailButtons.forEach((btn, index) => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                // 获取所在卡片对应项目编号: 通过data-project或者父级
+                const card = this.closest('.news-card');
+                // 更稳妥：按钮无data-project，但可以从父级查找自定义，或者用索引; 我们设置按钮的data-project属性 (简化)
+                // 为方便，按钮上手动添加自定义属性? 上面html未加data-project, 所以采用映射: 取索引或找父级数据。
+                // 改进：根据父级索引 (0,1,2,3) 映射
+                const allCards = document.querySelectorAll('.news-card');
+                let projectId = null;
+                allCards.forEach((c, idx) => {
+                    if (c === card) {
+                        projectId = (idx + 1).toString();  // 1,2,3,4 与projectsData匹配
+                    }
+                });
+                if (projectId && projectsData[projectId]) {
+                    modalTitle.innerText = projectsData[projectId].title;
+                    modalBody.innerHTML = projectsData[projectId].content;
+                } else {
+                    // fallback
+                    modalTitle.innerText = '科研项目详情';
+                    modalBody.innerHTML = '<p>更详细的研究介绍、数据、负责人以及发表信息会展示在这里。 (模拟内容)</p>';
+                }
+                // 显示浮层
+                overlay.style.display = 'flex';
+            });
+        });
+
+        // 关闭弹窗 (点击×或者背景)
+        document.getElementById('closeDetailBtn').addEventListener('click', function() {
+            overlay.style.display = 'none';
+        });
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        });
+
+        // 可选：按ESC关闭
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && overlay.style.display === 'flex') {
+                overlay.style.display = 'none';
+            }
+        });
+
+        // 锚点平滑滚动
+        document.querySelectorAll('.nav-item').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href'); // #research ...
+                if(targetId && targetId !== '#') {
+                    e.preventDefault();
+                    const targetEl = document.querySelector(targetId);
+                    if(targetEl) {
+                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    })();
+</script>
+<!-- 确保移动端响应 -->
+<style>
+    @media (max-width: 650px) {
+        .container { padding: 1.5rem 1rem; }
+        .lab-name { font-size: 1.8rem; }
+        .activity-item { flex-direction: column; gap:0.3rem; }
+        .activity-date { align-self: flex-start; }
+        .member-avatar { width: 80px; height: 80px; font-size:2rem; }
+        .detail-card { padding: 1.8rem; }
+    }
+</style>
+
+</body>
+</html>
