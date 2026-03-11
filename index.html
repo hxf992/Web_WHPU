@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOFU课题组 · 学术主页</title>
+    <title>TOFU课题组 · 增强背景版</title>
     <!-- 柔和风格, 学术感字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,24 +14,134 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
+        /* ===== 增强动态背景设置 ===== */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8faff;
             color: #1e2b3c;
             line-height: 1.5;
             scroll-behavior: smooth;
+            /* 背景图片 - 使用1.jpg作为基础背景 */
+            background-image: url('images/background/1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
         }
+        
+        /* 半透明遮罩层 - 调低透明度，让背景更明显（从0.85改为0.65） */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.65);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* 浮动圆形背景层 - 放大所有圆形，增强可见度 */
+        .floating-circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .floating-circles div {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.2; /* 稍微提高透明度 */
+            animation: floatAround 25s infinite alternate ease-in-out;
+        }
+        
+        /* 所有圆形尺寸放大1.5倍左右，并调整位置使其分布更广 */
+        .floating-circles .circle1 {
+            width: 600px;
+            height: 600px;
+            background-image: url('images/background/round-bg.png');
+            top: -150px;
+            right: -150px;
+            animation-duration: 30s;
+        }
+        
+        .floating-circles .circle2 {
+            width: 500px;
+            height: 500px;
+            background-image: url('images/background/2.png');
+            bottom: -100px;
+            left: -100px;
+            animation-duration: 35s;
+            animation-delay: 5s;
+        }
+        
+        .floating-circles .circle3 {
+            width: 450px;
+            height: 450px;
+            background-image: url('images/background/3.png');
+            top: 20%;
+            left: 10%;
+            animation-duration: 28s;
+            animation-delay: 2s;
+        }
+        
+        .floating-circles .circle4 {
+            width: 400px;
+            height: 400px;
+            background-image: url('images/background/4.png');
+            bottom: 15%;
+            right: 5%;
+            animation-duration: 32s;
+            animation-delay: 8s;
+        }
+        
+        .floating-circles .circle5 {
+            width: 550px;
+            height: 550px;
+            background-image: url('images/background/5.png');
+            top: 40%;
+            right: 20%;
+            animation-duration: 40s;
+            animation-delay: 12s;
+        }
+        
+        @keyframes floatAround {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(40px, -30px) rotate(12deg); }
+            50% { transform: translate(-30px, 40px) rotate(-8deg); }
+            75% { transform: translate(30px, 30px) rotate(10deg); }
+            100% { transform: translate(-15px, -15px) rotate(-5deg); }
+        }
+        
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 2rem 2rem 3rem;
+            position: relative;
+            z-index: 1;
         }
-        /* 头部标识 */
+        
+        /* 头部标识 - 保持毛玻璃效果，略微降低背景不透明度让背景透出 */
         .lab-header {
             margin-bottom: 2.5rem;
-            border-bottom: 2px solid #d0e0f0;
+            border-bottom: 2px solid rgba(208, 224, 240, 0.8);
             padding-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.4); /* 更透明一些 */
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
+        
         .lab-name {
             font-size: 2.4rem;
             font-weight: 600;
@@ -41,6 +151,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
         .lab-affiliation {
             font-size: 1.1rem;
             color: #2c4b6f;
@@ -49,30 +160,35 @@
             border-left: 4px solid #809ab3;
             padding-left: 1rem;
         }
-        /* 导航卡片区 */
+        
+        /* 导航卡片区 - 毛玻璃效果 */
         .section-nav {
             display: flex;
             gap: 1.8rem;
             margin: 2rem 0 1.5rem;
             flex-wrap: wrap;
         }
+        
         .nav-item {
             font-weight: 500;
-            background: white;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
             padding: 0.5rem 1.6rem;
             border-radius: 40px;
-            box-shadow: 0 4px 10px rgba(0,40,70,0.08);
-            border: 1px solid #cdddec;
+            box-shadow: 0 4px 15px rgba(0,40,70,0.1);
+            border: 1px solid rgba(205, 221, 236, 0.8);
             transition: 0.15s;
             color: #1f4465;
             text-decoration: none;
             font-size: 1rem;
         }
+        
         .nav-item:hover {
-            background: #e4edf7;
+            background: rgba(255, 255, 255, 0.8);
             border-color: #809ab3;
-            box-shadow: 0 6px 14px rgba(27,79,122,0.12);
+            box-shadow: 0 6px 20px rgba(27,79,122,0.15);
         }
+        
         /* 通用区块设计 */
         .section-title {
             font-size: 2rem;
@@ -81,6 +197,7 @@
             position: relative;
             display: inline-block;
         }
+        
         .section-title:after {
             content: '';
             position: absolute;
@@ -92,6 +209,21 @@
             border-radius: 4px;
         }
         
+        /* 所有卡片增加半透明毛玻璃效果，降低不透明度让背景更明显 */
+        .member-card, .publication-card, .activity-list, .image-guide {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px rgba(0, 35, 65, 0.1);
+        }
+        
+        .member-card:hover, .publication-card:hover {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(10,60,110,0.15);
+        }
+        
         /* 课题组成员网格 - 带滚动条 */
         .member-grid-container {
             max-height: 600px;
@@ -100,19 +232,23 @@
             margin: 2rem 0 1rem;
             border-radius: 18px;
             scrollbar-width: thin;
-            scrollbar-color: #98b9d9 #e4eff9;
+            scrollbar-color: #98b9d9 rgba(255,255,255,0.5);
         }
+        
         .member-grid-container::-webkit-scrollbar {
             width: 8px;
         }
+        
         .member-grid-container::-webkit-scrollbar-track {
-            background: #e4eff9;
+            background: rgba(228, 239, 249, 0.5);
             border-radius: 10px;
         }
+        
         .member-grid-container::-webkit-scrollbar-thumb {
             background: #98b9d9;
             border-radius: 10px;
         }
+        
         .member-grid-container::-webkit-scrollbar-thumb:hover {
             background: #1f5a92;
         }
@@ -122,20 +258,14 @@
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 2rem 1.5rem;
         }
+        
         .member-card {
-            background: white;
             border-radius: 18px;
             padding: 1.8rem 1.2rem 1.5rem;
             text-align: center;
-            box-shadow: 0 6px 18px rgba(40,70,100,0.08);
-            border: 1px solid #dbe6f0;
             transition: 0.15s;
         }
-        .member-card:hover {
-            background: #f3f9ff;
-            border-color: #90b0d0;
-            transform: translateY(-3px);
-        }
+        
         .member-avatar {
             width: 110px;
             height: 110px;
@@ -148,38 +278,44 @@
             color: white;
             font-size: 2.8rem;
             font-weight: 400;
-            box-shadow: 0 8px 14px #c0d3e6;
+            box-shadow: 0 8px 14px rgba(192, 211, 230, 0.5);
             overflow: hidden;
+            border: 3px solid rgba(255,255,255,0.8);
         }
+        
         .member-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+        
         .member-name {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 0.2rem;
         }
+        
         .member-role {
             color: #1f5a92;
             font-weight: 500;
             font-size: 0.9rem;
-            background: #e1effa;
+            background: rgba(225, 239, 250, 0.8);
+            backdrop-filter: blur(5px);
             display: inline-block;
             padding: 0.2rem 1.2rem;
             border-radius: 20px;
             margin: 0.5rem 0 0.3rem;
         }
+        
         .member-desc {
             color: #2f4460;
             font-size: 0.9rem;
             margin-top: 0.6rem;
-            border-top: 1px dashed #bfd5ea;
+            border-top: 1px dashed rgba(191, 213, 234, 0.8);
             padding-top: 0.7rem;
         }
         
-        /* 科研成果网格 - 带滚动条 - 使用flex column-reverse实现新成果在前 */
+        /* 科研成果网格 - 带滚动条 */
         .publication-grid-container {
             max-height: 700px;
             overflow-y: auto;
@@ -187,21 +323,25 @@
             margin: 2rem 0 1rem;
             border-radius: 18px;
             scrollbar-width: thin;
-            scrollbar-color: #98b9d9 #e4eff9;
+            scrollbar-color: #98b9d9 rgba(255,255,255,0.5);
             display: flex;
             flex-direction: column;
         }
+        
         .publication-grid-container::-webkit-scrollbar {
             width: 8px;
         }
+        
         .publication-grid-container::-webkit-scrollbar-track {
-            background: #e4eff9;
+            background: rgba(228, 239, 249, 0.5);
             border-radius: 10px;
         }
+        
         .publication-grid-container::-webkit-scrollbar-thumb {
             background: #98b9d9;
             border-radius: 10px;
         }
+        
         .publication-grid-container::-webkit-scrollbar-thumb:hover {
             background: #1f5a92;
         }
@@ -210,26 +350,23 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
-            /* 使用flex column-reverse配合order实现倒序 */
             display: flex;
             flex-direction: column-reverse;
         }
         
-        /* 对于grid布局的兼容处理 */
         @media (min-width: 768px) {
             .publication-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 grid-auto-flow: dense;
-                direction: rtl; /* 从右向左排列，实现新卡片在前 */
+                direction: rtl;
             }
             .publication-card {
-                direction: ltr; /* 卡片内容恢复从左到右 */
+                direction: ltr;
             }
         }
         
         .publication-card {
-            background: white;
             border-radius: 20px;
             padding: 1.6rem 1.5rem 1.8rem 1.5rem;
             box-shadow: 0 10px 25px -8px rgba(0,35,65,0.12);
@@ -238,13 +375,15 @@
             display: flex;
             flex-direction: column;
         }
+        
         .publication-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 22px 30px -12px rgba(10,60,110,0.2);
             border-color: #b3cde5;
         }
+        
         .pub-tag {
-            background: #d9e7f5;
+            background: rgba(217, 231, 245, 0.8);
             color: #124072;
             font-size: 0.75rem;
             font-weight: 600;
@@ -255,30 +394,35 @@
             margin-bottom: 1rem;
             border: 1px solid #aac3db;
         }
+        
         .pub-title {
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
             line-height: 1.3;
         }
+        
         .pub-authors {
             color: #2d3f54;
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
             font-style: italic;
         }
+        
         .pub-journal {
             color: #1f5a92;
             font-weight: 500;
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
+        
         .pub-links {
             display: flex;
             gap: 0.8rem;
             margin-top: 0.5rem;
             flex-wrap: wrap;
         }
+        
         .pub-link {
             background: transparent;
             border: 2px solid #1f5a92;
@@ -295,10 +439,12 @@
             flex: 1;
             min-width: 100px;
         }
+        
         .pub-link:hover {
             background: #1f5a92;
             color: white;
         }
+        
         .btn-detail {
             background: transparent;
             border: 2px solid #1f5a92;
@@ -314,6 +460,7 @@
             display: inline-block;
             width: 100%;
         }
+        
         .btn-detail:hover {
             background: #1f5a92;
             color: white;
@@ -321,48 +468,55 @@
         
         /* 课题组活动 – 只显示4项 */
         .activity-list {
-            background: white;
             border-radius: 28px;
             padding: 2rem 2rem 1rem;
             box-shadow: inset 0 1px 5px #eef5fc, 0 15px 25px -10px #a7c0d9;
             border: 1px solid #cddef0;
             margin-top: 2rem;
         }
+        
         .activity-item {
             display: flex;
             gap: 1.5rem;
             padding: 1.2rem 0;
-            border-bottom: 1px solid #d3e3f2;
+            border-bottom: 1px solid rgba(211, 227, 242, 0.8);
         }
+        
         .activity-item:nth-child(n+5) {
             display: none;
         }
+        
         .activity-item:last-child {
             border-bottom: none;
         }
+        
         .activity-date {
             min-width: 110px;
             font-weight: 600;
             color: #003f6f;
-            background: #e4eff9;
+            background: rgba(228, 239, 249, 0.8);
             padding: 0.3rem 1rem;
             border-radius: 30px;
             height: fit-content;
             text-align: center;
             font-size: 0.9rem;
         }
+        
         .activity-content {
             flex: 1;
         }
+        
         .activity-content h3 {
             font-size: 1.25rem;
             font-weight: 580;
             margin-bottom: 0.25rem;
             color: #002b4a;
         }
+        
         .activity-content p {
             color: #2c4057;
         }
+        
         .activity-location {
             margin-top: 0.4rem;
             font-size: 0.9rem;
@@ -370,6 +524,32 @@
             display: flex;
             align-items: center;
             gap: 4px;
+        }
+        
+        /* 课题组简介 - 毛玻璃效果 */
+        .image-guide {
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            margin: 1rem 0 2rem;
+            border-left: 4px solid #1f5a92;
+            font-size: 0.95rem;
+        }
+        
+        .image-guide h4 {
+            color: #003057;
+            margin-bottom: 0.8rem;
+        }
+        
+        .image-guide code {
+            background: rgba(209, 224, 240, 0.8);
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            font-family: monospace;
+        }
+        
+        .image-guide ul {
+            margin-left: 1.5rem;
+            color: #1e2b3c;
         }
         
         /* 模态弹窗 - 成果详情 */
@@ -383,10 +563,12 @@
             justify-content: center;
             z-index: 1000;
         }
+        
         .detail-card {
             max-width: 550px;
             width: 90%;
-            background: #fbfdff;
+            background: rgba(251, 253, 255, 0.95);
+            backdrop-filter: blur(10px);
             border-radius: 36px;
             padding: 2.5rem 2.2rem;
             box-shadow: 0 40px 60px #001e3c;
@@ -397,18 +579,21 @@
             max-height: 80vh;
             overflow-y: auto;
         }
+        
         .detail-card h2 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
             color: #002a50;
             padding-right: 2rem;
         }
+        
         .detail-card p {
             font-size: 1rem;
             margin: 1rem 0;
             color: #17334f;
             line-height: 1.6;
         }
+        
         .close-detail {
             position: absolute;
             top: 1.2rem; right: 1.8rem;
@@ -419,9 +604,11 @@
             color: #305f8a;
             font-weight: 300;
         }
+        
         .close-detail:hover {
             color: #001e3c;
         }
+        
         .badge-dummy {
             background: #b5d2ec;
             padding: 0.3rem 1.5rem;
@@ -429,6 +616,7 @@
             font-size: 0.9rem;
             display: inline-block;
         }
+        
         .external-link {
             display: inline-block;
             margin-top: 1rem;
@@ -441,48 +629,38 @@
             border: 1px solid #98b9d9;
             transition: 0.2s;
         }
+        
         .external-link:hover {
             background: #1f5a92;
             color: white;
             border-color: #1f5a92;
         }
         
-        /* GitHub Pages 图片上传说明 */
-        .image-guide {
-            background: #e8f0fa;
-            border-radius: 16px;
-            padding: 1.2rem 1.5rem;
-            margin: 1rem 0 2rem;
-            border-left: 4px solid #1f5a92;
-            font-size: 0.95rem;
-        }
-        .image-guide h4 {
-            color: #003057;
-            margin-bottom: 0.8rem;
-        }
-        .image-guide code {
-            background: #d1e0f0;
-            padding: 0.2rem 0.4rem;
-            border-radius: 6px;
-            font-family: monospace;
-        }
-        .image-guide ul {
-            margin-left: 1.5rem;
-            color: #1e2b3c;
-        }
-        
         /* 页脚 */
         .footer {
             margin-top: 4rem;
-            border-top: 2px solid #d0e2f2;
+            border-top: 2px solid rgba(208, 226, 242, 0.8);
             padding-top: 1.8rem;
             font-size: 0.9rem;
             color: #3d6180;
             text-align: center;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 1.5rem;
         }
     </style>
 </head>
 <body>
+
+<!-- 浮动背景圆层 - 已放大尺寸 -->
+<div class="floating-circles">
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+    <div class="circle4"></div>
+    <div class="circle5"></div>
+</div>
 
 <div class="container">
     <!-- 课题组招牌 -->
@@ -498,7 +676,7 @@
         <p><strong>🚀研究方向2：</strong> - <code>铁路基础设施</code>、<code>铁路轨枕</code>、<code>有砟道床</code>。</p>
         <p><strong>🚀研究方向3：</strong> - <code>机器学习</code>、<code>深度学习</code>在土木工程的应用。</p>
         <ul>
-             <li>❤️❤️❤️❤️❤️❤️❤️</li>
+            <li>❤️❤️❤️❤️❤️❤️❤️</li>
             <li>欢迎各位报考研究生。</li>
             <li>欢迎联系咨询。</li>
             <li>😊😊😊😊😊😊😊</li>
@@ -519,15 +697,17 @@
         <!-- 带滚动条的成员网格容器 -->
         <div class="member-grid-container">
             <div class="member-grid">
-                <!-- 成员卡片 1 -->
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <img src="https://tm.whpu.edu.cn/__local/0/8B/A3/35D1F708A2079F85D4A932449EC_C1193E10_34053.jpg" alt="付豪">
-                    </div>
-                    <div class="member-name">付豪 讲师</div>
-                    <div class="member-role">负责人 · 硕士生导师</div>
-                    <div class="member-desc">智能材料、3D打印、铁路工程，发表SCI论文20余篇。</div>
-                </div>
+<!-- 成员卡片 1 -->
+<div class="member-card">
+    <div class="member-avatar">
+        <img src="images/fuhao.jpg" alt="付豪">
+    </div>
+    <div class="member-name">
+        <a href="CV/fuhao.html" target="_blank" style="text-decoration: none; color: inherit;">付豪 讲师</a>
+    </div>
+    <div class="member-role">负责人 · 硕士生导师</div>
+    <div class="member-desc">智能材料、3D打印、铁路工程，发表SCI论文20余篇。</div>
+</div>
                 <!-- 成员卡片 2 -->
                 <div class="member-card">
                     <div class="member-avatar">
@@ -538,23 +718,18 @@
                     <div class="member-role">博士研究生 · 三年级</div>
                     <div class="member-desc">铁路道床GPR反演研究，探地雷达信号处理，机器学习应用。</div>
                 </div>
-                
-               
             </div>
         </div>
-        
-
     </section>
 
     <!-- 科研成果区块 - 新成果自动显示在最前 -->
     <section id="publications">
         <h2 class="section-title">📄 科研成果</h2>
         
-        <!-- 带滚动条的成果网格容器 - 新成果自动在最前 -->
+        <!-- 带滚动条的成果网格容器 -->
         <div class="publication-grid-container">
             <div class="publication-grid">
                 <!-- 成果卡片 - 按时间倒序排列，最新的放在最上面 -->
-                <!-- 新成果 1 (2025) -->
                 <div class="publication-card">
                     <span class="pub-tag">最新成果 · 2025.06</span>
                     <div class="pub-title">自修复导电水凝胶用于柔性电子皮肤</div>
@@ -566,7 +741,6 @@
                     </div>
                 </div>
                 
-                <!-- 新成果 2 (2025) -->
                 <div class="publication-card">
                     <span class="pub-tag">最新成果 · 2025.05</span>
                     <div class="pub-title">基于深度学习的地铁隧道结构健康监测系统</div>
@@ -578,7 +752,6 @@
                     </div>
                 </div>
                 
-                <!-- 成果卡片 1 (原成果1) -->
                 <div class="publication-card">
                     <span class="pub-tag">最新成果 · 2025.04</span>
                     <div class="pub-title">仿生柔性压力传感器阵列</div>
@@ -590,7 +763,6 @@
                     </div>
                 </div>
                 
-                <!-- 成果卡片 2 -->
                 <div class="publication-card">
                     <span class="pub-tag">材料设计 · 2024</span>
                     <div class="pub-title">室温自修复电子皮肤</div>
@@ -602,7 +774,6 @@
                     </div>
                 </div>
                 
-                <!-- 成果卡片 3 -->
                 <div class="publication-card">
                     <span class="pub-tag">微纳加工 · 2024</span>
                     <div class="pub-title">3D打印微流控芯片快速检测系统</div>
@@ -614,7 +785,6 @@
                     </div>
                 </div>
                 
-                <!-- 成果卡片 4 -->
                 <div class="publication-card">
                     <span class="pub-tag">能源器件 · 2023</span>
                     <div class="pub-title">织物基摩擦纳米发电机用于自驱动传感</div>
@@ -626,7 +796,6 @@
                     </div>
                 </div>
                 
-                <!-- 成果卡片 5 -->
                 <div class="publication-card">
                     <span class="pub-tag">跨学科 · 2023</span>
                     <div class="pub-title">机器学习辅助的探地雷达道床病害识别</div>
@@ -634,11 +803,10 @@
                     <div class="pub-journal">IEEE TGRS, 2023, 61: 4501-4512</div>
                     <div class="pub-links">
                         <button class="btn-detail" data-project="5">📋 成果简介</button>
-                        <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36" target="_blank" class="pub-link">🔗 期刊链接</a>
+                        <a href="index3.html" target="_blank" class="pub-link">🔗 期刊链接</a>
                     </div>
                 </div>
                 
-                <!-- 成果卡片 6 -->
                 <div class="publication-card">
                     <span class="pub-tag">2023</span>
                     <div class="pub-title">基于深度学习的结构健康监测</div>
@@ -650,7 +818,6 @@
                     </div>
                 </div>
                 
-                <!-- 成果卡片 7 -->
                 <div class="publication-card">
                     <span class="pub-tag">2022</span>
                     <div class="pub-title">智能材料在土木工程中的应用综述</div>
@@ -663,8 +830,6 @@
                 </div>
             </div>
         </div>
-        
-      
     </section>
 
     <!-- 课题组活动区块 - 只显示4项 -->
@@ -672,7 +837,6 @@
         <h2 class="section-title">🧪 课题组活动</h2>
         
         <div class="activity-list">
-            <!-- 活动条目 1 -->
             <div class="activity-item">
                 <div class="activity-date">2025.04.15-17</div>
                 <div class="activity-content">
@@ -682,7 +846,6 @@
                 </div>
             </div>
             
-            <!-- 活动条目 2 -->
             <div class="activity-item">
                 <div class="activity-date">2025.03.20</div>
                 <div class="activity-content">
@@ -692,7 +855,6 @@
                 </div>
             </div>
             
-            <!-- 活动条目 3 -->
             <div class="activity-item">
                 <div class="activity-date">2025.01.10-12</div>
                 <div class="activity-content">
@@ -702,7 +864,6 @@
                 </div>
             </div>
             
-            <!-- 活动条目 4 -->
             <div class="activity-item">
                 <div class="activity-date">2024.12.05</div>
                 <div class="activity-content">
@@ -712,8 +873,6 @@
                 </div>
             </div>
         </div>
-        
-
     </section>
 
     <!-- 页脚 -->
@@ -742,7 +901,6 @@
         const modalBody = document.getElementById('modalBody');
         const externalLinkContainer = document.getElementById('externalLinkContainer');
 
-        // 成果简介数据（新增两个成果）
         const projectsData = {
             '1': {
                 title: '仿生柔性压力传感器阵列',
@@ -791,7 +949,6 @@
             }
         };
 
-        // 给所有成果简介按钮绑定点击事件
         const detailButtons = document.querySelectorAll('.btn-detail');
         detailButtons.forEach((btn) => {
             btn.addEventListener('click', function(e) {
@@ -871,16 +1028,121 @@
         .btn-detail { width: 100%; }
         .member-grid-container { max-height: 500px; }
         .publication-grid-container { max-height: 600px; }
+        .floating-circles div {
+            opacity: 0.15;
+        }
+        /* 移动端稍微缩小浮动元素尺寸 */
+        .floating-circles .circle1 { width: 400px; height: 400px; }
+        .floating-circles .circle2 { width: 350px; height: 350px; }
+        .floating-circles .circle3 { width: 300px; height: 300px; }
+        .floating-circles .circle4 { width: 280px; height: 280px; }
+        .floating-circles .circle5 { width: 380px; height: 380px; }
     }
     
     @media print {
-        body { background: white; }
+        body { 
+            background: white; 
+            background-image: none;
+        }
+        body::before { display: none; }
+        .floating-circles { display: none; }
         .nav-item, .image-guide { display: none; }
         .member-grid-container { max-height: none; overflow: visible; }
         .publication-grid-container { max-height: none; overflow: visible; }
         .activity-item:nth-child(n+5) { display: block; }
     }
 </style>
+<!-- 鼠标移动水波特效 - 柔和版 -->
+<canvas id="waveCanvas" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:9999;"></canvas>
 
+<script>
+// 鼠标水波特效 - 柔和版
+(function() {
+    const canvas = document.getElementById('waveCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let mouseX = width / 2;
+    let mouseY = height / 2;
+    let waves = [];
+    let lastTime = 0;
+    
+    // 初始化画布大小
+    function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+    resize();
+    
+    // 监听整个document的mousemove事件
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        const now = Date.now();
+        // 降低频率：从30ms改为50ms
+        if (now - lastTime > 50) {
+            // 只添加一个波纹，大小减半
+            waves.push({
+                x: mouseX,
+                y: mouseY,
+                radius: 3,           // 初始半径从5->3
+                maxRadius: 60,        // 最大半径从120->60（减小一半）
+                speed: 1.2,           // 扩散速度从2.0->1.2
+                alpha: 0.5,           // 透明度从0.7->0.5
+                lineWidth: 1.5        // 线宽从3->1.5
+            });
+            
+            lastTime = now;
+        }
+        
+        // 减少波纹总数上限：从80->40
+        if (waves.length > 40) {
+            waves = waves.slice(-40);
+        }
+    });
+    
+    window.addEventListener('resize', resize);
+    
+    // 动画循环
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        
+        for (let i = 0; i < waves.length; i++) {
+            const w = waves[i];
+            
+            w.radius += w.speed;
+            w.alpha -= 0.004;        // 淡出速度稍微降低
+            
+            if (w.alpha <= 0 || w.radius >= w.maxRadius) continue;
+            
+            // 只保留单圈波纹，更简洁
+            ctx.beginPath();
+            ctx.arc(w.x, w.y, w.radius, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(70, 130, 230, ${w.alpha})`;
+            ctx.lineWidth = w.lineWidth;
+            ctx.stroke();
+            
+            // 可选：添加一个非常淡的内圈（如果需要层次感）
+            if (w.radius > 20) {
+                ctx.beginPath();
+                ctx.arc(w.x, w.y, w.radius * 0.5, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(100, 160, 255, ${w.alpha * 0.5})`;
+                ctx.lineWidth = w.lineWidth * 0.6;
+                ctx.stroke();
+            }
+        }
+        
+        waves = waves.filter(w => w.alpha > 0.01 && w.radius < w.maxRadius);
+        
+        requestAnimationFrame(animate);
+    }
+    
+    animate();
+})();
+</script>
 </body>
 </html>
