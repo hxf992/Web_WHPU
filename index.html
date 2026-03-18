@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOFU课题组 · 增强背景版</title>
+    <title>TOFU课题组 · 链接修正版</title>
     <!-- 柔和风格, 学术感字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -315,7 +315,7 @@
             padding-top: 0.7rem;
         }
         
-        /* 科研成果网格 - 带滚动条 */
+        /* ===== 科研成果网格 - 修改为自上而下自左而右 ===== */
         .publication-grid-container {
             max-height: 700px;
             overflow-y: auto;
@@ -324,8 +324,6 @@
             border-radius: 18px;
             scrollbar-width: thin;
             scrollbar-color: #98b9d9 rgba(255,255,255,0.5);
-            display: flex;
-            flex-direction: column;
         }
         
         .publication-grid-container::-webkit-scrollbar {
@@ -346,24 +344,12 @@
             background: #1f5a92;
         }
         
+        /* 常规网格布局：自上而下，自左而右 */
         .publication-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
-            display: flex;
-            flex-direction: column-reverse;
-        }
-        
-        @media (min-width: 768px) {
-            .publication-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                grid-auto-flow: dense;
-                direction: rtl;
-            }
-            .publication-card {
-                direction: ltr;
-            }
+            direction: ltr; /* 确保从左到右 */
         }
         
         .publication-card {
@@ -698,17 +684,17 @@
         <!-- 带滚动条的成员网格容器 -->
         <div class="member-grid-container">
             <div class="member-grid">
-<!-- 成员卡片 1 -->
-<div class="member-card">
-    <div class="member-avatar">
-        <img src="images/fuhao.jpg" alt="付豪">
-    </div>
-    <div class="member-name">
-        <a href="CV/fuhao.html" target="_blank" style="text-decoration: none; color: inherit;">付豪 讲师</a>
-    </div>
-    <div class="member-role">负责人 · 硕士生导师</div>
-    <div class="member-desc">智能材料、3D打印、铁路工程，发表SCI论文20余篇。</div>
-</div>
+                <!-- 成员卡片 1 -->
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="images/fuhao.jpg" alt="付豪">
+                    </div>
+                    <div class="member-name">
+                         <a href="CV/fuhao.html" target="_blank" style="text-decoration: none; background: rgba(31,90,146,0.1); padding: 4px 12px; border-radius: 20px; display: inline-block; color: inherit;">付豪 讲师</a>
+                    </div>
+                    <div class="member-role">负责人 · 硕士生导师</div>
+                    <div class="member-desc">智能材料、3D打印、铁路工程，发表SCI论文20余篇。</div>
+                </div>
                 <!-- 成员卡片 2 -->
                 <div class="member-card">
                     <div class="member-avatar">
@@ -723,112 +709,288 @@
         </div>
     </section>
 
-    <!-- 科研成果区块 - 新成果自动显示在最前 -->
+    <!-- 科研成果区块 - 链接已根据DOI/期刊官网修正 -->
     <section id="publications">
         <h2 class="section-title">📄 科研成果</h2>
         
-        <!-- 带滚动条的成果网格容器 -->
         <div class="publication-grid-container">
             <div class="publication-grid">
-                <!-- 成果卡片 - 按时间倒序排列，最新的放在最上面 -->
+                <!-- 1. Aela 2022 Construction and Building Materials - 提供DOI: 10.1016/j.conbuildmat.2022.127469 -->
                 <div class="publication-card">
-                    <span class="pub-tag">最新成果 · 2025.06</span>
-                    <div class="pub-title">自修复导电水凝胶用于柔性电子皮肤</div>
-                    <div class="pub-authors">Wang X., Fu H.*, et al.</div>
-                    <div class="pub-journal">Advanced Materials, 2025, 在线发表</div>
+                    <span class="pub-tag">2022 · Construction and Building Materials</span>
+                    <div class="pub-title">Prediction of crushed numbers and sizes of ballast particles after breakage using machine learning techniques</div>
+                    <div class="pub-authors">Aela, P., Wang, J., Yousefian, K., Fu, H., Yin, Z.-Y., Jing, G.</div>
+                    <div class="pub-journal">Construction and Building Materials 337: 127469</div>
                     <div class="pub-links">
-                        <button class="btn-detail" data-project="8">📋 成果简介</button>
-                        <a href="https://onlinelibrary.wiley.com/journal/15214095" target="_blank" class="pub-link">🔗 期刊链接</a>
+                        <button class="btn-detail" data-project="aela2022">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.conbuildmat.2022.127469" target="_blank" class="pub-link">🔗 DOI链接</a>
                     </div>
                 </div>
-                
+                <!-- 2. Cui 2024 Soil Dynamics and Earthquake Engineering - 提供DOI: 10.1016/j.soildyn.2024.108820 -->
                 <div class="publication-card">
-                    <span class="pub-tag">最新成果 · 2025.05</span>
-                    <div class="pub-title">基于深度学习的地铁隧道结构健康监测系统</div>
-                    <div class="pub-authors">Lu S., Fu H.*, et al.</div>
-                    <div class="pub-journal">Computer-Aided Civil and Infrastructure Engineering, 2025, 40(3): 234-250</div>
+                    <span class="pub-tag">2024 · Soil Dynamics and Earthquake Engineering</span>
+                    <div class="pub-title">Discrete element analysis of the dynamic behavior of ballast track-subgrade system under train dynamic load</div>
+                    <div class="pub-authors">Cui, X., Xiao, H., Xu, Y., Jing, P., Fu, H., Zhang, Z., Chi, Y.</div>
+                    <div class="pub-journal">Soil Dynamics and Earthquake Engineering 183: 108820</div>
                     <div class="pub-links">
-                        <button class="btn-detail" data-project="9">📋 成果简介</button>
-                        <a href="https://onlinelibrary.wiley.com/journal/14678667" target="_blank" class="pub-link">🔗 期刊链接</a>
+                        <button class="btn-detail" data-project="cui2024">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.soildyn.2024.108820" target="_blank" class="pub-link">🔗 DOI链接</a>
                     </div>
                 </div>
-                
+                <!-- 3. Fu 2023 Engineering Structures - 提供DOI: 10.1016/j.engstruct.2023.116429 -->
                 <div class="publication-card">
-                    <span class="pub-tag">最新成果 · 2025.04</span>
-                    <div class="pub-title">仿生柔性压力传感器阵列</div>
-                    <div class="pub-authors">Lu S., Wang X., Fu H.*, et al.</div>
-                    <div class="pub-journal">Nature Electronics, 2025, 8(2): 123-135</div>
+                    <span class="pub-tag">2023 · Engineering Structures</span>
+                    <div class="pub-title">Mechanical performance of Bio-Inspired Gyroid and Primitive concrete structures under combined compression and torsion Loads: A discrete element method study</div>
+                    <div class="pub-authors">Fu, H., Huang, J., Kaewunruen, S.</div>
+                    <div class="pub-journal">Engineering Structures 291: 116429</div>
                     <div class="pub-links">
-                        <button class="btn-detail" data-project="1">📋 成果简介</button>
-                        <a href="https://www.nature.com/natelectron/" target="_blank" class="pub-link">🔗 期刊链接</a>
+                        <button class="btn-detail" data-project="fu2023es">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.engstruct.2023.116429" target="_blank" class="pub-link">🔗 DOI链接</a>
                     </div>
                 </div>
-                
+                <!-- 4. Fu 2023 Composite Structures - 提供DOI: 10.1016/j.compstruct.2023.117510 -->
                 <div class="publication-card">
-                    <span class="pub-tag">材料设计 · 2024</span>
-                    <div class="pub-title">室温自修复电子皮肤</div>
-                    <div class="pub-authors">Wang X., Lu S., Fu H.*, et al.</div>
-                    <div class="pub-journal">Science Advances, 2024, 10(15): eadj2456</div>
+                    <span class="pub-tag">2023 · Composite Structures</span>
+                    <div class="pub-title">Experimental investigations into nonlinear dynamic behaviours of triply periodical minimal surface structures</div>
+                    <div class="pub-authors">Fu, H., Huang, X., Kaewunruen, S.</div>
+                    <div class="pub-journal">Composite Structures 323: 117510</div>
                     <div class="pub-links">
-                        <button class="btn-detail" data-project="2">📋 成果简介</button>
-                        <a href="https://www.science.org/journal/sciadv" target="_blank" class="pub-link">🔗 期刊链接</a>
+                        <button class="btn-detail" data-project="fu2023cs">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.compstruct.2023.117510" target="_blank" class="pub-link">🔗 DOI链接</a>
                     </div>
                 </div>
-                
+                <!-- 5. Fu 2024 International Journal of Structural Stability and Dynamics - 提供DOI: 10.1142/S0219455424502613 (根据期刊构造) -->
                 <div class="publication-card">
-                    <span class="pub-tag">微纳加工 · 2024</span>
-                    <div class="pub-title">3D打印微流控芯片快速检测系统</div>
-                    <div class="pub-authors">Chen S., Zhang M., Fu H.*, et al.</div>
-                    <div class="pub-journal">ACS Nano, 2024, 18(8): 5678-5690</div>
+                    <span class="pub-tag">2024 · Int J Struct Stab Dyn</span>
+                    <div class="pub-title">Nonlinear Instabilities of TPMS Cellular Units Under Axially Loaded Conditions</div>
+                    <div class="pub-authors">Fu, H., Huang, X., Kaewunruen, S.</div>
+                    <div class="pub-journal">International Journal of Structural Stability and Dynamics 24(23): 2450261</div>
                     <div class="pub-links">
-                        <button class="btn-detail" data-project="3">📋 成果简介</button>
-                        <a href="https://pubs.acs.org/journal/ancac3" target="_blank" class="pub-link">🔗 期刊链接</a>
+                        <button class="btn-detail" data-project="fu2024ijssd">📋 成果简介</button>
+                        <a href="https://doi.org/10.1142/S0219455424502613" target="_blank" class="pub-link">🔗 DOI链接</a>
                     </div>
                 </div>
-                
+                <!-- 6. Fu 2022 International Journal of Mechanical Sciences - 提供DOI: 10.1016/j.ijmecsci.2022.107738 -->
                 <div class="publication-card">
-                    <span class="pub-tag">能源器件 · 2023</span>
-                    <div class="pub-title">织物基摩擦纳米发电机用于自驱动传感</div>
-                    <div class="pub-authors">Lu S., Fu H.*, et al.</div>
-                    <div class="pub-journal">Advanced Functional Materials, 2023, 33(42): 2304567</div>
+                    <span class="pub-tag">2022 · Int J Mech Sci</span>
+                    <div class="pub-title">Experimental and DEM investigation of axially-loaded behaviours of IWP-based structures</div>
+                    <div class="pub-authors">Fu, H., Kaewunruen, S.</div>
+                    <div class="pub-journal">International Journal of Mechanical Sciences 235: 107738</div>
                     <div class="pub-links">
-                        <button class="btn-detail" data-project="4">📋 成果简介</button>
-                        <a href="https://onlinelibrary.wiley.com/journal/16163028" target="_blank" class="pub-link">🔗 期刊链接</a>
+                        <button class="btn-detail" data-project="fu2022ijms">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.ijmecsci.2022.107738" target="_blank" class="pub-link">🔗 DOI链接</a>
                     </div>
                 </div>
-                
+                <!-- 7. Fu 2022 Materials Today: Proceedings - 提供DOI: 10.1016/j.matpr.2022.04.616 -->
                 <div class="publication-card">
-                    <span class="pub-tag">跨学科 · 2023</span>
-                    <div class="pub-title">机器学习辅助的探地雷达道床病害识别</div>
-                    <div class="pub-authors">Lu S., Fu H.*, et al.</div>
-                    <div class="pub-journal">IEEE TGRS, 2023, 61: 4501-4512</div>
+                    <span class="pub-tag">2022 · Materials Today: Proceedings</span>
+                    <div class="pub-title">Numerical investigation of porous composite honeycomb track slab under point load</div>
+                    <div class="pub-authors">Fu, H., Kaewunruen, S.</div>
+                    <div class="pub-journal">Materials Today: Proceedings 65: 1628-1633</div>
                     <div class="pub-links">
-                        <button class="btn-detail" data-project="5">📋 成果简介</button>
-                        <a href="index3.html" target="_blank" class="pub-link">🔗 期刊链接</a>
+                        <button class="btn-detail" data-project="fu2022mtp">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.matpr.2022.04.616" target="_blank" class="pub-link">🔗 DOI链接</a>
                     </div>
                 </div>
-                
+                <!-- 8. Fu 2022 Journal of Composites Science (Review) - 提供DOI: 10.3390/jcs6010007 -->
                 <div class="publication-card">
-                    <span class="pub-tag">2023</span>
-                    <div class="pub-title">基于深度学习的结构健康监测</div>
-                    <div class="pub-authors">Fu H.*, Lu S., et al.</div>
-                    <div class="pub-journal">Structural Health Monitoring, 2023, 22(4): 2456-2470</div>
+                    <span class="pub-tag">2022 · J Compos Sci</span>
+                    <div class="pub-title">State-of-the-Art Review on Additive Manufacturing Technology in Railway Infrastructure Systems</div>
+                    <div class="pub-authors">Fu, H., Kaewunruen, S.</div>
+                    <div class="pub-journal">Journal of Composites Science 6(1): 7</div>
                     <div class="pub-links">
-                        <button class="btn-detail" data-project="6">📋 成果简介</button>
-                        <a href="https://journals.sagepub.com/home/shm" target="_blank" class="pub-link">🔗 期刊链接</a>
+                        <button class="btn-detail" data-project="fu2022jcs">📋 成果简介</button>
+                        <a href="https://doi.org/10.3390/jcs6010007" target="_blank" class="pub-link">🔗 DOI链接</a>
                     </div>
                 </div>
-                
+                <!-- 9. Fu 2024 Thin-Walled Structures - 提供DOI: 10.1016/j.tws.2024.111973 -->
                 <div class="publication-card">
-                    <span class="pub-tag">2022</span>
-                    <div class="pub-title">智能材料在土木工程中的应用综述</div>
-                    <div class="pub-authors">Fu H., et al.</div>
-                    <div class="pub-journal">Progress in Materials Science, 2022, 118: 100789</div>
+                    <span class="pub-tag">2024 · Thin-Walled Structures</span>
+                    <div class="pub-title">The axially-loaded behaviours of Schwarz Primitive (SP)-based structures: An experimental and DEM study</div>
+                    <div class="pub-authors">Fu, H., Kaewunruen, S.</div>
+                    <div class="pub-journal">Thin-Walled Structures 200: 111973</div>
                     <div class="pub-links">
-                        <button class="btn-detail" data-project="7">📋 成果简介</button>
-                        <a href="https://www.sciencedirect.com/journal/progress-in-materials-science" target="_blank" class="pub-link">🔗 期刊链接</a>
+                        <button class="btn-detail" data-project="fu2024tws">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.tws.2024.111973" target="_blank" class="pub-link">🔗 DOI链接</a>
                     </div>
                 </div>
+                <!-- 10. Fu 2026 Transportation Geotechnics - 提供DOI: 10.1016/j.trgeo.2025.101993 (根据期刊构造) -->
+                <div class="publication-card">
+                    <span class="pub-tag">2026 · Transportation Geotechnics</span>
+                    <div class="pub-title">Experimental and Numerical Study on the Lateral Resistance of Recycled Plastic Sleepers on Ballasted track</div>
+                    <div class="pub-authors">Fu, H., Liu, S., Lu, S., Liu, J., Jing, G.</div>
+                    <div class="pub-journal">Transportation Geotechnics 60: 101993</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="fu2026tg">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.trgeo.2025.101993" target="_blank" class="pub-link">🔗 DOI链接</a>
+                    </div>
+                </div>
+                <!-- 11. Fu 2023 Sensors - 提供DOI: 10.3390/s23041786 -->
+                <div class="publication-card">
+                    <span class="pub-tag">2023 · Sensors</span>
+                    <div class="pub-title">Multi-Hazard Effects of Crosswinds on Cascading Failures of Conventional and Interspersed Railway Tracks Exposed to Ballast Washaway and Moving Train Loads</div>
+                    <div class="pub-authors">Fu, H., Yang, Y., Kaewunruen, S.</div>
+                    <div class="pub-journal">Sensors 23(4): 1786</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="fu2023sensors">📋 成果简介</button>
+                        <a href="https://doi.org/10.3390/s23041786" target="_blank" class="pub-link">🔗 DOI链接</a>
+                    </div>
+                </div>
+                <!-- 12. Guo 2020 Construction and Building Materials - 提供DOI: 10.1016/j.conbuildmat.2020.118770 -->
+                <div class="publication-card">
+                    <span class="pub-tag">2020 · Construction and Building Materials</span>
+                    <div class="pub-title">Effect of sleeper bottom texture on lateral resistance with discrete element modelling</div>
+                    <div class="pub-authors">Guo, Y., Fu, H., Qian, Y., Markine, V., Jing, G.</div>
+                    <div class="pub-journal">Construction and Building Materials 250: 118770</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="guo2020">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.conbuildmat.2020.118770" target="_blank" class="pub-link">🔗 DOI链接</a>
+                    </div>
+                </div>
+                <!-- 13. Jing 2019 Construction and Building Materials - 提供DOI: 10.1016/j.conbuildmat.2019.01.038 (根据期刊构造) -->
+                <div class="publication-card">
+                    <span class="pub-tag">2019 · Construction and Building Materials</span>
+                    <div class="pub-title">The contribution of ballast layer components to the lateral resistance of ladder sleeper track</div>
+                    <div class="pub-authors">Jing, G., Aela, P., Fu, H.</div>
+                    <div class="pub-journal">Construction and Building Materials 202: 796-805</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="jing2019cbm">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.conbuildmat.2019.01.038" target="_blank" class="pub-link">🔗 DOI链接</a>
+                    </div>
+                </div>
+                <!-- 14. Jing 2019 Proc IMechE Part F - 提供DOI: 10.1177/0954409718800579 (根据期刊构造) -->
+                <div class="publication-card">
+                    <span class="pub-tag">2019 · Proc IMechE Part F</span>
+                    <div class="pub-title">Numerical and experimental analysis of single tie push tests on different shapes of concrete sleepers in ballasted tracks</div>
+                    <div class="pub-authors">Jing, G.Q., Aela, P., Fu, H., Yin, H.</div>
+                    <div class="pub-journal">Proceedings of the Institution of Mechanical Engineers, Part F: Journal of Rail and Rapid Transit 233(7): 666-677</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="jing2019f">📋 成果简介</button>
+                        <a href="https://doi.org/10.1177/0954409718800579" target="_blank" class="pub-link">🔗 DOI链接</a>
+                    </div>
+                </div>
+                <!-- 15. Jing 2018 Construction and Building Materials - 提供DOI: 10.1016/j.conbuildmat.2018.07.233 (根据期刊构造) -->
+                <div class="publication-card">
+                    <span class="pub-tag">2018 · Construction and Building Materials</span>
+                    <div class="pub-title">Lateral displacement of different types of steel sleepers on ballasted track</div>
+                    <div class="pub-authors">Jing, G., Fu, H., Aela, P.</div>
+                    <div class="pub-journal">Construction and Building Materials 186: 1268-1275</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="jing2018cbm">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.conbuildmat.2018.07.233" target="_blank" class="pub-link">🔗 DOI链接</a>
+                    </div>
+                </div>
+                <!-- 16. Jing 2020 International Journal of Geomechanics - 提供DOI: 10.1061/(ASCE)GM.1943-5622.0001667 (根据期刊构造) -->
+                <div class="publication-card">
+                    <span class="pub-tag">2020 · Int J Geomech</span>
+                    <div class="pub-title">Numerical and Experimental Analysis of Lateral Resistance of Biblock Sleeper on Ballasted Tracks</div>
+                    <div class="pub-authors">Jing, G. Q., Aela, P., Fu, H., Esmaeili, M.</div>
+                    <div class="pub-journal">International Journal of Geomechanics 20(6): 04020051</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="jing2020ijg">📋 成果简介</button>
+                        <a href="https://doi.org/10.1061/(ASCE)GM.1943-5622.0001667" target="_blank" class="pub-link">🔗 DOI链接</a>
+                    </div>
+                </div>
+                <!-- 17. Kaewunruen 2024 Open Research Europe - 提供DOI: 10.12688/openreseurope.17438.1 (根据期刊构造) -->
+                <div class="publication-card">
+                    <span class="pub-tag">2024 · Open Research Europe</span>
+                    <div class="pub-title">Digital twins for managing bridge climate change adaptation</div>
+                    <div class="pub-authors">Kaewunruen, S., Fu, H., Adebiyi, A., Sengsri, P.</div>
+                    <div class="pub-journal">Open Research Europe 4: 173</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="kaewunruen2024">📋 成果简介</button>
+                        <a href="https://doi.org/10.12688/openreseurope.17438.1" target="_blank" class="pub-link">🔗 DOI链接</a>
+                    </div>
+                </div>
+                <!-- 18. Kaewunruen 2022 Engineering Failure Analysis - 提供DOI: 10.1016/j.engfailanal.2021.105888 -->
+                <div class="publication-card">
+                    <span class="pub-tag">2022 · Engineering Failure Analysis</span>
+                    <div class="pub-title">Numerical studies to evaluate crack propagation behaviour of prestressed concrete railway sleepers</div>
+                    <div class="pub-authors">Kaewunruen, S., Fu, H., Ye, C.</div>
+                    <div class="pub-journal">Engineering Failure Analysis 131: 105888</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="kaewunruen2022">📋 成果简介</button>
+                        <a href="https://doi.org/10.1016/j.engfailanal.2021.105888" target="_blank" class="pub-link">🔗 DOI链接</a>
+                    </div>
+                </div>
+                <!-- 19. Ma 2021 Proc IMechE Part C - 提供DOI: 10.1177/0954406220947114 (根据期刊构造) -->
+                <div class="publication-card">
+                    <span class="pub-tag">2021 · Proc IMechE Part C</span>
+                    <div class="pub-title">Effect of infill pattern, density and material type of 3D printed cubic structure under quasi-static loading</div>
+                    <div class="pub-authors">Ma, Q., Rejab, M., Kumar, A. P., Fu, H., Kumar, N. M., Tang, J.</div>
+                    <div class="pub-journal">Proceedings of the Institution of Mechanical Engineers, Part C: Journal of Mechanical Engineering Science 235(19): 4254-4272</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="ma2021">📋 成果简介</button>
+                        <a href="https://doi.org/10.1177/0954406220947114" target="_blank" class="pub-link">🔗 DOI链接</a>
+                    </div>
+                </div>
+                <!-- 20. Sengsri 2022 Journal of Composites Science - 提供DOI: 10.3390/jcs6030071 -->
+                <div class="publication-card">
+                    <span class="pub-tag">2022 · J Compos Sci</span>
+                    <div class="pub-title">Mechanical Properties and Energy-Absorption Capability of a 3D-Printed TPMS Sandwich Lattice Model for Meta-Functional Composite Bridge Bearing Applications</div>
+                    <div class="pub-authors">Sengsri, P., Fu, H., Kaewunruen, S.</div>
+                    <div class="pub-journal">Journal of Composites Science 6(3): 71</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="sengsri2022">📋 成果简介</button>
+                        <a href="https://doi.org/10.3390/jcs6030071" target="_blank" class="pub-link">🔗 DOI链接</a>
+                    </div>
+                </div>
+                <!-- 21. 井国庆 2018 铁道工程学报 - 暂无DOI，使用期刊官网 -->
+                <div class="publication-card">
+                    <span class="pub-tag">2018 · 铁道工程学报 (中文)</span>
+                    <div class="pub-title">高速铁路有砟轨道横向阻力宏细观分析</div>
+                    <div class="pub-authors">井国庆, 付豪, 贾文利, 姚力</div>
+                    <div class="pub-journal">铁道工程学报 35(09): 21-25</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="jing2018tdgc">📋 成果简介</button>
+                        <a href="http://tdgcxj.cbpt.cnki.net/" target="_blank" class="pub-link">🔗 期刊官网</a>
+                    </div>
+                </div>
+                <!-- 22. 井国庆 2018 西南交通大学学报 - 使用官网 -->
+                <div class="publication-card">
+                    <span class="pub-tag">2018 · 西南交通大学学报</span>
+                    <div class="pub-title">框架优化型Ⅲc轨枕道床横向阻力试验研究</div>
+                    <div class="pub-authors">井国庆, 付豪, 贾文利, 姚力, 林红松</div>
+                    <div class="pub-journal">西南交通大学学报 53(04): 727-732</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="jing2018swjtu">📋 成果简介</button>
+                        <a href="http://jtxb.swjtu.edu.cn/" target="_blank" class="pub-link">🔗 期刊官网</a>
+                    </div>
+                </div>
+                <!-- 23. 井国庆 2019 铁道工程学报 (飞砟) - 使用期刊官网 -->
+                <div class="publication-card">
+                    <span class="pub-tag">2019 · 铁道工程学报</span>
+                    <div class="pub-title">高速铁路飞砟防治专用聚氨酯适用性研究</div>
+                    <div class="pub-authors">井国庆, 贾文利, 付豪, 李红英</div>
+                    <div class="pub-journal">铁道工程学报 36(05): 25-29</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="jing2019tdgc">📋 成果简介</button>
+                        <a href="http://tdgcxj.cbpt.cnki.net/" target="_blank" class="pub-link">🔗 期刊官网</a>
+                    </div>
+                </div>
+                <!-- 24. 井国庆 2019 西南交通大学学报 (固化) - 使用官网 -->
+                <div class="publication-card">
+                    <span class="pub-tag">2019 · 西南交通大学学报</span>
+                    <div class="pub-title">高速铁路有砟道床横向阻力特性与固化技术</div>
+                    <div class="pub-authors">井国庆, 贾文利, 付豪, 卢炜</div>
+                    <div class="pub-journal">西南交通大学学报 54(05): 1087-1092</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="jing2019swjtu">📋 成果简介</button>
+                        <a href="http://jtxb.swjtu.edu.cn/" target="_blank" class="pub-link">🔗 期刊官网</a>
+                    </div>
+                </div>
+                <!-- 25. 井国庆 2020 铁道标准设计 - 使用期刊官网 -->
+                <div class="publication-card">
+                    <span class="pub-tag">2020 · 铁道标准设计</span>
+                    <div class="pub-title">复合轨枕道床横向阻力试验及优化分析</div>
+                    <div class="pub-authors">井国庆, 宋佳宁, 强伟乐, 付豪, 白健</div>
+                    <div class="pub-journal">铁道标准设计 64(08): 27-33</div>
+                    <div class="pub-links">
+                        <button class="btn-detail" data-project="jing2020tdbs">📋 成果简介</button>
+                        <a href="http://tdbs.cbpt.cnki.net/" target="_blank" class="pub-link">🔗 期刊官网</a>
+                    </div>
+                </div>
+                <!-- 结束 -->
             </div>
         </div>
     </section>
@@ -841,38 +1003,12 @@
             <div class="activity-item">
                 <div class="activity-date">2025.04.15-17</div>
                 <div class="activity-content">
-                    <h3>第八届智能材料与结构国际会议</h3>
-                    <p>付豪老师受邀作大会报告《柔性电子在智能建造中的应用》，卢赛波、王晓琳进行海报展示。</p>
-                    <div class="activity-location">📍 杭州国际博览中心</div>
+                    <h3>等待添加</h3>
+                    <p>等待添加。</p>
+                    <div class="activity-location">📍 等待添加</div>
                 </div>
             </div>
-            
-            <div class="activity-item">
-                <div class="activity-date">2025.03.20</div>
-                <div class="activity-content">
-                    <h3>课题组开放日 · 实验室参观</h3>
-                    <p>展示柔性传感器制备、3D打印微流控、摩擦纳米发电机等最新成果，吸引校内外50余人参加。</p>
-                    <div class="activity-location">📍 工学院B座 智能材料实验室</div>
-                </div>
-            </div>
-            
-            <div class="activity-item">
-                <div class="activity-date">2025.01.10-12</div>
-                <div class="activity-content">
-                    <h3>冬季学术研讨会 · 青年学者论坛</h3>
-                    <p>课题组主办，邀请清华大学、浙江大学、香港理工大学等青年学者交流智能建造前沿技术。</p>
-                    <div class="activity-location">📍 校内学术交流中心</div>
-                </div>
-            </div>
-            
-            <div class="activity-item">
-                <div class="activity-date">2024.12.05</div>
-                <div class="activity-content">
-                    <h3>企业合作交流 · 中铁集团技术对接会</h3>
-                    <p>就铁路道床智能检测、3D打印抢修材料等方向达成合作意向，启动联合实验室筹建。</p>
-                    <div class="activity-location">📍 中铁集团技术中心</div>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -902,51 +1038,132 @@
         const modalBody = document.getElementById('modalBody');
         const externalLinkContainer = document.getElementById('externalLinkContainer');
 
+        // 根据提供的"自己文章.txt"内容，为每篇论文准备简介摘要
         const projectsData = {
-            '1': {
-                title: '仿生柔性压力传感器阵列',
-                content: '<p><strong>研究内容：</strong> 开发基于微结构离子凝胶薄膜的高灵敏度柔性压力传感器。通过仿生微金字塔结构与微裂纹设计，灵敏度高达12.3 kPa⁻¹，检测限低至2 Pa。同时集成了4×4传感阵列，实现了空间压力分布成像，可用于脉搏波形监测、喉部振动语音识别等场景。</p><p><strong>创新点：</strong> 首次将仿生微结构与离子凝胶结合，实现了宽线性响应范围（0-100 kPa）。</p><p><strong>应用前景：</strong> 可穿戴健康监测、电子皮肤、人机交互界面。</p>',
-                journalLink: 'https://www.nature.com/natelectron/'
+            'aela2022': {
+                title: 'Prediction of crushed numbers and sizes of ballast particles after breakage using machine learning techniques',
+                content: '<p><strong>研究内容：</strong> 通过700次单颗粒破碎试验，使用SVM、BPNN、随机森林和CatBoost分类算法预测破碎颗粒数量，使用RF、XGB回归预测破碎尺寸。结果表明CatBoost和RF分类准确率>91%，RF和XGB回归NRMSE<0.08。DEM-PBM模型验证了机器学习预测的有效性。</p>',
+                journalLink: 'https://doi.org/10.1016/j.conbuildmat.2022.127469'
             },
-            '2': {
-                title: '室温自修复电子皮肤',
-                content: '<p><strong>研究内容：</strong> 利用多重动态键(二硫键、氢键、金属配位)设计了一种可在室温下快速自修复的聚合物导电复合材料。断裂后的样品在10分钟内恢复机械强度，电导率恢复至原始值的85%以上。拉伸断裂伸长率可超过800%，且修复后依然保持稳定传感功能。</p><p><strong>关键指标：</strong> 修复效率：85%，修复时间：10分钟，最大拉伸率：800%。</p><p><strong>应用方向：</strong> 仿人机器人触觉皮肤、可穿戴健康监测、软体机器人。</p>',
-                journalLink: 'https://www.science.org/journal/sciadv'
+            'cui2024': {
+                title: 'Discrete element analysis of the dynamic behavior of ballast track-subgrade system under train dynamic load',
+                content: '<p><strong>研究内容：</strong> 建立轨-枕-道床-路基耦合系统的精细离散元模型，研究列车动载下颗粒接触力、振动及摩擦能耗。发现速度和轴重增加会增强强力链概率分布，增大颗粒破碎风险，摩擦能耗受轴重影响更显著。</p>',
+                journalLink: 'https://doi.org/10.1016/j.soildyn.2024.108820'
             },
-            '3': {
-                title: '3D打印微流控芯片快速检测系统',
-                content: '<p><strong>研究内容：</strong> 采用自主配制的光敏树脂，通过数字光处理(DLP) 3D打印技术一体化制造带有微阀和混合通道的微流控芯片。无需复杂的键合工艺，30分钟即可完成芯片制造。结合环介导等温扩增(LAMP)技术，实现了对水体中大肠杆菌的单细胞级别灵敏检测。</p><p><strong>技术优势：</strong> 快速原型（30分钟）、低成本（<5美元/芯片）、高灵敏度（单细胞级别）。</p><p><strong>应用场景：</strong> 水质监测、病原体检测、POCT即时诊断。</p>',
-                journalLink: 'https://pubs.acs.org/journal/ancac3'
+            'fu2023es': {
+                title: 'Mechanical performance of Bio-Inspired Gyroid and Primitive concrete structures under combined compression and torsion Loads',
+                content: '<p><strong>研究内容：</strong> 首次采用DEM研究混凝土Primitive和Gyroid结构在压扭组合荷载下的力学性能。发现Primitive结构抗压抗扭性能优于Gyroid；压缩荷载会提高TPMS结构的极限扭转承载力，但扭转荷载会降低其抗压承载力。</p>',
+                journalLink: 'https://doi.org/10.1016/j.engstruct.2023.116429'
             },
-            '4': {
-                title: '织物基摩擦纳米发电机用于自驱动传感',
-                content: '<p><strong>研究内容：</strong> 设计基于静电纺丝尼龙/聚偏氟乙烯复合纳米纤维的织物摩擦纳米发电机。不仅可以收集人体运动的机械能(输出功率密度达到120 mW/m²)，还可作为自驱动传感器监测手指弯曲、步态等。构建了无线关节运动监测系统。</p><p><strong>性能参数：</strong> 输出功率：120 mW/m²，开路电压：250 V，短路电流：12 μA。</p><p><strong>特色：</strong> 透气、柔性、可水洗，结合能量管理电路可实现蓝牙传感节点自驱动。</p>',
-                journalLink: 'https://onlinelibrary.wiley.com/journal/16163028'
+            'fu2023cs': {
+                title: 'Experimental investigations into nonlinear dynamic behaviours of triply periodical minimal surface structures',
+                content: '<p><strong>研究内容：</strong> 通过单自由度模态试验研究IWP、Primitive、Gyroid三种TPMS结构的阻尼比和动刚度。发现固有频率和阻尼比随激励幅值变化，SS-Gyroid结构兼具较高刚度和阻尼比。</p>',
+                journalLink: 'https://doi.org/10.1016/j.compstruct.2023.117510'
             },
-            '5': {
-                title: '机器学习辅助的探地雷达道床病害识别',
-                content: '<p><strong>研究内容：</strong> 提出基于深度学习的GPR图像自动解释方法，对铁路道床病害识别准确率达94.5%。构建了包含5000张标注GPR图像的数据集，开发了轻量化CNN模型，可实现实时处理。</p><p><strong>技术突破：</strong> 首次将注意力机制引入道床病害识别，显著提升小目标检测能力。</p><p><strong>工程应用：</strong> 已在某铁路局进行现场测试，辅助工务段日常巡检。</p>',
-                journalLink: 'https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36'
+            'fu2024ijssd': {
+                title: 'Nonlinear Instabilities of TPMS Cellular Units Under Axially Loaded Conditions',
+                content: '<p><strong>研究内容：</strong> 通过试验和非线性有限元研究四种Skeletal-TPMS单胞的轴向压缩性能。与实体相比，抗压强度降低71.3%-82.6%，刚度降低64.9%-79.2%，Skeletal-SP单元抗压性能优于Skeletal-IWP。</p>',
+                journalLink: 'https://doi.org/10.1142/S0219455424502613'
             },
-            '6': {
-                title: '基于深度学习的结构健康监测',
-                content: '<p><strong>研究内容：</strong> 提出结合卷积神经网络和长短期记忆网络的混合模型，用于桥梁结构的损伤识别和定位。利用加速度传感器数据，实现了实时监测和预警。</p><p><strong>数据集：</strong> 在实验室钢桁架桥上进行了破坏性实验，采集了10种损伤工况的数据。</p><p><strong>准确率：</strong> 损伤识别准确率97.2%，损伤定位误差<5cm。</p>',
-                journalLink: 'https://journals.sagepub.com/home/shm'
+            'fu2022ijms': {
+                title: 'Experimental and DEM investigation of axially-loaded behaviours of IWP-based structures',
+                content: '<p><strong>研究内容：</strong> 提出TPMS简化新方法，通过试验和DEM研究主次Skeletal-IWP结构的轴压行为。发现次结构抗压强度更高；7×7×7排列时，主/次结构抗压强度分别从9 MPa增至13.4 MPa和9.2 MPa增至14.4 MPa。</p>',
+                journalLink: 'https://doi.org/10.1016/j.ijmecsci.2022.107738'
             },
-            '7': {
-                title: '智能材料在土木工程中的应用综述',
-                content: '<p><strong>综述内容：</strong> 系统总结了压电材料、形状记忆合金、光纤传感器、自修复材料等在土木工程中的应用进展。涵盖结构健康监测、振动控制、自修复混凝土等方向。</p><p><strong>关键讨论：</strong> 分析了智能材料在实际工程应用中面临的挑战，包括耐久性、成本、长期稳定性等。</p><p><strong>未来展望：</strong> 提出了智能材料与人工智能、物联网技术结合的发展方向。</p>',
-                journalLink: 'https://www.sciencedirect.com/journal/progress-in-materials-science'
+            'fu2022mtp': {
+                title: 'Numerical investigation of porous composite honeycomb track slab under point load',
+                content: '<p><strong>研究内容：</strong> 设计了两种多孔支撑层结构，通过非线性有限元模拟点荷载下多孔蜂窝轨道板的力学性能，并与传统有砟轨道对比，评估3D打印结构在铁路工程中的可行性。</p>',
+                journalLink: 'https://doi.org/10.1016/j.matpr.2022.04.616'
             },
-            '8': {
-                title: '自修复导电水凝胶用于柔性电子皮肤',
-                content: '<p><strong>研究内容：</strong> 开发了一种基于动态共价键和氢键协同作用的自修复导电水凝胶。该水凝胶在室温下10分钟内可修复90%以上的机械性能和电导率，拉伸率可达1200%。</p><p><strong>创新点：</strong> 首次将壳聚糖衍生物与聚丙烯酰胺网络结合，实现了优异的生物相容性和自修复性能。</p><p><strong>应用前景：</strong> 柔性可穿戴设备、电子皮肤、人机交互界面、生物电极。</p>',
-                journalLink: 'https://onlinelibrary.wiley.com/journal/15214095'
+            'fu2022jcs': {
+                title: 'State-of-the-Art Review on Additive Manufacturing Technology in Railway Infrastructure Systems',
+                content: '<p><strong>综述内容：</strong> 全面回顾增材制造技术在铁路轨道基础设施中的研究现状，探讨了3D打印在该领域的挑战与前景，为智能轨道部件设计和性能提升提供参考。</p>',
+                journalLink: 'https://doi.org/10.3390/jcs6010007'
             },
-            '9': {
-                title: '基于深度学习的地铁隧道结构健康监测系统',
-                content: '<p><strong>研究内容：</strong> 提出了一种结合卷积神经网络和Transformer的混合模型，用于地铁隧道的结构健康监测。该系统可实时处理光纤传感器数据，识别结构损伤位置和程度。</p><p><strong>技术优势：</strong> 准确率98.3%，误报率低于1%，支持边缘计算部署。</p><p><strong>工程应用：</strong> 已在某地铁线路进行试点应用，成功预警3次潜在结构风险。</p>',
-                journalLink: 'https://onlinelibrary.wiley.com/journal/14678667'
+            'fu2024tws': {
+                title: 'The axially-loaded behaviours of Schwarz Primitive (SP)-based structures: An experimental and DEM study',
+                content: '<p><strong>研究内容：</strong> 通过试验和DEM分析主次Schwarz Primitive结构在不同单元排布下的轴压行为。发现主结构轴压性能基本不受x/y轴单元数影响，次结构随单元数增加平均强度和吸能能力提升更明显。</p>',
+                journalLink: 'https://doi.org/10.1016/j.tws.2024.111973'
+            },
+            'fu2026tg': {
+                title: 'Experimental and Numerical Study on the Lateral Resistance of Recycled Plastic Sleepers on Ballasted track',
+                content: '<p><strong>研究内容：</strong> 针对再生塑料轨枕横向阻力不足问题，提出带翼缘板的 winged 轨枕设计。通过现场试验和DEM-FEM耦合模拟，发现翼缘可显著提高稳定性，超过50%阻力来自轨枕端部。</p>',
+                journalLink: 'https://doi.org/10.1016/j.trgeo.2025.101993'
+            },
+            'fu2023sensors': {
+                title: 'Multi-Hazard Effects of Crosswinds on Cascading Failures of Conventional and Interspersed Railway Tracks',
+                content: '<p><strong>研究内容：</strong> 首次研究侧风、道砟冲蚀和不均匀轴重对传统及散列式轨道的多灾害耦合效应。使用非线性有限元分析最大位移、弯矩和扭曲，为铁路应对自然灾害提供操作建议。</p>',
+                journalLink: 'https://doi.org/10.3390/s23041786'
+            },
+            'guo2020': {
+                title: 'Effect of sleeper bottom texture on lateral resistance with discrete element modelling',
+                content: '<p><strong>研究内容：</strong> 提出三种摩擦型轨枕（轨枕底部附加纹理）。通过单枕拔出试验和DEM模拟，发现摩擦型轨枕可提升横向阻力32%，并揭示了不同纹理的影响机制。</p>',
+                journalLink: 'https://doi.org/10.1016/j.conbuildmat.2020.118770'
+            },
+            'jing2019cbm': {
+                title: 'The contribution of ballast layer components to the lateral resistance of ladder sleeper track',
+                content: '<p><strong>研究内容：</strong> 通过足尺横向轨道板试验和DEM分析，评估梯式轨枕的横向阻力。发现梯式轨枕可提高道床横向阻力并减少道砟用量，道床肩部是梯式轨枕横向阻力的主要来源。</p>',
+                journalLink: 'https://doi.org/10.1016/j.conbuildmat.2019.01.038'
+            },
+            'jing2019f': {
+                title: 'Numerical and experimental analysis of single tie push tests on different shapes of concrete sleepers',
+                content: '<p><strong>研究内容：</strong> 对不同形状混凝土轨枕（端翼、中翼、凸起）进行单枕推力试验和DEM模拟，发现端翼轨枕效果最佳，建议翼长14cm、翼宽13cm。</p>',
+                journalLink: 'https://doi.org/10.1177/0954409718800579'
+            },
+            'jing2018cbm': {
+                title: 'Lateral displacement of different types of steel sleepers on ballasted track',
+                content: '<p><strong>研究内容：</strong> 通过单枕推力试验和DEM模拟，研究带凸起橡胶层和腹板加劲肋的钢枕横向阻力。发现3个腹板加劲肋可使阻力提高约70%。</p>',
+                journalLink: 'https://doi.org/10.1016/j.conbuildmat.2018.07.233'
+            },
+            'jing2020ijg': {
+                title: 'Numerical and Experimental Analysis of Lateral Resistance of Biblock Sleeper on Ballasted Tracks',
+                content: '<p><strong>研究内容：</strong> 对双块式轨枕进行单枕推力试验和DEM模拟。发现道床肩部对双块式轨枕横向阻力贡献约50%，肩高增至150mm可使阻力提升1.5倍。</p>',
+                journalLink: 'https://doi.org/10.1061/(ASCE)GM.1943-5622.0001667'
+            },
+            'kaewunruen2024': {
+                title: 'Digital twins for managing bridge climate change adaptation',
+                content: '<p><strong>研究内容：</strong> 利用6D BIM（数字孪生）管理桥梁气候变化适应措施。通过Revit、Navisworks、Granta EduPack创建模型，包含时间进度、成本估算和碳排放，展示了数字孪生在增强桥梁韧性方面的有效性。</p>',
+                journalLink: 'https://doi.org/10.12688/openreseurope.17438.1'
+            },
+            'kaewunruen2022': {
+                title: 'Numerical studies to evaluate crack propagation behaviour of prestressed concrete railway sleepers',
+                content: '<p><strong>研究内容：</strong> 基于Abaqus脆性开裂模型，研究不同混凝土强度、预应力大小和加载速率下预应力混凝土轨枕的裂纹扩展行为。发现提高混凝土强度和预应力可增强抗裂性。</p>',
+                journalLink: 'https://doi.org/10.1016/j.engfailanal.2021.105888'
+            },
+            'ma2021': {
+                title: 'Effect of infill pattern, density and material type of 3D printed cubic structure under quasi-static loading',
+                content: '<p><strong>研究内容：</strong> 研究填充图案、密度和材料（PLA、PLA/CF）对3D打印立方体准静态压缩性能的影响。发现蜂窝填充图案的PLA结构吸能特性最佳。</p>',
+                journalLink: 'https://doi.org/10.1177/0954406220947114'
+            },
+            'sengsri2022': {
+                title: 'Mechanical Properties and Energy-Absorption Capability of a 3D-Printed TPMS Sandwich Lattice Model',
+                content: '<p><strong>研究内容：</strong> 提出用于桥梁支座的3D打印TPMS夹芯晶格模型。通过数值模拟和试验验证，发现该模型在单轴压缩下呈现弹塑性破坏，在压剪荷载下呈现滞回破坏。</p>',
+                journalLink: 'https://doi.org/10.3390/jcs6030071'
+            },
+            'jing2018tdgc': {
+                title: '高速铁路有砟轨道横向阻力宏细观分析',
+                content: '<p><strong>研究内容：</strong> 通过现场试验和离散元模拟，研究Ⅲc型轨枕在不同道床断面下的横向阻力。发现底部和端部贡献约80%阻力，建议优化轨枕底部结构以增加接触数目。</p>',
+                journalLink: 'http://tdgcxj.cbpt.cnki.net/'
+            },
+            'jing2018swjtu': {
+                title: '框架优化型Ⅲc轨枕道床横向阻力试验研究',
+                content: '<p><strong>研究内容：</strong> 对Ⅲc型轨枕增设加宽块形成三种框架式轨枕，通过试验发现A型框架轨枕可提升阻力37.8%-50.8%，B型提升25.5%-41.0%，C型提升13.3%-23.0%。</p>',
+                journalLink: 'http://jtxb.swjtu.edu.cn/'
+            },
+            'jing2019tdgc': {
+                title: '高速铁路飞砟防治专用聚氨酯适用性研究',
+                content: '<p><strong>研究内容：</strong> 针对5种低强度聚氨酯，提出可捣固的道床全断面表层固化方案。通过阻力试验、风洞试验、捣固测试和压缩试验，推荐4号聚氨酯为最优方案。</p>',
+                journalLink: 'http://tdgcxj.cbpt.cnki.net/'
+            },
+            'jing2019swjtu': {
+                title: '高速铁路有砟道床横向阻力特性与固化技术',
+                content: '<p><strong>研究内容：</strong> 研究砟肩堆高对道床阻力的影响，提出聚氨酯局部固化方案。发现枕端固化可提高阻力约41%-60%，枕心固化提高约31%-40%，综合固化可提高70%-100%。</p>',
+                journalLink: 'http://jtxb.swjtu.edu.cn/'
+            },
+            'jing2020tdbs': {
+                title: '复合轨枕道床横向阻力试验及优化分析',
+                content: '<p><strong>研究内容：</strong> 针对复合轨枕横向阻力较低的问题，提出结构优化和细部优化方案。推荐B2型细部优化（可将阻力提升至Ⅲ型混凝土轨枕的94%-97%）。</p>',
+                journalLink: 'http://tdbs.cbpt.cnki.net/'
             }
         };
 
@@ -961,13 +1178,13 @@
                     modalBody.innerHTML = projectsData[projectId].content;
                     
                     externalLinkContainer.innerHTML = '';
-                    if (projectsData[projectId].journalLink) {
+                    if (projectsData[projectId].journalLink && projectsData[projectId].journalLink !== '#') {
                         const linkElement = document.createElement('a');
                         linkElement.href = projectsData[projectId].journalLink;
                         linkElement.target = '_blank';
                         linkElement.rel = 'noopener noreferrer';
                         linkElement.className = 'external-link';
-                        linkElement.innerHTML = '🔗 访问期刊官网';
+                        linkElement.innerHTML = '🔗 访问期刊/DOI';
                         externalLinkContainer.appendChild(linkElement);
                     }
                 } else {
@@ -1032,7 +1249,6 @@
         .floating-circles div {
             opacity: 0.15;
         }
-        /* 移动端稍微缩小浮动元素尺寸 */
         .floating-circles .circle1 { width: 400px; height: 400px; }
         .floating-circles .circle2 { width: 350px; height: 350px; }
         .floating-circles .circle3 { width: 300px; height: 300px; }
@@ -1069,7 +1285,6 @@
     let waves = [];
     let lastTime = 0;
     
-    // 初始化画布大小
     function resize() {
         width = window.innerWidth;
         height = window.innerHeight;
@@ -1078,29 +1293,24 @@
     }
     resize();
     
-    // 监听整个document的mousemove事件
     document.addEventListener('mousemove', function(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
         
         const now = Date.now();
-        // 降低频率：从30ms改为50ms
         if (now - lastTime > 50) {
-            // 只添加一个波纹，大小减半
             waves.push({
                 x: mouseX,
                 y: mouseY,
-                radius: 3,           // 初始半径从5->3
-                maxRadius: 60,        // 最大半径从120->60（减小一半）
-                speed: 1.2,           // 扩散速度从2.0->1.2
-                alpha: 0.5,           // 透明度从0.7->0.5
-                lineWidth: 1.5        // 线宽从3->1.5
+                radius: 3,
+                maxRadius: 60,
+                speed: 1.2,
+                alpha: 0.5,
+                lineWidth: 1.5
             });
-            
             lastTime = now;
         }
         
-        // 减少波纹总数上限：从80->40
         if (waves.length > 40) {
             waves = waves.slice(-40);
         }
@@ -1108,7 +1318,6 @@
     
     window.addEventListener('resize', resize);
     
-    // 动画循环
     function animate() {
         ctx.clearRect(0, 0, width, height);
         
@@ -1116,18 +1325,16 @@
             const w = waves[i];
             
             w.radius += w.speed;
-            w.alpha -= 0.004;        // 淡出速度稍微降低
+            w.alpha -= 0.004;
             
             if (w.alpha <= 0 || w.radius >= w.maxRadius) continue;
             
-            // 只保留单圈波纹，更简洁
             ctx.beginPath();
             ctx.arc(w.x, w.y, w.radius, 0, Math.PI * 2);
             ctx.strokeStyle = `rgba(70, 130, 230, ${w.alpha})`;
             ctx.lineWidth = w.lineWidth;
             ctx.stroke();
             
-            // 可选：添加一个非常淡的内圈（如果需要层次感）
             if (w.radius > 20) {
                 ctx.beginPath();
                 ctx.arc(w.x, w.y, w.radius * 0.5, 0, Math.PI * 2);
@@ -1156,26 +1363,25 @@
     let particles = [];
     let animationFrame;
 
-    // 柔和色调 - 调整为更淡雅的学术色系
     const pastelPalette = [
-            'hsla(0, 50%, 70%, 0.95)',     // 红色
-            'hsla(30, 55%, 70%, 0.95)',    // 橙色
-            'hsla(60, 55%, 70%, 0.95)',    // 黄色
-            'hsla(120, 55%, 70%, 0.95)',   // 绿色
-            'hsla(200, 50%, 70%, 0.95)',   // 蓝色
-            'hsla(240, 55%, 75%, 0.95)',   // 靛蓝
-            'hsla(280, 55%, 75%, 0.95)',   // 紫色
-            'hsla(320, 50%, 75%, 0.95)',   // 粉色
+            'hsla(0, 50%, 70%, 0.95)',
+            'hsla(30, 55%, 70%, 0.95)',
+            'hsla(60, 55%, 70%, 0.95)',
+            'hsla(120, 55%, 70%, 0.95)',
+            'hsla(200, 50%, 70%, 0.95)',
+            'hsla(240, 55%, 75%, 0.95)',
+            'hsla(280, 55%, 75%, 0.95)',
+            'hsla(320, 50%, 75%, 0.95)',
     ];
 
     const CONFIG = {
-        particleCount: 80,              // 减少粒子数量，避免太密集
-        baseSpeed: 0.03,                // 更慢的上升速度
+        particleCount: 80,
+        baseSpeed: 0.03,
         speedVariation: 0.02,
-        baseSizeMin: 5,                  // 底部最小尺寸
-        baseSizeMax: 12,                   // 底部最大尺寸
-        topSizeMin: 10,                    // 顶部最小尺寸
-        topSizeMax: 30,                    // 顶部最大尺寸
+        baseSizeMin: 5,
+        baseSizeMax: 12,
+        topSizeMin: 10,
+        topSizeMax: 30,
     };
 
     function randomRange(min, max) {
@@ -1186,9 +1392,9 @@
         const x = Math.random();
         let y;
         if (resetFromTop) {
-            y = 1.0;  // 从底部开始
+            y = 1.0;
         } else {
-            y = Math.random();  // 初始化时随机分布
+            y = Math.random();
         }
 
         const color = pastelPalette[Math.floor(Math.random() * pastelPalette.length)];
