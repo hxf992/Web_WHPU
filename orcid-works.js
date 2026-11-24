@@ -1,4 +1,6 @@
 (() => {
+  const assetBase = new URL('.', document.currentScript.src);
+  let figureRecords = [];
   const endpoint = 'https://pub.orcid.org/v3.0/0000-0003-1262-8113/works';
   const descriptions = {
     '10.1016/j.istruc.2026.113466': '研究三周期极小曲面结构的力链传递及受压性能。',
@@ -34,22 +36,27 @@
   const fallback = document.querySelector('[data-orcid-fallback]');
   const make = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
   function safeUrl(value) { try { const u = new URL(value); return /^https?:$/.test(u.protocol) ? u.href : ''; } catch { return ''; } }
-  // Only figures verified against their corresponding open-access article appear here.
-  const figures = {
-    '10.3390/s23041786': {src:'https://mdpi-res.com/sensors/sensors-23-01786/article_deploy/html/images/sensors-23-01786-g005-550.jpg', source:'https://www.mdpi.com/1424-8220/23/4/1786', caption:'图 5：1:4 混合轨枕轨道有限元模型', credit:'Fu, Yang & Kaewunruen (2023), Sensors, CC BY 4.0'},
-    '10.3390/jcs6030071': {src:'https://mdpi-res.com/jcs/jcs-06-00071/article_deploy/html/images/jcs-06-00071-g004-550.jpg', source:'https://www.mdpi.com/2504-477X/6/3/71', caption:'图 4：Schwarz Primitive 单胞 CAD 模型', credit:'Sengsri, Fu & Kaewunruen (2022), J. Compos. Sci., CC BY 4.0'},
-    '10.3390/jcs6010007': {src:'https://mdpi-res.com/jcs/jcs-06-00007/article_deploy/html/images/jcs-06-00007-g010-550.jpg', source:'https://www.mdpi.com/2504-477X/6/1/7', caption:'图 10：多层 3D 打印复合岔枕', credit:'Fu & Kaewunruen (2021), J. Compos. Sci., CC BY 4.0'}
-  };
+  const viewer = make('dialog', 'figure-viewer');
+  const viewerTitle = make('h2'); const viewerImg = make('img');
+  const closeViewer = make('button', 'viewer-close', '关闭'); closeViewer.type='button';
+  const viewerCredit = make('p'); const openOriginal = make('a', '', '打开高清组合图'); openOriginal.target='_blank'; openOriginal.rel='noopener noreferrer';
+  viewer.append(closeViewer, viewerTitle, viewerImg, viewerCredit, openOriginal); document.body.append(viewer);
+  closeViewer.addEventListener('click', () => viewer.close());
+  viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
   function art(work) {
-    const info = figures[work.doi];
+    const info = figureRecords.find(x => x.doi === work.doi || (x.titleMatch && work.title.includes(x.titleMatch)));
     const figure = make('figure', 'paper-figure');
-    if (!info) { figure.append(make('p', 'figure-unavailable', '论文原图待补充')); return figure; }
-    const img = make('img'); img.src = info.src; img.alt = info.caption; img.loading = 'lazy';
-    img.addEventListener('error', () => { img.remove(); figure.prepend(make('p', 'figure-unavailable', '原图暂时无法加载，请查看论文来源')); });
-    const caption = make('figcaption'); caption.append(document.createTextNode(info.caption + ' · ' + info.credit + ' · '));
-    const source = make('a', '', '原文与图源'); source.href = info.source; source.target = '_blank'; source.rel = 'noopener noreferrer'; caption.append(source);
-    const license = make('a', '', '许可'); license.href = 'https://creativecommons.org/licenses/by/4.0/'; license.target = '_blank'; license.rel = 'noopener noreferrer'; caption.append(document.createTextNode(' · '), license);
-    figure.append(img, caption); return figure;
+    if (!info) { const link=make('a','figure-unavailable','查看原文图表'); link.href=work.url; link.target='_blank'; link.rel='noopener noreferrer'; figure.append(link); return figure; }
+    const imageUrl = new URL(info.src, assetBase).href;
+    const button = make('button', 'montage-button'); button.type='button'; button.setAttribute('aria-label','放大查看：'+work.title+' 的四图组合');
+    const img=make('img'); img.src=imageUrl; img.alt=work.title+'：论文原图四图组合'; img.loading='lazy'; img.width=1600; img.height=1200;
+    button.append(img, make('span','montage-zoom','查看四图组合'));
+    button.addEventListener('click',()=>{viewerTitle.textContent=work.title; viewerImg.src=imageUrl; viewerImg.alt=img.alt; viewerCredit.textContent=info.panels.map((p,i)=>String.fromCharCode(65+i)+' · '+p.label+'（PDF 第 '+p.page+' 页）').join('；')+'。来源：'+info.version+'，裁取并重新排版。'; openOriginal.href=imageUrl; viewer.showModal();});
+    img.addEventListener('error',()=>{button.hidden=true;figure.prepend(make('p','figure-unavailable','组合图暂时无法加载'));});
+    const caption=make('figcaption'); caption.append(make('span','figure-index',info.panels.map(p=>p.label).join(' / ')));
+    const source=make('a','','论文与图源');source.href=info.source;source.target='_blank';source.rel='noopener noreferrer';caption.append(source);
+    if(info.version==='作者稿') caption.append(make('span','author-version','作者稿'));
+    figure.append(button,caption);return figure;
   }
   function render(data) {
     if (!Array.isArray(data.group)) throw new Error('invalid ORCID response');
@@ -85,8 +92,7 @@
     status.textContent = '已从 ORCID 读取 ' + works.length + ' 篇公开期刊论文 · 每次打开页面时更新。未收录或非公开成果不会显示。';
   }
   const controller = new AbortController(); const timer = setTimeout(() => controller.abort(), 12000);
-  fetch(endpoint, {headers: {Accept: 'application/json'}, signal: controller.signal})
-    .then(r => { if (!r.ok) throw new Error('ORCID ' + r.status); return r.json(); })
-    .then(render).catch(() => {status.textContent = '暂时无法连接 ORCID，显示原有成果列表。请稍后刷新，或访问 ORCID 查看最新记录。';})
+  Promise.all([fetch(endpoint, {headers: {Accept: 'application/json'}, signal: controller.signal}).then(r => {if(!r.ok) throw new Error('ORCID '+r.status);return r.json();}), fetch(new URL('paper-figures.json',assetBase), {signal:controller.signal}).then(r=>r.ok?r.json():[]).catch(()=>[])])
+    .then(([data, figures]) => {figureRecords=Array.isArray(figures)?figures:[];render(data);}).catch(() => {status.textContent = '暂时无法连接 ORCID，显示原有成果列表。请稍后刷新，或访问 ORCID 查看最新记录。';})
     .finally(() => clearTimeout(timer));
 })();

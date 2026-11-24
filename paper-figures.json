@@ -1,0 +1,1489 @@
+[
+  {
+    "id": "p00",
+    "doi": "10.1016/j.conbuildmat.2018.07.095",
+    "src": "images/papers/p00-montage.jpg",
+    "source": "https://doi.org/10.1016/j.conbuildmat.2018.07.095",
+    "title": "2018-Lateral displacement of different types of steel sleepers on ballasted track",
+    "panels": [
+      {
+        "label": "Fig. 3",
+        "page": 3,
+        "caption": "Fig. 3. Steel sleepers used in experimental tests.",
+        "crop": [
+          107.2239990234375,
+          302.9649658203125,
+          477.0559997558594,
+          740.7169799804688
+        ]
+      },
+      {
+        "label": "Fig. 5",
+        "page": 4,
+        "caption": "Fig. 5. Test panel preparation and instrumentation.",
+        "crop": [
+          108.5510025024414,
+          497.239013671875,
+          495.2850036621094,
+          740.5960083007812
+        ]
+      },
+      {
+        "label": "Fig. 9",
+        "page": 6,
+        "caption": "Fig. 9. (a) Ballast particles scanning, (b) 3D view of a simulated particle.",
+        "crop": [
+          85.8740005493164,
+          65.91896057128906,
+          515.385009765625,
+          225.31396484375
+        ]
+      },
+      {
+        "label": "Fig. 10",
+        "page": 6,
+        "caption": "Fig. 10. Simulation of the steel sleeper on the ballast layer.",
+        "crop": [
+          119.88999938964844,
+          666.2389526367188,
+          481.5,
+          740.6519775390625
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p01",
+    "doi": "10.3969/j.issn.0258-2724.2018.04.009",
+    "src": "images/papers/p01-montage.jpg",
+    "source": "https://doi.org/10.3969/j.issn.0258-2724.2018.04.009",
+    "title": "2018-框架优化型Ⅲc轨枕道床横向阻力试验研究",
+    "panels": [
+      {
+        "label": "Fig. ２",
+        "page": 2,
+        "caption": "图２　各型轨枕示意\nＦｉｇ．２　Ｄｉａｇｒａｍｓｏｆｆｒａｍｅｓｌｅｅｐｅｒｓ\n按设计尺寸特制混凝土块，在我国标准Ⅲｃ型\n轨枕特定部位上，如承轨台底部、边缘及轨枕中部",
+        "crop": [
+          278.37469482421875,
+          524.26806640625,
+          459.17254638671875,
+          665.4755859375
+        ]
+      },
+      {
+        "label": "Fig. ４",
+        "page": 3,
+        "caption": "图４　框架轨枕（从左至右依次为Ａ、Ｂ、Ｃ型）\nＦｉｇ．４　Ｐｉｃｔｕｒｅｓｏｆｆｒａｍｅｓｌｅｅｐｅｒｓ（Ａ、Ｂ、Ｃｆｒｏｍｌｅｆｔｔｏｒｉｇｈｔ）",
+        "crop": [
+          45.97576141357422,
+          503.4056396484375,
+          198.924560546875,
+          668.6778564453125
+        ]
+      },
+      {
+        "label": "PDF p. 3",
+        "page": 3,
+        "caption": "",
+        "crop": [
+          365.0269775390625,
+          464.39752197265625,
+          482.4609375,
+          615.0174560546875
+        ]
+      },
+      {
+        "label": "Fig. ６",
+        "page": 4,
+        "caption": "图６　标准Ⅲｃ、Ａ型轨枕横向阻力位移\nＦｉｇ．６　Ｒｅｓｉｓｔａｎｃｅｄｉｓｐｌａｃｅｍｅｎｔｏｆ\nⅢｃｓｌｅｅｐｅｒａｎｄＡｆｒａｍｅｓｌｅｅｐｅｒ\n从轨枕与道床相互作用分析，Ａ型框架轨枕在\n轨枕承轨台处增设翼缘，增加了轨枕端头处轨枕移\n动时道砟剪切锲体径向宽度，理论上相较于标准",
+        "crop": [
+          267.0215759277344,
+          144.27890014648438,
+          470.4285888671875,
+          268.7964172363281
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p02",
+    "doi": "10.3969/j.issn.1006-2106.2018.09.004",
+    "src": "images/papers/p02-montage.jpg",
+    "source": "https://doi.org/10.3969/j.issn.1006-2106.2018.09.004",
+    "title": "2018-高速铁路有砟轨道横向阻力宏细观分析",
+    "panels": [
+      {
+        "label": "PDF p. 3",
+        "page": 3,
+        "caption": "",
+        "crop": [
+          47.891000000000005,
+          99.101,
+          271.19,
+          218.373
+        ]
+      },
+      {
+        "label": "PDF p. 3",
+        "page": 3,
+        "caption": "",
+        "crop": [
+          46.160000000000004,
+          520.0609999999999,
+          271.19,
+          768.252
+        ]
+      },
+      {
+        "label": "PDF p. 3",
+        "page": 3,
+        "caption": "",
+        "crop": [
+          326.582,
+          647.226,
+          523.339,
+          808.594
+        ]
+      },
+      {
+        "label": "PDF p. 4",
+        "page": 4,
+        "caption": "",
+        "crop": [
+          327.135,
+          219.25,
+          525.153,
+          390.265
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文",
+    "titleMatch": "高速铁路有砟轨道横向阻力宏细观分析"
+  },
+  {
+    "id": "p03",
+    "doi": "10.1177/0954409718805274",
+    "src": "images/papers/p03-montage.jpg",
+    "source": "https://doi.org/10.1177/0954409718805274",
+    "title": "2019-Numerical and experimental analysis of single tie push tests on different shapes of concrete sleepers in ballasted tracks",
+    "panels": [
+      {
+        "label": "Fig. 5",
+        "page": 4,
+        "caption": "Figure 5. (a) Concrete sleepers cross-section and view of (b) end-winged sleeper, (c) middle-winged sleeper, and (d) bumped\nsleeper.",
+        "crop": [
+          79.28800201416016,
+          261.65802001953125,
+          480.87200927734375,
+          470.40203857421875
+        ]
+      },
+      {
+        "label": "Fig. 6",
+        "page": 5,
+        "caption": "Figure 6. Panel setup including (a) LVDTs, (b) loading jack,\nand (c) steel rods as support.",
+        "crop": [
+          72.66500091552734,
+          255.10198974609375,
+          281.1260070800781,
+          488.6519775390625
+        ]
+      },
+      {
+        "label": "Fig. 12",
+        "page": 8,
+        "caption": "Figure 12. Position of measurement spheres under the sleeper.",
+        "crop": [
+          109.00499725341797,
+          527.1719970703125,
+          473.79400634765625,
+          750.6300048828125
+        ]
+      },
+      {
+        "label": "Fig. 13",
+        "page": 9,
+        "caption": "Figure 13. Simulation of STPTs with (a) the creation of the\ntest environment, (b) generation of particles, and (c) imple-\nmentation of cycles to reach the initial equilibrium state.",
+        "crop": [
+          72.72100067138672,
+          170.85702514648438,
+          281.1319885253906,
+          310.2960205078125
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p04",
+    "doi": "10.1016/j.conbuildmat.2019.01.017",
+    "src": "images/papers/p04-montage.jpg",
+    "source": "https://doi.org/10.1016/j.conbuildmat.2019.01.017",
+    "title": "2019-The contribution of ballast layer components to the lateral resistance of ladder sleeper track",
+    "panels": [
+      {
+        "label": "Fig. 3",
+        "page": 2,
+        "caption": "Fig. 3. Geometrical characteristics of the ladder sleeper.",
+        "crop": [
+          85.8740005493164,
+          535.052001953125,
+          515.1749877929688,
+          740.6519775390625
+        ]
+      },
+      {
+        "label": "Fig. 5",
+        "page": 4,
+        "caption": "Fig. 5. Ladder sleeper track with (a) 0%, (b) 25%, (c) 75%, (d) 100% crib ballast height.",
+        "crop": [
+          108.5510025024414,
+          65.91799926757812,
+          495.3630065917969,
+          431.6189880371094
+        ]
+      },
+      {
+        "label": "Fig. 10",
+        "page": 8,
+        "caption": "Fig. 10. (a) Generation of track domain and the ladder sleeper, (b) Ballast generation within the domain, (c) The equilibrium state of the panels with SH = 0 and 150 mm, (d)\ndifferent views of the porosity measurement spheres.",
+        "crop": [
+          71.70099639892578,
+          65.91900634765625,
+          531.2200317382812,
+          353.0429992675781
+        ]
+      },
+      {
+        "label": "Fig. 14",
+        "page": 9,
+        "caption": "Fig. 14. The stress distribution in ladder tracks with (a) SH = 0 mm, and (b) SH = 150 mm.",
+        "crop": [
+          76.06600189208984,
+          191.49298095703125,
+          505.36700439453125,
+          331.7259826660156
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p05",
+    "doi": "10.3969/j.issn.0258-2724.20170480",
+    "src": "images/papers/p05-montage.jpg",
+    "source": "https://doi.org/10.3969/j.issn.0258-2724.20170480",
+    "title": "2019-高速铁路有砟道床横向阻力特性与固化技术",
+    "panels": [
+      {
+        "label": "Fig. 2",
+        "page": 3,
+        "caption": "图 2   轨枕端部道砟受力情况概况",
+        "crop": [
+          73.54039764404297,
+          311.6412048339844,
+          417.7414245605469,
+          421.8412170410156
+        ]
+      },
+      {
+        "label": "Fig. 4",
+        "page": 4,
+        "caption": "图 4   聚氨酯喷涂\nFig. 4   Polyurethane injection",
+        "crop": [
+          19.015100479125977,
+          113.88941955566406,
+          232.7550048828125,
+          253.95242309570312
+        ]
+      },
+      {
+        "label": "Fig. 5",
+        "page": 4,
+        "caption": "图 5   道床横向阻力测试\nFig. 5   Lateral resistance tests",
+        "crop": [
+          13.669429779052734,
+          604.3682861328125,
+          233.10198974609375,
+          687.7384643554688
+        ]
+      },
+      {
+        "label": "PDF p. 5",
+        "page": 5,
+        "caption": "",
+        "crop": [
+          30.950639923095704,
+          523.8324085693359,
+          220.093439453125,
+          682.0268111572266
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p06",
+    "doi": "10.3969/j.issn.1006-2106.2019.05.005",
+    "src": "images/papers/p06-montage.jpg",
+    "source": "https://doi.org/10.3969/j.issn.1006-2106.2019.05.005",
+    "title": "2019-高速铁路飞砟防治专用聚氨酯适用性研究",
+    "panels": [
+      {
+        "label": "PDF p. 3",
+        "page": 3,
+        "caption": "",
+        "crop": [
+          326.30600000000004,
+          269.982,
+          506.54,
+          400.72799999999995
+        ]
+      },
+      {
+        "label": "PDF p. 4",
+        "page": 4,
+        "caption": "",
+        "crop": [
+          69.615,
+          195.953,
+          262.08,
+          350.697
+        ]
+      },
+      {
+        "label": "PDF p. 4",
+        "page": 4,
+        "caption": "",
+        "crop": [
+          328.77000000000004,
+          84.941,
+          518.895,
+          228.752
+        ]
+      },
+      {
+        "label": "PDF p. 5",
+        "page": 5,
+        "caption": "",
+        "crop": [
+          66.331,
+          211.5,
+          264.15000000000003,
+          371.394
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文",
+    "titleMatch": "高速铁路飞砟防治专用聚氨酯适用性研究"
+  },
+  {
+    "id": "p07",
+    "doi": "10.1016/j.conbuildmat.2020.118770",
+    "src": "images/papers/p07-montage.jpg",
+    "source": "https://doi.org/10.1016/j.conbuildmat.2020.118770",
+    "title": "2020-Effect of sleeper bottom texture on lateral resistance with discrete element modelling",
+    "panels": [
+      {
+        "label": "Fig. 4",
+        "page": 4,
+        "caption": "Fig. 4. Different types of frictional sleepers: (a) mono-block sleeper, (b) GT-sleeper, (c) ST-sleeper, (d) RT-sleeper.",
+        "crop": [
+          50.55400085449219,
+          342.40997314453125,
+          536.4829711914062,
+          512.8599853515625
+        ]
+      },
+      {
+        "label": "Fig. 5",
+        "page": 4,
+        "caption": "Fig. 5. Single sleeper pull-out test setup.",
+        "crop": [
+          112.91600036621094,
+          550.1319580078125,
+          471.13299560546875,
+          740.594970703125
+        ]
+      },
+      {
+        "label": "Fig. 7",
+        "page": 5,
+        "caption": "Fig. 7. Four types of modelled sleepers and ballast particle generation method.",
+        "crop": [
+          85.86399841308594,
+          519.0249633789062,
+          516.1519775390625,
+          727.2769775390625
+        ]
+      },
+      {
+        "label": "Fig. 10",
+        "page": 7,
+        "caption": "Fig. 10. SSPT model creation procedure.",
+        "crop": [
+          114.18399810791016,
+          65.90497589111328,
+          487.1189880371094,
+          181.39697265625
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p08",
+    "doi": "10.13238/j.issn.1004-2954.201908110002",
+    "src": "images/papers/p08-montage.jpg",
+    "source": "https://doi.org/10.13238/j.issn.1004-2954.201908110002",
+    "title": "2020-复合轨枕道床横向阻力试验及优化分析",
+    "panels": [
+      {
+        "label": "Fig. 1",
+        "page": 2,
+        "caption": "图1　复合轨枕",
+        "crop": [
+          335.14398193359375,
+          349.02093505859375,
+          481.00897216796875,
+          438.31494140625
+        ]
+      },
+      {
+        "label": "Fig. 3",
+        "page": 3,
+        "caption": "图3　细部优化复合轨枕(单位:mm)",
+        "crop": [
+          27.222999572753906,
+          492.41888427734375,
+          264.208984375,
+          559.4219360351562
+        ]
+      },
+      {
+        "label": "Fig. 5",
+        "page": 4,
+        "caption": "图5　现场阻力测试",
+        "crop": [
+          28.45499038696289,
+          171.803955078125,
+          264.8949890136719,
+          293.91595458984375
+        ]
+      },
+      {
+        "label": "PDF p. 4",
+        "page": 4,
+        "caption": "",
+        "crop": [
+          316.9789460449218,
+          208.81865802001954,
+          505.39300488281253,
+          376.17512762451173
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p09",
+    "doi": "10.1177/0954406220971667",
+    "src": "images/papers/p09-montage.jpg",
+    "source": "https://doi.org/10.1177/0954406220971667",
+    "title": "2021-Effect of infill pattern density and material type of 3D printed cubic structure under quasi-static loading",
+    "panels": [
+      {
+        "label": "Fig. 2",
+        "page": 3,
+        "caption": "Figure 2. Four infill patterns of 3D printed cubic structure: (a) triangle; (b) rectilinear; (c) line; (d) honeycomb.",
+        "crop": [
+          72.72100067138672,
+          628.6520385742188,
+          535.3679809570312,
+          751.9910278320312
+        ]
+      },
+      {
+        "label": "Fig. 4",
+        "page": 4,
+        "caption": "Figure 4. 3D printed cubic structures with four infill patterns and densities: (a) PLA/CF material; (b) PLA material.",
+        "crop": [
+          132.13499450683594,
+          610.5110473632812,
+          450.3909912109375,
+          751.9910278320312
+        ]
+      },
+      {
+        "label": "Fig. 5",
+        "page": 5,
+        "caption": "Figure 5. 3D printed cubic structures with two types of materials under quasi-static compression.",
+        "crop": [
+          144.7209930419922,
+          140.8660430908203,
+          463.4320068359375,
+          277.07403564453125
+        ]
+      },
+      {
+        "label": "Fig. 20",
+        "page": 15,
+        "caption": "Figure 20. Effect of Fpeak on 3D printed cubic structure with four different infill patterns: (a) honeycomb; (b) line; (c) rectilinear;\n(d) triangle.",
+        "crop": [
+          72.77799987792969,
+          79.5250244140625,
+          535.4320068359375,
+          480.8290100097656
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p10",
+    "doi": "10.3390/jcs6030071",
+    "src": "images/papers/p10-montage.jpg",
+    "source": "https://doi.org/10.3390/jcs6030071",
+    "title": "2022-Mechanical properties and energy-absorption capability of a 3D-printed TPMS sandwich lattice model for meta-functional composite bridge bearing applications",
+    "panels": [
+      {
+        "label": "Fig. 4",
+        "page": 5,
+        "caption": "Figure 4. Schwarz primitive unit cell CAD model.",
+        "crop": [
+          168.10400390625,
+          599.1395874023438,
+          286.4560241699219,
+          719.5635986328125
+        ]
+      },
+      {
+        "label": "Fig. 7",
+        "page": 7,
+        "caption": "Figure 7. Boundary conditions of (a) a schwarz primitive unit cell FEA model and (b) an elastomeric\nblock unit cell FEA model under combined compression–shear loading.",
+        "crop": [
+          168.5900115966797,
+          359.2740173339844,
+          493.23004150390625,
+          502.17401123046875
+        ]
+      },
+      {
+        "label": "Fig. 13",
+        "page": 10,
+        "caption": "Figure 13. Full-FEA simulations of the proposed novel sandwich lattice model under uniaxial\ncompression and combined compression–shear loading.",
+        "crop": [
+          171.01800537109375,
+          284.5760192871094,
+          472.8580017089844,
+          434.2560119628906
+        ]
+      },
+      {
+        "label": "Fig. 19",
+        "page": 13,
+        "caption": "Figure 19. Uniform stress distribution of the combined compression–shear behaviour of the proposed\nnovel SP sandwich lattice model.",
+        "crop": [
+          169.91819763183594,
+          554.3753662109375,
+          533.572021484375,
+          734.7559814453125
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p11",
+    "doi": "10.1016/j.engfailanal.2021.105888",
+    "src": "images/papers/p11-montage.jpg",
+    "source": "https://doi.org/10.1016/j.engfailanal.2021.105888",
+    "title": "2022-Numerical studies to evaluate crack propagation behaviour of prestressed concrete railway sleepers",
+    "panels": [
+      {
+        "label": "Fig. 2",
+        "page": 3,
+        "caption": "Fig. 2. Contact and boundary conditions.",
+        "crop": [
+          57.5275993347168,
+          496.8453063964844,
+          486.75958251953125,
+          673.3572998046875
+        ]
+      },
+      {
+        "label": "Fig. 3",
+        "page": 5,
+        "caption": "Fig. 3. Arrangement at the rail seat for positive bending test. BSI.",
+        "crop": [
+          100.0469970703125,
+          288.5589904785156,
+          444.17498779296875,
+          581.85498046875
+        ]
+      },
+      {
+        "label": "Fig. 6",
+        "page": 7,
+        "caption": "Fig. 6. Distribution of cracks in sleepers with different concrete strength.",
+        "crop": [
+          85.8740005493164,
+          51.40802001953125,
+          458.3699951171875,
+          366.5920104980469
+        ]
+      },
+      {
+        "label": "Fig. 10",
+        "page": 10,
+        "caption": "Fig. 10. Distribution of cracks in sleepers under various loading rates.",
+        "crop": [
+          85.8740005493164,
+          51.42498779296875,
+          458.3699951171875,
+          288.1289978027344
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p12",
+    "doi": "10.1016/j.conbuildmat.2022.127469",
+    "src": "images/papers/p12-montage.jpg",
+    "source": "https://doi.org/10.1016/j.conbuildmat.2022.127469",
+    "title": "2022-Prediction of crushed numbers and sizes of ballast particles after breakage using machine learning techniques",
+    "panels": [
+      {
+        "label": "Fig. 1",
+        "page": 2,
+        "caption": "Fig. 1. Degraded ballast forms (a) ballast wearing, (b) breakage, (c) angular \nprojection [12,13].",
+        "crop": [
+          47.71969985961914,
+          53.433013916015625,
+          278.51971435546875,
+          250.82501220703125
+        ]
+      },
+      {
+        "label": "Fig. 4",
+        "page": 4,
+        "caption": "Fig. 4. Support plates and contact force diagrams for different support plates.",
+        "crop": [
+          118.47200012207031,
+          53.415985107421875,
+          476.85601806640625,
+          487.68798828125
+        ]
+      },
+      {
+        "label": "Fig. 8",
+        "page": 7,
+        "caption": "Fig. 8. Framework of executed BPNN for crushed particle numbers.",
+        "crop": [
+          111.38600158691406,
+          455.9643859863281,
+          483.88201904296875,
+          699.4364013671875
+        ]
+      },
+      {
+        "label": "Fig. 11",
+        "page": 11,
+        "caption": "Fig. 11. The procedure of DEM simulation of single-particle crushing tests: (a) \n3D scanning device, (b) the creation of the STL file of particles using the 3D- \nscanning method, (c) the generation of pebbles within the particle geometry \ndomain, (d) modeling different particle support conditions (e) applying force by \na wall element, and (f) force–displacement curve for particle No.1.",
+        "crop": [
+          41.42679977416992,
+          53.43499755859375,
+          284.8988037109375,
+          428.9549865722656
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p13",
+    "doi": "10.1061/(asce)gm.1943-5622.0001689",
+    "src": "images/papers/p13-montage.jpg",
+    "source": "https://doi.org/10.1061/(ASCE)GM.1943-5622.0001689",
+    "title": "2020-Numerical and Experimental Analysis of Lateral Resistance of Biblock Sleeper on Ballasted Tracks",
+    "panels": [
+      {
+        "label": "Fig. 4",
+        "page": 3,
+        "caption": "Fig. 4. Single-tie push tests setup.",
+        "crop": [
+          319.4679870605469,
+          347.8480224609375,
+          568.844970703125,
+          578.1920166015625
+        ]
+      },
+      {
+        "label": "Fig. 8",
+        "page": 5,
+        "caption": "Fig. 8. (a) 3D laser scanner of ballast particles; and (b) scanned ballast particles. (Data from Guo et al. 2018.)",
+        "crop": [
+          136.58799743652344,
+          416.24798583984375,
+          475.55902099609375,
+          720.031982421875
+        ]
+      },
+      {
+        "label": "Fig. 10",
+        "page": 6,
+        "caption": "Fig. 10. Simulated domain of the ballasted track.",
+        "crop": [
+          136.58799743652344,
+          436.0480041503906,
+          475.55902099609375,
+          626.6719970703125
+        ]
+      },
+      {
+        "label": "Fig. 11",
+        "page": 7,
+        "caption": "Fig. 11. 3D view of: (a) monoblock; and (b) biblock panels.",
+        "crop": [
+          43.347999572753906,
+          34.527992248535156,
+          292.7250061035156,
+          122.7919921875
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p14",
+    "doi": "10.3390/jcs6010007",
+    "src": "images/papers/p14-montage.jpg",
+    "source": "https://doi.org/10.3390/jcs6010007",
+    "title": "2021-State-of-the-art review on additive manufacturing technology in railway infrastructure systems",
+    "panels": [
+      {
+        "label": "Fig. 4",
+        "page": 4,
+        "caption": "Figure 4. Schematic diagram of laser cladding process.",
+        "crop": [
+          164.58001708984375,
+          538.1471557617188,
+          485.1400146484375,
+          742.0670776367188
+        ]
+      },
+      {
+        "label": "Fig. 6",
+        "page": 7,
+        "caption": "Figure 6. The change of railway fastener systems.",
+        "crop": [
+          40.737003326416016,
+          159.18798828125,
+          554.2570190429688,
+          299.0279846191406
+        ]
+      },
+      {
+        "label": "Fig. 10",
+        "page": 9,
+        "caption": "Figure 10. Three-dimensional (3D)-printed composite bearers with multi-layers.",
+        "crop": [
+          154.86001586914062,
+          313.5549621582031,
+          498.2200012207031,
+          401.3149719238281
+        ]
+      },
+      {
+        "label": "Fig. 15",
+        "page": 14,
+        "caption": "Figure 15. Qualitative comparison of costs between 3D printing technology and conventional\nmanufacturing technology. (a) cost of the level of product complexity; (b) cost of the product\nquantity.",
+        "crop": [
+          79.91200256347656,
+          91.40104675292969,
+          516.5120239257812,
+          275.88104248046875
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p15",
+    "doi": "10.1016/j.ijmecsci.2022.107738",
+    "src": "images/papers/p15-montage.jpg",
+    "source": "https://doi.org/10.1016/j.ijmecsci.2022.107738",
+    "title": "2022-Experimental and DEM investigation of axially-loaded behaviours of IWP-based structures",
+    "panels": [
+      {
+        "label": "Fig. 3",
+        "page": 3,
+        "caption": "Fig. 3. The main and secondary Skeletal-IWP units and their topological bones (a) the main Skeletal-IWP unit with the Body-Centered Cubic (BCC) topology, (b) the \nIWP surface split the cube into two non-intersected extents with an identical volume and (c) the secondary Skeletal-IWP unit with the Edge-Centered Cubic topology.",
+        "crop": [
+          91.65670776367188,
+          467.0052795410156,
+          503.6567077636719,
+          718.6552734375
+        ]
+      },
+      {
+        "label": "Fig. 4",
+        "page": 4,
+        "caption": "Fig. 4. Axially-loaded test setup. The 3D printed IWP based specimens are placed in the loading area of the universal testing machine. The load and the displacement \nare recorded by the data acquisition system automatically.",
+        "crop": [
+          115.63799285888672,
+          416.9052734375,
+          479.63800048828125,
+          718.6552734375
+        ]
+      },
+      {
+        "label": "Fig. 11",
+        "page": 7,
+        "caption": "Fig. 11. Cracking areas, marked in red lines, of Main Skeletal-IWP unit (case \nM111) and Secondary Skeletal-IWP unit (case S111) in DEM simulation.",
+        "crop": [
+          37.6282958984375,
+          531.634033203125,
+          293.4783020019531,
+          701.5340576171875
+        ]
+      },
+      {
+        "label": "Fig. 17",
+        "page": 13,
+        "caption": "Fig. 17. Ball movement trends of the main Skeletal-IWP unit (a) Isotropic view of transparent Balls and velocity arrows, (b) isotropic view of velocity arrows, (c) \nfront view of velocity arrows, (d) top view of velocity arrows, (e) Cutting planes, (f) velocity arrows around cutting plane 1, and (g) velocity arrows around cutting \nplane 2.",
+        "crop": [
+          85.64720916748047,
+          53.40199279785156,
+          509.647216796875,
+          279.85198974609375
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p16",
+    "doi": "10.1016/j.matpr.2022.04.691",
+    "src": "images/papers/p16-montage.jpg",
+    "source": "https://doi.org/10.1016/j.matpr.2022.04.691",
+    "title": "2022-Numerical investigation of porous composite honeycomb track slab under point load",
+    "panels": [
+      {
+        "label": "Fig. 1",
+        "page": 2,
+        "caption": "Fig. 1. Dimensions of the track models(a) ballasted track; (b) gradient honeycomb track support; (c) uniform honeycomb track support.",
+        "crop": [
+          46.92599868774414,
+          598.3779907226562,
+          546.989013671875,
+          740.594970703125
+        ]
+      },
+      {
+        "label": "Fig. 2",
+        "page": 3,
+        "caption": "Fig. 2. Examples of FEM models: (a) Half FEM model of gradient honeycomb track; (b) Meshed FEM model of gradient honeycomb track.",
+        "crop": [
+          123.42400360107422,
+          65.90499877929688,
+          473.5880126953125,
+          455.2969970703125
+        ]
+      },
+      {
+        "label": "Fig. 3",
+        "page": 4,
+        "caption": "Fig. 3. Vertical deﬂection of track components for ballasted track, uniform honeycomb track and gradient honeycomb track: (a) Rail deﬂection; (b) sleeper deﬂection; (c)\nsupporting layer deﬂection; (d) subgrade deﬂection.",
+        "crop": [
+          66.7239990234375,
+          65.90499877929688,
+          524.6719970703125,
+          442.09698486328125
+        ]
+      },
+      {
+        "label": "Fig. 4",
+        "page": 5,
+        "caption": "Fig. 4. Vertical acceleration of track components for ballasted track, uniform honeycomb track and gradient honeycomb track: (a) Rail acceleration; (b) sleeper acceleration;\n(c) supporting layer acceleration and (d) subgrade acceleration.",
+        "crop": [
+          66.7239990234375,
+          65.90499877929688,
+          524.6719970703125,
+          448.3970031738281
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p17",
+    "doi": "10.1016/j.compstruct.2023.117510",
+    "src": "images/papers/p17-montage.jpg",
+    "source": "https://doi.org/10.1016/j.compstruct.2023.117510",
+    "title": "2023-Experimental investigations into nonlinear dynamic behaviours of triply periodical minimal surface structures",
+    "panels": [
+      {
+        "label": "Fig. 4",
+        "page": 5,
+        "caption": "Fig. 4. 3D printed cellular structures with different TPMS topologies manufactured using stereolithography(SLA) and made from “photosensitive 8200” resin. (a) \nSheetal type TPMS cellular structures, (b) Main solid type TPMS cellular structures and (c) Secondary solid type TPMS cellular structures.",
+        "crop": [
+          100.728515625,
+          363.05255126953125,
+          496.70220947265625,
+          490.68414306640625
+        ]
+      },
+      {
+        "label": "Fig. 6",
+        "page": 6,
+        "caption": "Fig. 6. Impact hammer test equipments. The P8004 data acquisition tool and the DATS software from PROSIG Ltd.",
+        "crop": [
+          100.45610809326172,
+          268.5635986328125,
+          494.77191162109375,
+          418.9320068359375
+        ]
+      },
+      {
+        "label": "Fig. 10",
+        "page": 9,
+        "caption": "Fig. 10. The natural frequency results and the linear fit of the main solid (MS) type, secondary solid(SS) type and sheetal (SH) type of TPMS-based structures under \nloads with different force magnitudes in forty impact hammer tests. (a) IWP structures, (b) Primitive structures and (c) Gyroid structures. And (d) the linear fit of the \nfrequencies of all TPMS structures.",
+        "crop": [
+          40.47188186645508,
+          313.98565673828125,
+          554.807861328125,
+          528.513671875
+        ]
+      },
+      {
+        "label": "Fig. 13",
+        "page": 14,
+        "caption": "Fig. 13. Damping ratios, estimated using HPBM, ECFM and LDM based on the impact hammer tests, of (a) MS-IWP structure, (b) SS-IWP structure and (c) SH- \nIWP structure.",
+        "crop": [
+          172.37684631347656,
+          366.8848876953125,
+          423.048828125,
+          575.3648681640625
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p18",
+    "doi": "10.1016/j.engstruct.2023.116429",
+    "src": "images/papers/p18-montage.jpg",
+    "source": "https://doi.org/10.1016/j.engstruct.2023.116429",
+    "title": "2023-Mechanical performance of Bio-Inspired Gyroid and Primitive concrete structures under combined compression and torsion Loads A discrete element method study",
+    "panels": [
+      {
+        "label": "Fig. 2",
+        "page": 3,
+        "caption": "Fig. 2. Unit cells with 0.5 relative density of the main skeletal and secondary \nskeletal TPMS structures of the Gyroid and Primitive surfaces.",
+        "crop": [
+          42.05039978027344,
+          290.56597900390625,
+          284.22637939453125,
+          539.2219848632812
+        ]
+      },
+      {
+        "label": "Fig. 6",
+        "page": 5,
+        "caption": "Fig. 6. The validation of the discrete element method (DEM) models, which employ Ball elements and contact elements, against the tested specimens described in \n[53]. The figure depicts (a) Main Skeletal-Gyroid (MS-Gyroid) structure and (b) Secondary Skeletal-Primitive (SS-Primitive) structure.",
+        "crop": [
+          68.86609649658203,
+          370.207275390625,
+          526.4661254882812,
+          718.6552734375
+        ]
+      },
+      {
+        "label": "Fig. 9",
+        "page": 8,
+        "caption": "Fig. 9. DEM modelling of TPMS based structures under coupled compression \nand torsion loads. The compressive load is applied by the motion of the Wall \nElements. The torsional load is applied by the rotation of the Wall elements.",
+        "crop": [
+          42.05039978027344,
+          53.40399169921875,
+          284.22637939453125,
+          213.0679931640625
+        ]
+      },
+      {
+        "label": "Fig. 17",
+        "page": 12,
+        "caption": "Fig. 17. The cracking patterns of the Gyroid and Primitive based structures under combined compression load and torsion load at the spin rate of 20◦/min.",
+        "crop": [
+          54.74959945678711,
+          53.412994384765625,
+          540.5736083984375,
+          262.9010009765625
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p19",
+    "doi": "10.3390/s23041786",
+    "src": "images/papers/p19-montage.jpg",
+    "source": "https://doi.org/10.3390/s23041786",
+    "title": "2023-Multi-Hazard Effects of Crosswinds on Cascading Failures of Conventional and Interspersed Railway Tracks Exposed to Ballast Washaway and Moving Train Loads",
+    "panels": [
+      {
+        "label": "Fig. 5",
+        "page": 5,
+        "caption": "Figure 5. 1:4 interspersed track FEM model.",
+        "crop": [
+          160.74700927734375,
+          343.9289855957031,
+          560.7470092773438,
+          471.76898193359375
+        ]
+      },
+      {
+        "label": "Fig. 6",
+        "page": 6,
+        "caption": "Figure 6. Deterioration of ballasted track under water ponding conditions: (a) the softening and\nmovement of subgrade layer and (b) the ballast particle rearrangement.",
+        "crop": [
+          159.24000549316406,
+          225.669189453125,
+          543.0400390625,
+          342.2771911621094
+        ]
+      },
+      {
+        "label": "Fig. 8",
+        "page": 7,
+        "caption": "Figure 8. Different track support conditions under even axle loads: (a) normal support condition,\n(b) small-scale loss support condition, (c) large-scale loss support condition and (d) full-scale loss\nsupport condition.",
+        "crop": [
+          160.74159240722656,
+          296.20245361328125,
+          516.2965698242188,
+          495.679443359375
+        ]
+      },
+      {
+        "label": "Fig. 11",
+        "page": 10,
+        "caption": "Figure 11. Dynamic track response under different track support states and axle loads at 60 km/h.\n(a) timber track with even axle loads and largescale loss support, (b) timber track with uneven axle\nloads and large–scale loss support, (c) 1in4 track with even axle loads and large–scale loss support\nand (d) 1in4 track with uneven axle loads and large–scale loss support.",
+        "crop": [
+          167.54612731933594,
+          502.4628601074219,
+          473.44873046875,
+          712.4239501953125
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p20",
+    "doi": "10.1142/s0219455424502614",
+    "src": "images/papers/p20-montage.jpg",
+    "source": "https://doi.org/10.1142/S0219455424502614",
+    "title": "2024-Nonlinear Instabilities of TPMS Cellular Units Under Axially Loaded Conditions",
+    "panels": [
+      {
+        "label": "Fig. 1",
+        "page": 4,
+        "caption": "Fig. 1. Diagram of various types of TPMS.",
+        "crop": [
+          59.894996643066406,
+          398.2449951171875,
+          404.0959777832031,
+          593.3099975585938
+        ]
+      },
+      {
+        "label": "Fig. 3",
+        "page": 8,
+        "caption": "Fig. 3. Axially loaded tests. (a) Schematic of compressive tests and (b) sample states before, during\nand after the test.",
+        "crop": [
+          54.01499938964844,
+          84.55599975585938,
+          409.9750061035156,
+          374.30999755859375
+        ]
+      },
+      {
+        "label": "Fig. 6",
+        "page": 11,
+        "caption": "Fig. 6. Schematic of FEM models of CB-R and IWP-4.",
+        "crop": [
+          116.05499267578125,
+          84.67498779296875,
+          370.85400390625,
+          301.1099853515625
+        ]
+      },
+      {
+        "label": "Fig. 12",
+        "page": 18,
+        "caption": "Fig. 12. Distributions of the equivalent stress at the peak load for all types of units.",
+        "crop": [
+          52.93499755859375,
+          84.50701904296875,
+          410.93499755859375,
+          406.2300109863281
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p21",
+    "doi": "10.1016/j.tws.2024.111973",
+    "src": "images/papers/p21-montage.jpg",
+    "source": "https://doi.org/10.1016/j.tws.2024.111973",
+    "title": "2024-The axially-loaded behaviours of Schwarz Primitive (SP)-based structures an experimental and DEM study",
+    "panels": [
+      {
+        "label": "Fig. 3",
+        "page": 4,
+        "caption": "Fig. 3. The volumetric domains of the main and secondary SP unit cells.",
+        "crop": [
+          310.1510009765625,
+          53.406982421875,
+          554.1510009765625,
+          290.0569763183594
+        ]
+      },
+      {
+        "label": "Fig. 5",
+        "page": 5,
+        "caption": "Fig. 5. Diagram depicting the axial load test configuration, wherein 3D-printed \nSP units are positioned within the load application zone of the universal test \nmachine, with both load and displacement automatically captured via the data \nacquisition system.",
+        "crop": [
+          41.14330291748047,
+          365.3009948730469,
+          285.143310546875,
+          600.4509887695312
+        ]
+      },
+      {
+        "label": "Fig. 12",
+        "page": 10,
+        "caption": "Fig. 12. Post-compression visualisation of fragmented DEM representations. Depicted below are models employing Ball elements, whilst Contact elements have been \nillustrated above.",
+        "crop": [
+          115.63799285888672,
+          53.40998840332031,
+          479.63800048828125,
+          297.7099914550781
+        ]
+      },
+      {
+        "label": "Fig. 20",
+        "page": 15,
+        "caption": "Fig. 20. Contact force chain coloured by the magnitude of contact forces at a strain of 2 %: (a) Main SP structure for the ‘555’ configuration, and (b) Secondary SP \nstructure for the ‘555’ configuration.",
+        "crop": [
+          61.666107177734375,
+          53.43498229980469,
+          533.6661376953125,
+          286.4849853515625
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p22",
+    "doi": "10.1016/j.trgeo.2026.101993",
+    "src": "images/papers/p22-montage.jpg",
+    "source": "https://doi.org/10.1016/j.trgeo.2026.101993",
+    "title": "2026-Experimental and Numerical Study on the Lateral Resistance of Recycled Plastic Sleepers on Ballasted track",
+    "panels": [
+      {
+        "label": "Fig. 2",
+        "page": 3,
+        "caption": "Fig. 2. Wings for recycled plastic sleeper.",
+        "crop": [
+          125.55899810791016,
+          234.11395263671875,
+          469.6869812011719,
+          525.10595703125
+        ]
+      },
+      {
+        "label": "Fig. 3",
+        "page": 3,
+        "caption": "Fig. 3. Lateral resistance test set-up.",
+        "crop": [
+          125.21900177001953,
+          558.86767578125,
+          470.0669860839844,
+          728.1796875
+        ]
+      },
+      {
+        "label": "Fig. 7",
+        "page": 6,
+        "caption": "Fig. 7. 3D scanning and DEM generation of Ballast particles.",
+        "crop": [
+          38.47869873046875,
+          53.43800354003906,
+          287.7586975097656,
+          271.51800537109375
+        ]
+      },
+      {
+        "label": "Fig. 13",
+        "page": 10,
+        "caption": "Fig. 13. Schematic illustration of sleeper–ballast contacts in different regions for mono-block and winged plastic sleepers.",
+        "crop": [
+          40.122798919677734,
+          53.406982421875,
+          555.1787719726562,
+          387.4549865722656
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p23",
+    "doi": "10.12688/openreseurope.17809.2",
+    "src": "images/papers/p23-montage.jpg",
+    "source": "https://doi.org/10.12688/openreseurope.17809.2",
+    "title": "Digital_twins_for_managing_bridge_climate_change_adaptation",
+    "panels": [
+      {
+        "label": "Fig. 2",
+        "page": 6,
+        "caption": "Figure 2. Diagram showing the BIM levels from 3D - 7D. Reused with permission from 13.",
+        "crop": [
+          169.26341247558594,
+          70.84759521484375,
+          443.83660888671875,
+          344.3860778808594
+        ]
+      },
+      {
+        "label": "Fig. 3",
+        "page": 9,
+        "caption": "Figure 3. 3D Model view of the bridge.",
+        "crop": [
+          73.12919616699219,
+          82.14198303222656,
+          281.79632568359375,
+          270.36187744140625
+        ]
+      },
+      {
+        "label": "Fig. 4",
+        "page": 9,
+        "caption": "Figure 4. Complete Timeline of the bridge on Navisworks 2022.",
+        "crop": [
+          54.7747802734375,
+          320.77191162109375,
+          557.69775390625,
+          530.6912841796875
+        ]
+      },
+      {
+        "label": "Fig. 8",
+        "page": 11,
+        "caption": "Figure 8. Graph of the total estimated carbon emission of each Adaptation Measure.",
+        "crop": [
+          102.88587951660156,
+          350.4372863769531,
+          511.0416259765625,
+          572.933349609375
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p24",
+    "doi": "10.1016/j.istruc.2026.113466",
+    "src": "images/papers/p24-montage.jpg",
+    "source": "https://doi.org/10.1016/j.istruc.2026.113466",
+    "title": "Manuscript_Compressive test comparsion_revised 2026-07-5",
+    "panels": [
+      {
+        "label": "Fig. 2",
+        "page": 10,
+        "caption": "Fig. 2. The Shell type, main type and secondary type of IWP SP and Gyroid 3D printed specimens. \n242",
+        "crop": [
+          85.72000122070312,
+          308.679931640625,
+          510.20001220703125,
+          654.5599365234375
+        ]
+      },
+      {
+        "label": "Fig. 3",
+        "page": 13,
+        "caption": "Fig. 3. Compressive test setting up \n297",
+        "crop": [
+          195.63998413085938,
+          103.72000122070312,
+          399.67999267578125,
+          267.44000244140625
+        ]
+      },
+      {
+        "label": "PDF p. 17",
+        "page": 17,
+        "caption": "",
+        "crop": [
+          85.47999572753906,
+          528.8800048828125,
+          510.44000244140625,
+          728.1199951171875
+        ]
+      },
+      {
+        "label": "Fig. 9",
+        "page": 26,
+        "caption": "",
+        "crop": [
+          85.84000396728516,
+          103.72000122070312,
+          509.9599914550781,
+          584.9600219726562
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "作者稿"
+  },
+  {
+    "id": "p25",
+    "doi": "10.1007/s11629-025-0043-0",
+    "src": "images/papers/p25-montage.jpg",
+    "source": "https://doi.org/10.1007/s11629-025-0043-0",
+    "title": "Coupled effects of temperature gradients and differential settlement on damage and debonding in ballastless track at subgrade-tunnel transitions",
+    "panels": [
+      {
+        "label": "Fig. 4",
+        "page": 5,
+        "caption": "",
+        "crop": [
+          125.19999694824219,
+          325.84002685546875,
+          469.760009765625,
+          466.8800048828125
+        ]
+      },
+      {
+        "label": "Fig. 7",
+        "page": 6,
+        "caption": "",
+        "crop": [
+          321.760009765625,
+          187.59999084472656,
+          518.9600219726562,
+          340.3999938964844
+        ]
+      },
+      {
+        "label": "Fig. 12",
+        "page": 9,
+        "caption": "",
+        "crop": [
+          60.15999984741211,
+          373.8399963378906,
+          531.4400024414062,
+          537.6799926757812
+        ]
+      },
+      {
+        "label": "Fig. 21",
+        "page": 12,
+        "caption": "",
+        "crop": [
+          301.6000061035156,
+          598.9600219726562,
+          532.1600341796875,
+          724.6400146484375
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  },
+  {
+    "id": "p26",
+    "doi": "10.1016/j.soildyn.2024.108820",
+    "src": "images/papers/p26-montage.jpg",
+    "source": "https://doi.org/10.1016/j.soildyn.2024.108820",
+    "title": "Discrete element analysis of the dynamic behavior of ballast track-subgrade system under train dynamic load",
+    "panels": [
+      {
+        "label": "Fig. 1",
+        "page": 2,
+        "caption": "Fig. 1. 3D laser scanning of the outer contour of track ballast particle.",
+        "crop": [
+          306.5799865722656,
+          600.972412109375,
+          558.4039916992188,
+          728.2364501953125
+        ]
+      },
+      {
+        "label": "Fig. 6",
+        "page": 4,
+        "caption": "Fig. 6. Rail-sleeper-ballast bed-subgrade system discrete element model.",
+        "crop": [
+          306.5799865722656,
+          642.1563720703125,
+          558.4039916992188,
+          728.2363891601562
+        ]
+      },
+      {
+        "label": "Fig. 12",
+        "page": 7,
+        "caption": "Fig. 12. Detailed view of particle contact forces.",
+        "crop": [
+          37.628299713134766,
+          53.397003173828125,
+          289.4523010253906,
+          217.093017578125
+        ]
+      },
+      {
+        "label": "Fig. 19",
+        "page": 10,
+        "caption": "Fig. 19. Frictional energy consumption of ballast particles in some ballast \nboxes (Condition 1).",
+        "crop": [
+          37.628299713134766,
+          256.6479797363281,
+          289.4523010253906,
+          473.9119873046875
+        ]
+      }
+    ],
+    "credit": "论文原图组合 · 裁取并重新排版",
+    "version": "论文正文"
+  }
+]
