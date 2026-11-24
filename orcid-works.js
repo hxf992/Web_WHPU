@@ -34,14 +34,22 @@
   const fallback = document.querySelector('[data-orcid-fallback]');
   const make = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
   function safeUrl(value) { try { const u = new URL(value); return /^https?:$/.test(u.protocol) ? u.href : ''; } catch { return ''; } }
-  function art(title) {
-    const t = title.toLowerCase();
-    const porous = /tpms|minimal surface|gyroid|primitive|cellular|porous|lattice|3d.print|additive manufacturing/.test(t);
-    const tile = make('div', 'work-art ' + (porous ? 'work-art-porous' : 'work-art-track'));
-    tile.setAttribute('role', 'img'); tile.setAttribute('aria-label', porous ? '多孔结构研究主题示意图' : '铁路与工程研究主题示意图');
-    tile.append(make('span', '', porous ? 'POROUS STRUCTURES' : 'RAILWAY & ENGINEERING'));
-    tile.append(make('small', '', '研究主题示意图'));
-    return tile;
+  // Only figures verified against their corresponding open-access article appear here.
+  const figures = {
+    '10.3390/s23041786': {src:'https://mdpi-res.com/sensors/sensors-23-01786/article_deploy/html/images/sensors-23-01786-g005-550.jpg', source:'https://www.mdpi.com/1424-8220/23/4/1786', caption:'图 5：1:4 混合轨枕轨道有限元模型', credit:'Fu, Yang & Kaewunruen (2023), Sensors, CC BY 4.0'},
+    '10.3390/jcs6030071': {src:'https://mdpi-res.com/jcs/jcs-06-00071/article_deploy/html/images/jcs-06-00071-g004-550.jpg', source:'https://www.mdpi.com/2504-477X/6/3/71', caption:'图 4：Schwarz Primitive 单胞 CAD 模型', credit:'Sengsri, Fu & Kaewunruen (2022), J. Compos. Sci., CC BY 4.0'},
+    '10.3390/jcs6010007': {src:'https://mdpi-res.com/jcs/jcs-06-00007/article_deploy/html/images/jcs-06-00007-g010-550.jpg', source:'https://www.mdpi.com/2504-477X/6/1/7', caption:'图 10：多层 3D 打印复合岔枕', credit:'Fu & Kaewunruen (2021), J. Compos. Sci., CC BY 4.0'}
+  };
+  function art(work) {
+    const info = figures[work.doi];
+    const figure = make('figure', 'paper-figure');
+    if (!info) { figure.append(make('p', 'figure-unavailable', '论文原图待补充')); return figure; }
+    const img = make('img'); img.src = info.src; img.alt = info.caption; img.loading = 'lazy';
+    img.addEventListener('error', () => { img.remove(); figure.prepend(make('p', 'figure-unavailable', '原图暂时无法加载，请查看论文来源')); });
+    const caption = make('figcaption'); caption.append(document.createTextNode(info.caption + ' · ' + info.credit + ' · '));
+    const source = make('a', '', '原文与图源'); source.href = info.source; source.target = '_blank'; source.rel = 'noopener noreferrer'; caption.append(source);
+    const license = make('a', '', '许可'); license.href = 'https://creativecommons.org/licenses/by/4.0/'; license.target = '_blank'; license.rel = 'noopener noreferrer'; caption.append(document.createTextNode(' · '), license);
+    figure.append(img, caption); return figure;
   }
   function render(data) {
     if (!Array.isArray(data.group)) throw new Error('invalid ORCID response');
@@ -63,7 +71,7 @@
     if (!works.length) throw new Error('no public journal articles');
     const fragment = document.createDocumentFragment();
     for (const w of works) {
-      const card = make('article', 'orcid-work'); card.append(art(w.title));
+      const card = make('article', 'orcid-work'); card.append(art(w));
       const content = make('div', 'orcid-work-body');
       content.append(make('p', 'orcid-meta', [w.year || '年份未提供', w.journal].filter(Boolean).join(' · ')));
       content.append(make('h3', '', w.title));
