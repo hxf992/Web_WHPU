@@ -238,8 +238,8 @@ var _hmt = _hmt || [];
         
         /* 课题组成员网格 - 带滚动条 */
         .member-grid-container {
-            max-height: 600px;
-            overflow-y: auto;
+            max-height: none;
+            overflow: visible;
             padding-right: 10px;
             margin: 2rem 0 1rem;
             border-radius: 18px;
@@ -329,8 +329,8 @@ var _hmt = _hmt || [];
         
         /* ===== 科研成果网格 ===== */
         .publication-grid-container {
-            max-height: 700px;
-            overflow-y: auto;
+            max-height: none;
+            overflow: visible;
             padding-right: 10px;
             margin: 2rem 0 1rem;
             border-radius: 18px;
@@ -1291,8 +1291,6 @@ body{background:#f1f5f5;color:#203945;background-image:none}body::before,.floati
         .pub-links { flex-direction: column; }
         .pub-link { width: 100%; }
         .btn-detail { width: 100%; }
-        .member-grid-container { max-height: 500px; }
-        .publication-grid-container { max-height: 600px; }
         .floating-circles div {
             opacity: 0.15;
         }
@@ -1450,7 +1448,7 @@ body{background:#f1f5f5;color:#203945;background-image:none}body::before,.floati
 </script>
 
 <script src="orcid-works.js" defer></script>
-<link rel="stylesheet" href="site-theme.css">
+<link rel="stylesheet" href="site-theme.css?v=20261125">
 <script src="pointer-effects.js" defer></script>
 </body>
 </html>
