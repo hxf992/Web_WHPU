@@ -652,7 +652,7 @@ var _hmt = _hmt || [];
 <style>
 body{background:#f1f5f5;color:#203945;background-image:none}body::before,.floating-circles,#particle-canvas{display:none}.container{max-width:1180px}.lab-header{min-height:420px;display:flex;flex-direction:column;justify-content:center;padding:3.5rem;background:linear-gradient(90deg,rgba(8,35,49,.94),rgba(8,35,49,.25)),url('images/railway-hero.jpg') center/cover;border:0;border-radius:8px;box-shadow:none}.lab-name{color:#fff;background:none;-webkit-text-fill-color:initial;font-family:Georgia,"Microsoft YaHei",serif;font-size:clamp(2rem,5vw,3.6rem)}.lab-affiliation{color:#dbeceb;border-color:#83c6bf;max-width:650px;line-height:1.8}.image-guide{background:#fff;box-shadow:none;border:1px solid #dce5e6;border-radius:8px}.image-guide code{font-family:inherit;color:#17696b}.image-guide ul{list-style:none}.section-nav{gap:.7rem}.nav-item{border-radius:4px;background:white;box-shadow:none}.section-title{color:#183d4c}.section-title:after{width:48px;background:#448f89}.member-grid-container,.publication-grid-container{max-height:none;overflow:visible}.member-card,.activity-list{background:white;border:1px solid #dce5e6;border-radius:8px;box-shadow:none}.member-card:hover,.publication-card:hover{transform:none;box-shadow:0 8px 24px #133a4b12}.member-desc{font-size:1rem}.member-role{font-size:.9rem}.publication-card{background:white}.orcid-work{backdrop-filter:none}.orcid-work h3{font-size:1.1rem}.orcid-work .orcid-summary{font-size:.95rem}@media(max-width:700px){.container{padding:1rem}.lab-header{min-height:340px;padding:2rem}.section-nav{gap:.5rem}.nav-item{padding:.5rem .8rem}.image-guide{padding:1.3rem}}
 </style></head>
-<body>
+<body class="lab-page">
 <canvas id="particle-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
 
 <!-- 浮动背景圆层 - 已放大尺寸 -->
@@ -672,6 +672,11 @@ body{background:#f1f5f5;color:#203945;background-image:none}body::before,.floati
 		
     </header>
 
+<div class="research-ribbon" aria-label="课题组研究方向">
+  <a href="#publications" class="research-tile"><img src="images/papers/p22-montage.jpg" alt="轨枕试验与离散元模拟原图组合"><div><span>RAILWAY INFRASTRUCTURE</span><h2>铁路基础设施</h2><p>有砟道床 · 轨枕 · 轨道韧性</p></div></a>
+  <a href="#publications" class="research-tile"><img src="images/papers/p21-montage.jpg" alt="多孔结构试验与计算原图组合"><div><span>ARCHITECTED MATERIALS</span><h2>多孔与仿生结构</h2><p>TPMS · 3D 打印 · 力学性能</p></div></a>
+  <a href="#publications" class="research-tile"><img src="images/papers/p12-montage.jpg" alt="道砟颗粒破碎与机器学习原图组合"><div><span>DATA & PHYSICS</span><h2>数据与物理融合</h2><p>机器学习 · PINN · 正反演</p></div></a>
+</div>
     <div class="image-guide">
         <h4>课题组简介</h4>
         <p>课题组围绕铁路基础设施与智能建造，结合试验、数值模拟和数据驱动方法，研究有砟轨道、轨枕及新型多孔结构。</p>
@@ -714,7 +719,7 @@ body{background:#f1f5f5;color:#203945;background-image:none}body::before,.floati
                     <div class="member-desc">北京交通大学2025硕士研究生，方向：铁路道床探地雷达探测与信号处理。</div>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar" aria-hidden="true">邢</div>
+                    <div class="member-avatar"><img src="images/xingzhongshuo.png" alt="邢忠硕"></div>
                     <div class="member-name">邢忠硕</div>
                     <div class="member-role">2026级研究生</div>
                     <div class="member-desc">研究方向：基于物理信息神经网络（PINN）的道床脏污正演与反演。</div>
@@ -727,7 +732,7 @@ body{background:#f1f5f5;color:#203945;background-image:none}body::before,.floati
     <section id="publications">
         <h2 class="section-title">📄 科研成果</h2>
         
-        <div data-orcid-works><p class="orcid-intro">成果来自付豪的 <a class="orcid-header-link" href="https://orcid.org/0000-0003-1262-8113" target="_blank" rel="noopener noreferrer">ORCID 公开记录</a>。中文简介依据论文题名整理，未整理的条目会明确标注；已核实的配图来自对应论文；尚未核实的原图标为待补充。</p><p class="orcid-status" role="status">正在读取 ORCID 公开成果；如连接不可用，将显示原有列表。</p><div class="orcid-list"></div></div><div class="publication-grid-container" data-orcid-fallback>
+        <div data-orcid-works><p class="orcid-intro">成果来自付豪的 <a class="orcid-header-link" href="https://orcid.org/0000-0003-1262-8113" target="_blank" rel="noopener noreferrer">ORCID 公开记录</a>。中文简介依据论文题名整理，未整理的条目会明确标注；配图从对应论文中选取，点击组合图可放大查看图号与出处。</p><p class="orcid-status" role="status">正在读取 ORCID 公开成果；如连接不可用，将显示原有列表。</p><div class="orcid-list"></div></div><div class="publication-grid-container" data-orcid-fallback>
             <div class="publication-grid">
                 <!-- ===== 2026年论文 ===== -->
                 <!-- 1. Fu 2026 Transportation Geotechnics (最新) -->
@@ -1522,5 +1527,6 @@ body{background:#f1f5f5;color:#203945;background-image:none}body::before,.floati
 </script>
 
 <script src="orcid-works.js" defer></script>
+<link rel="stylesheet" href="site-theme.css">
 </body>
 </html>
