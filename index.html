@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -648,7 +648,10 @@ var _hmt = _hmt || [];
             padding: 1.5rem;
         }
     </style>
-</head>
+<link rel="stylesheet" href="orcid-works.css">
+<style>
+body{background:#f1f5f5;color:#203945;background-image:none}body::before,.floating-circles,#particle-canvas{display:none}.container{max-width:1180px}.lab-header{min-height:420px;display:flex;flex-direction:column;justify-content:center;padding:3.5rem;background:linear-gradient(90deg,rgba(8,35,49,.94),rgba(8,35,49,.25)),url('images/railway-hero.jpg') center/cover;border:0;border-radius:8px;box-shadow:none}.lab-name{color:#fff;background:none;-webkit-text-fill-color:initial;font-family:Georgia,"Microsoft YaHei",serif;font-size:clamp(2rem,5vw,3.6rem)}.lab-affiliation{color:#dbeceb;border-color:#83c6bf;max-width:650px;line-height:1.8}.image-guide{background:#fff;box-shadow:none;border:1px solid #dce5e6;border-radius:8px}.image-guide code{font-family:inherit;color:#17696b}.image-guide ul{list-style:none}.section-nav{gap:.7rem}.nav-item{border-radius:4px;background:white;box-shadow:none}.section-title{color:#183d4c}.section-title:after{width:48px;background:#448f89}.member-grid-container,.publication-grid-container{max-height:none;overflow:visible}.member-card,.activity-list{background:white;border:1px solid #dce5e6;border-radius:8px;box-shadow:none}.member-card:hover,.publication-card:hover{transform:none;box-shadow:0 8px 24px #133a4b12}.member-desc{font-size:1rem}.member-role{font-size:.9rem}.publication-card{background:white}.orcid-work{backdrop-filter:none}.orcid-work h3{font-size:1.1rem}.orcid-work .orcid-summary{font-size:.95rem}@media(max-width:700px){.container{padding:1rem}.lab-header{min-height:340px;padding:2rem}.section-nav{gap:.5rem}.nav-item{padding:.5rem .8rem}.image-guide{padding:1.3rem}}
+</style></head>
 <body>
 <canvas id="particle-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
 
@@ -669,18 +672,11 @@ var _hmt = _hmt || [];
 		
     </header>
 
-    <!-- 课题组简介 -->
     <div class="image-guide">
-        <h4>📸 课题组简介</h4>
-        <p><strong>🚀研究方向1：</strong> - <code>3D打印多孔结构</code>、<code>超结构</code>、<code>仿生结构</code>。</p>
-        <p><strong>🚀研究方向2：</strong> - <code>铁路基础设施</code>、<code>铁路轨枕</code>、<code>有砟道床</code>。</p>
-        <p><strong>🚀研究方向3：</strong> - <code>机器学习</code>、<code>深度学习</code>在土木工程的应用。</p>
-        <ul>
-            <li>❤️❤️❤️❤️❤️❤️❤️</li>
-            <li>欢迎各位报考研究生</li>
-            <li>欢迎联系咨询📫haofu@whpu.edu.cn</li>
-            <li>😊😊😊😊😊😊😊</li>
-        </ul>
+        <h4>课题组简介</h4>
+        <p>课题组围绕铁路基础设施与智能建造，结合试验、数值模拟和数据驱动方法，研究有砟轨道、轨枕及新型多孔结构。</p>
+        <p><strong>研究方向：</strong>铁路基础设施与道床力学 · 3D 打印及仿生多孔结构 · 机器学习与物理信息神经网络</p>
+        <p>欢迎对相关研究感兴趣的同学联系：<a href="mailto:haofu@whpu.edu.cn">haofu@whpu.edu.cn</a></p>
     </div>
 
     <!-- 快速锚点导航 -->
@@ -717,6 +713,12 @@ var _hmt = _hmt || [];
                     <div class="member-role">硕士研究生 · 合作指导</div>
                     <div class="member-desc">北京交通大学2025硕士研究生，方向：铁路道床探地雷达探测与信号处理。</div>
                 </div>
+                <div class="member-card">
+                    <div class="member-avatar" aria-hidden="true">邢</div>
+                    <div class="member-name">邢忠硕</div>
+                    <div class="member-role">2026级研究生</div>
+                    <div class="member-desc">研究方向：基于物理信息神经网络（PINN）的道床脏污正演与反演。</div>
+                </div>
             </div>
         </div>
     </section>
@@ -725,7 +727,7 @@ var _hmt = _hmt || [];
     <section id="publications">
         <h2 class="section-title">📄 科研成果</h2>
         
-        <div class="publication-grid-container">
+        <div data-orcid-works><p class="orcid-intro">成果来自付豪的 <a class="orcid-header-link" href="https://orcid.org/0000-0003-1262-8113" target="_blank" rel="noopener noreferrer">ORCID 公开记录</a>。中文简介依据论文题名整理，未整理的条目会明确标注；配图为主题示意。</p><p class="orcid-status" role="status">正在读取 ORCID 公开成果；如连接不可用，将显示原有列表。</p><div class="orcid-list"></div></div><div class="publication-grid-container" data-orcid-fallback>
             <div class="publication-grid">
                 <!-- ===== 2026年论文 ===== -->
                 <!-- 1. Fu 2026 Transportation Geotechnics (最新) -->
@@ -1041,7 +1043,7 @@ var _hmt = _hmt || [];
 
     <!-- 页脚 -->
     <footer class="footer">
-        ⚛️ TOFU课题组 · 最后更新 2026年3月 · 联系方式：haofu@whpu.edu.cn
+        ⚛️ TOFU课题组 · 联系方式：haofu@whpu.edu.cn
 		    <!-- 在这里加上这行就行 -->
 <div style="text-align: center; margin-top: 10px;">
     <span style="color: #3D6180; font-size: 14px; vertical-align: middle;">访问次数：</span>
@@ -1519,5 +1521,6 @@ var _hmt = _hmt || [];
 })();
 </script>
 
+<script src="orcid-works.js" defer></script>
 </body>
 </html>
