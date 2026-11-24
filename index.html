@@ -1316,89 +1316,6 @@ body{background:#f1f5f5;color:#203945;background-image:none}body::before,.floati
         .activity-item:nth-child(n+5) { display: block; }
     }
 </style>
-<!-- 鼠标移动水波特效 - 柔和版 -->
-<canvas id="waveCanvas" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:9999;"></canvas>
-
-<script>
-// 鼠标水波特效 - 柔和版
-(function() {
-    const canvas = document.getElementById('waveCanvas');
-    const ctx = canvas.getContext('2d');
-    
-    let width = window.innerWidth;
-    let height = window.innerHeight;
-    let mouseX = width / 2;
-    let mouseY = height / 2;
-    let waves = [];
-    let lastTime = 0;
-    
-    function resize() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-    }
-    resize();
-    
-    document.addEventListener('mousemove', function(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        
-        const now = Date.now();
-        if (now - lastTime > 50) {
-            waves.push({
-                x: mouseX,
-                y: mouseY,
-                radius: 3,
-                maxRadius: 60,
-                speed: 1.2,
-                alpha: 0.5,
-                lineWidth: 1.5
-            });
-            lastTime = now;
-        }
-        
-        if (waves.length > 40) {
-            waves = waves.slice(-40);
-        }
-    });
-    
-    window.addEventListener('resize', resize);
-    
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-        
-        for (let i = 0; i < waves.length; i++) {
-            const w = waves[i];
-            
-            w.radius += w.speed;
-            w.alpha -= 0.004;
-            
-            if (w.alpha <= 0 || w.radius >= w.maxRadius) continue;
-            
-            ctx.beginPath();
-            ctx.arc(w.x, w.y, w.radius, 0, Math.PI * 2);
-            ctx.strokeStyle = `rgba(70, 130, 230, ${w.alpha})`;
-            ctx.lineWidth = w.lineWidth;
-            ctx.stroke();
-            
-            if (w.radius > 20) {
-                ctx.beginPath();
-                ctx.arc(w.x, w.y, w.radius * 0.5, 0, Math.PI * 2);
-                ctx.strokeStyle = `rgba(100, 160, 255, ${w.alpha * 0.5})`;
-                ctx.lineWidth = w.lineWidth * 0.6;
-                ctx.stroke();
-            }
-        }
-        
-        waves = waves.filter(w => w.alpha > 0.01 && w.radius < w.maxRadius);
-        
-        requestAnimationFrame(animate);
-    }
-    
-    animate();
-})();
-</script>
 <!-- 粒子效果脚本 -->
 <script>
 (function() {
@@ -1534,5 +1451,6 @@ body{background:#f1f5f5;color:#203945;background-image:none}body::before,.floati
 
 <script src="orcid-works.js" defer></script>
 <link rel="stylesheet" href="site-theme.css">
+<script src="pointer-effects.js" defer></script>
 </body>
 </html>
